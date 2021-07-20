@@ -1,3 +1,201 @@
 <resources>
-    <string name="app_name">Manual_lab</string>
+    <string name="app_name">Manual de laboratorio</string>
+    <string name="app_subtitle">Escu</string>
+
+    <string name="logotipo_esi">Logotipo ESI</string>
+    <string name="logotipo_gunt">Logotipo GUNT</string>
+
+    <string name="textAcercaDe">Esta aplicación ha sido desarrollada por Santiago J. Mas Peña,
+        para uso como manual de laboratorio, para la asignatura de Resistencia de Materiales y Estructuras.
+        Para cualquier duda o consulta, enviar un correo a santiago.maspena@alum.uca.es.</string>
+
+    <string name="identificador_uca">Identificador UCA</string>
+    <string name="clave_uca">Clave</string>
+    <string name="IntroduceIdentificador">Introduce tu identificador y tu clave UCA:</string>
+    <string name="AccederAnonimo">Acceder como usuario anónimo:</string>
+    <string name="EligeApp">Elige el manual de\nlaboratorio.</string>
+    <string name="elige_practica">Elige la practica</string>
+    <string name="DondeEstas">¿Dónde estás?</string>
+    <string name="tipoPractica">¿Cómo quieres hacer la práctica?</string>
+    <string name="manual_pandeo">Práctica de Pandeo</string>
+    <string name="manual_torsion">Práctica de Torsión</string>
+    <string name="manual_traccion">Práctica de Tracción</string>
+    <string name="manual_flexión">Práctica de Flexión</string>
+    <string name="baul">Baúl</string>
+    <string name="test">Test</string>
+    <string name="pesas">Pesas</string>
+    <string name="BarraDosGanchos"> Barra de dos ganchos.</string>
+    <string name="BarraCircular"> Barra de sección circular.</string>
+    <string name="BarraRectangular"> Barra de sección rectangular.</string>
+    <string name="PesasGrandes"> Juego de pesas grandes.</string>
+    <string name="PesasPequeñas"> Juego de pesas pequeñas.</string>
+    <string name="Llaves"> Llaves.</string>
+    <string name="Ampli"> Amplificador.</string>
+    <string name="Cable"> Cable de conexión.</string>
+    <string name="apoyo_articulado">Apoyo articulado.</string>
+    <string name="apoyo_empotrado">Apoyo empotrado.</string>
+    <string name="barra_cuad_500mm">Barra cuadrada de 500 m</string>
+    <string name="barra_cuad_1000m">Barra cuadrada de 1000 mm</string>
+    <string name="soporte5N">Soporte con carga 5 N</string>
+    <string name="pesa5N">Pesa de 5 N</string>
+    <string name="pesa10N">Pesa de 10 N</string>
+    <string name="pesa20N">Pesa de 20 N</string>
+    <string name="cargaAleatoria">Carga: %1$d N</string>
+    <string name="RA">Realidad Aumentada</string>
+    <string name="momento_torsor">Momento Torsor\nexperimental en Nm:</string>
+    <string name="carga_critica_pandeo">Carga crítica de Euler\nexperimental en N:</string>
+    <string name="ValorAmplificador">Indicación del\namplificador en mv/V:</string>
+    <string name="titulo_cuestionario">Cuestionario</string>
+    <string name="titulo_fin">Final del manual</string>
+    <string name="guion">- %1$s</string>
+
+
+    <string name="boton_inicio">Comenzar</string>
+    <string name="boton_ajustes">Ajustes</string>
+    <string name="boton_acercaDe">Acerca de…</string>
+    <string name="boton_continuar">Continuar</string>
+    <string name="boton_siguiente">Siguiente</string>
+    <string name="boton_anterior">Retroceder</string>
+    <string name="boton_explicacion">Explicación</string>
+    <string name="boton_ubicacion">Ubicación</string>
+    <string name="boton_en_lab">Laboratorio C13</string>
+    <string name="boton_fuera">Fuera del laboratorio</string>
+    <string name="boton_con_manual">Con el manual</string>
+    <string name="boton_sin_manual">Sin el manual</string>
+    <string name="boton_comenzarAR">Comenzar Realidad Aumentada</string>
+    <string name="boton_terminado">Terminado</string>
+    <string name="boton_vuelta_inicio">Volver al inicio</string>
+    <string name="boton_fin_aplicacion">Salir de la aplicación</string>
+
+
+    <string name="selecciona_app">Elige si estás en el laboratorio o no, si quieres hacer la ayuda para realizar la práctica. Después
+        selecciona la práctica que quieres hacer:</string>
+
+    <string name="manualIntroduccion">Hola, somos Laura y Dave. Con esta aplicación te vamos a ayudar
+        para que puedas realizar la práctica de %1$s de esta asignatura.</string>
+
+    <string name="manual_materiales_intro">Estos son todos los materiales disponibles para realizar la práctica.</string>
+
+    <string name="manual_materiales_torsion">Para la práctica de torsión solo vas a necesitar:\n- Barra de sección circular.
+        \n- Juego de pesas grandes.\n- Amplificador.\n- Cable.</string>
+
+    <string name="manual_materiales_pandeo">Para la práctica de pandeo se te ha asignado:\n- Barra de acero S2 de %1$s mm\n- %2$s\n- %3$s</string>
+
+    <string name="eligeMateriales">Marca aquellos materiales que vayas a necesitar:</string>
+
+    <string name="manualCargaIntro1">Para esta práctica se te ha asignado la siguiente carga en N:</string>
+
+    <string name="manualCargaIntro2">Elige las pesas necesarias para conseguir esa carga. Recuerda que el soporte es necesario.</string>
+
+    <string name="prepara_maquina_torsion_lab">Coloca el marcador 0 sobre la máquina tal como se ve en la imagen. </string>
+
+    <string name="prepara_maquina_pandeo_lab">Coloca el marcador 1  sobre la máquina tal como se ve en la imagen.</string>
+
+    <string name="prepara_maquina_torsion_casa">Coloca el marcador 2 sobre una superficie horizontal y bien iluminada.</string>
+
+    <string name="prepara_maquina_pandeo_casa">Coloca el marcador 4 sobre una superficie horizontal y bien iluminada.</string>
+
+    <string name="movil_posicion_horizontal">Pon el móvil en posición horizontal y presiona el botón de comenzar.</string>
+
+    <string name="introCalculosTorsion">Ahora te voy a mostrar los datos necesarios para que realices el cálculo del momento de torsión.</string>
+
+    <string name="introCalculosPandeo">Ahora te voy a mostrar los datos necesarios para que realices el cálculo de la carga crítica de Euler.</string>
+
+    <string name="valoresAsignadosTorsion">Estos son los valores que se te han asignado para esta práctica:\n\n\t\t\tCarga en N: %1$d N\n\n
+        Módulo de resistencia: \n\n\t\t\tWp = 196.3 mm^3\n\nMódulo de Elasticidad Transversal: \n\n\t\t\tG = 80 000 N/mm^2\n\nCoeficiente de la galga
+        extensiométrica:\n\n\t\t\tk = 2.05</string>
+
+    <string name="valoresAsignadosPandeo">Estos son los valores que se te ha asignado para esta práctica:\n\n\t\t\tBarra de prueba: %1$s Acero
+        \n\n\t\t\tLongitud (Lp): %2$s mm\n\nMomento de inercia de superficie:\n\n\t\t\t Imin = 106.6 mm^4\n\nMódulo de elasticidad:\n\n\t\t\tE = 210 000 N/mm^2</string>
+
+    <string name="finalCalculosTorsion">Recuerda/Apunta estos datos. Los vas a necesitar para calcular el Momento Torsor.</string>
+
+    <string name="finalCalculosPandeo">Recuerda/Apunta estos datos. Los vas a necesitar para calcular la carga crítica.</string>
+
+    <string name="horaDeCalcular">Es hora de que realices los cálculos.</string>
+
+    <string name="resolver_ecuacion_torsion">Para calcular el Momento Torsor, emplea esta ecuación:</string>
+
+    <string name="resolver_ecuacion_pandeo">Para calcular la carga crítica, emplea esta ecuación:</string>
+
+    <string name="introduceResultados">Introduce la solución cuando la tengas calculada:</string>
+
+    <string name="datos_automaticos">Se han introducido automáticamente los datos que se obtendrían al realizar el experimento en el laboratorio.</string>
+
+    <string name="titulo_mensaje_error_momento_torsion">El momento calculado no es correcto.</string>
+
+    <string name="cuerpo_mensaje_error_momento_torsion">Tu momento resultado está fuera del rango de ± 5%. Puedes modificar tu resultado o continuar con la práctica.</string>
+
+    <string name="titulo_mensaje_error_ampli_torsion">El valor del amplificador no es correcto.</string>
+
+    <string name="cuerpo_mensaje_error_ampli_torsion">Revisa que el amplificador esté bien conectado al pórtico. Si estás seguro de tu resultado, continua con la práctica.</string>
+
+    <string name="titulo_mensaje_error_carga_pandeo">La carga crítica calculada no es correcta.</string>
+
+    <string name="cuerpo_mensaje_error_carga_padeno">Tu carga calculada está fuera del rango de ± 5%. Puedes modificar tu resultado o continuar con la práctica.</string>
+
+    <string name="respuesta_fallidas">A continuación se muestran tus respuestas correctas, en verde, y erróneas en rojo:</string>
+
+    <string name="texto_final_bien">Enhorabuena, has acertado todas las preguntas. Esperamos que te haya gustado realizar la práctica con nosotros.
+        Si quieres volver a utilizar el manual, pulsa el botón de volver al inicio y podrás realizar la práctica desde cero otra vez.</string>
+
+    <string name="texto_final_mal">Has llegado al final de la practica de laboratorio. Has fallado algunas preguntas, así que tienes que esforzarte un poco más.
+        Si quieres volver a utilizar el manual, pulsa el botón de volver al inicio y podrás realizar cualquier práctica desde cero otra vez.</string>
+
+
+    <string-array name="pregunta_torsion0">
+        <item>0</item>
+        <item>¿Para el cálculo teórico de la deformada por torsión, qué valor de los siguiente hay que aplicar?</item>
+        <item>El módulo de la elasticidad transversal(G)</item>
+        <item>El módulo de la elasticidad longitudinal (E)</item>
+        <item>Ninguno de los dos valores es necesario</item>
+        <item>Ambos valores son necesarios</item>
+    </string-array>
+    <string-array name="pregunta_torsion1">
+        <item>2</item>
+        <item>¿Sabrías decir, para la barra sometida sólo a torsión, qué tipo de deformación se produce?</item>
+        <item>Deformación longitudinal en mm</item>
+        <item>Deformación longitudinal en radianes</item>
+        <item>Deformación angular en radianes</item>
+        <item>Deformación angular en mm</item>
+    </string-array>
+    <string-array name="pregunta_torsion2">
+        <item>1</item>
+        <item>¿Cómo se produce la deformación?</item>
+        <item>Alrededor del eje perpendicular de la barra</item>
+        <item>Alrededor del eje longitudinal de la barra</item>
+        <item>Alrededor del plano en el que está contenida la barra</item>
+    </string-array>
+    <string-array name="pregunta_torsion3">
+        <item>1</item>
+        <item>¿Qué distancia hay que tomar para calcular el momento torsor aplicado a la barra?</item>
+        <item>Desde la carga hasta la galga extensiométrica</item>
+        <item>Desde la carga hasta el extremo inicial del brazo de palanca</item>
+        <item>Desde la carga hasta el extremo izquierdo de la barra</item>
+    </string-array>
+
+    <string-array name="pregunta_pandeo0">
+        <item>1</item>
+        <item>La carga crítica de Euler depende del límite elástico del material:</item>
+        <item>Verdadero</item>
+        <item>Falso</item>
+    </string-array>
+    <string-array name="pregunta_pandeo1">
+        <item>1</item>
+        <item>La barra del experimento pandea siempre hacia el mismo lado y no se puede cambiar la dirección de la deformación:</item>
+        <item>Verdadero</item>
+        <item>Falso</item>
+    </string-array>
+    <string-array name="pregunta_pandeo2">
+        <item>0</item>
+        <item>Un elemento sometido a compresión pandeará en el plano que presente menor rigidez a la flexión:</item>
+        <item>Verdadero</item>
+        <item>Falso</item>
+    </string-array>
+    <string-array name="pregunta_pandeo3">
+        <item>0</item>
+        <item>La longitud de pandeo de una viga depende de los apoyos que tenga:</item>
+        <item>Verdadero</item>
+        <item>Falso</item>
+    </string-array>
 </resources>
