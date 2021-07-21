@@ -16,10 +16,33 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_titleFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/pop_up_anim"
+            app:exitAnim="@anim/pop_down_anim"
+            app:popEnterAnim="@anim/pop_up_anim"
+            app:popExitAnim="@anim/pop_down_anim" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="uca.esi.manual.ui.login.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" />
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_labSelectionFragmentAnon"
+            app:destination="@id/labSelectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <dialog
+        android:id="@+id/aboutFragment"
+        android:name="uca.esi.manual.ui.title.AboutFragment"
+        android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/labSelectionFragment"
+        android:name="uca.esi.manual.ui.selection.LabSelectionFragment"
+        android:label="lab_selection_fragment" />
 </navigation>

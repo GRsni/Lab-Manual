@@ -11,10 +11,13 @@
 
     <string name="identificador_uca">Identificador UCA</string>
     <string name="clave_uca">Clave</string>
-    <string name="IntroduceIdentificador">Introduce tu identificador y tu clave UCA:</string>
-    <string name="AccederAnonimo">Acceder como usuario anónimo:</string>
-    <string name="EligeApp">Elige el manual de\nlaboratorio.</string>
-    <string name="elige_practica">Elige la practica</string>
+    <string name="identificador">Identificador</string>
+    <string name="clave">Clave</string>
+    <string name="inicio_de_sesion">Inicio de sesión</string>
+    <string name="acceder_alumno">Acceder como alumno</string>
+    <string name="AccederAnonimo">Acceder como usuario anónimo</string>
+    <string name="EligeApp">Elige el manual de laboratorio.</string>
+    <string name="elige_practica">Elige la practica a realizar</string>
     <string name="DondeEstas">¿Dónde estás?</string>
     <string name="tipoPractica">¿Cómo quieres hacer la práctica?</string>
     <string name="manual_pandeo">Práctica de Pandeo</string>
@@ -66,7 +69,9 @@
     <string name="boton_terminado">Terminado</string>
     <string name="boton_vuelta_inicio">Volver al inicio</string>
     <string name="boton_fin_aplicacion">Salir de la aplicación</string>
-
+    <string name="boton_aceptar">Aceptar</string>
+    <string name="boton_salir">Salir</string>
+    <string name="boton_enviar_email">Enviar email</string>
 
     <string name="selecciona_app">Elige si estás en el laboratorio o no, si quieres hacer la ayuda para realizar la práctica. Después
         selecciona la práctica que quieres hacer:</string>
