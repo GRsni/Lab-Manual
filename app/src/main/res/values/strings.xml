@@ -17,7 +17,7 @@
     <string name="acceder_alumno">Acceder como alumno</string>
     <string name="AccederAnonimo">Acceder como usuario anónimo</string>
     <string name="EligeApp">Elige el manual de laboratorio.</string>
-    <string name="elige_practica">Elige la practica a realizar</string>
+    <string name="elige_practica">Elige la práctica a realizar</string>
     <string name="DondeEstas">¿Dónde estás?</string>
     <string name="tipoPractica">¿Cómo quieres hacer la práctica?</string>
     <string name="manual_pandeo">Práctica de Pandeo</string>
@@ -52,6 +52,11 @@
     <string name="titulo_fin">Final del manual</string>
     <string name="guion">- %1$s</string>
 
+    <string name="error_lectura_firebase">Error a leer la base de datos</string>
+    <string name="error_datos_alumno_vacios">Debes introducir el identicador y la clave de acceso</string>
+    <string name="error_datos_alumno_incorrectos">El identificador o la clave
+        introducidos son incorrectos</string>
+    <string name="error_practica_no_implementada">Esta práctica de laboratorio aún no ha sido implementada</string>
 
     <string name="boton_inicio">Comenzar</string>
     <string name="boton_ajustes">Ajustes</string>
@@ -73,8 +78,8 @@
     <string name="boton_salir">Salir</string>
     <string name="boton_enviar_email">Enviar email</string>
 
-    <string name="selecciona_app">Elige si estás en el laboratorio o no, si quieres hacer la ayuda para realizar la práctica. Después
-        selecciona la práctica que quieres hacer:</string>
+    <string name="selecciona_app">Elige si estás en el laboratorio C13 de la ESI o en otro lugar, y
+        seguidamente selecciona la práctica que quieres realizar:</string>
 
     <string name="manualIntroduccion">Hola, somos Laura y Dave. Con esta aplicación te vamos a ayudar
         para que puedas realizar la práctica de %1$s de esta asignatura.</string>

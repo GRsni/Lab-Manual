@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import timber.log.Timber
-import uca.esi.manual.models.User
 import uca.esi.manual.models.UserListResponse
 
 class UsersRepository {
@@ -14,24 +13,18 @@ class UsersRepository {
 
     fun getResponseFromDatabase(): MutableLiveData<UserListResponse> {
         Timber.i("loading users")
-        val data = MutableLiveData<UserListResponse>()
+        val mutableData = MutableLiveData<UserListResponse>()
         usersRef.get().addOnCompleteListener { task ->
             val response = UserListResponse()
             if (task.isSuccessful) {
-                Timber.i("task successful, retrieved user ids")
                 val result = task.result
-                result.let {
-                    Timber.i("children: %s", result.hasChildren())
-                    response.users = result.children.map {
-                        User(it.key, it.value.toString())
-                    }
-                }
+                response.users = result.value as MutableMap<String, String>
             } else {
                 response.exception = task.exception
             }
-            data.value = response
+            mutableData.value = response
         }
-        return data
+        return mutableData
     }
 
 }

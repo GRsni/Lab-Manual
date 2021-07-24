@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -11,7 +12,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginFragment">
 
         <TextView
             android:id="@+id/titulo"
@@ -32,8 +34,8 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="101dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="208dp"
             android:text="@string/identificador"
             android:textAlignment="center"
@@ -68,6 +70,7 @@
             android:hint="@string/identificador_uca"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
+            android:text="@{loginViewModel.username}"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.059"
@@ -82,7 +85,8 @@
             android:ems="10"
             android:hint="@string/clave_uca"
             android:importantForAutofill="no"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
+            android:text="@{loginViewModel.password}"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.059"
@@ -96,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="14dp"
             android:layout_marginTop="24dp"
-            android:onClick="@{()->loginViewModel.checkIdentfier()}"
+            android:onClick="@{()->loginViewModel.checkIdentifier()}"
             android:text="@string/acceder_alumno"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

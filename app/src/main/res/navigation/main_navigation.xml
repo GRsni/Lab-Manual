@@ -8,7 +8,7 @@
         android:id="@+id/titleFragment"
         android:name="uca.esi.manual.ui.title.TitleFragment"
         android:label="title_fragment"
-        tools:layout="@layout/title_fragment" >
+        tools:layout="@layout/title_fragment">
         <action
             android:id="@+id/action_titleFragment_to_loginFragment"
             app:destination="@id/loginFragment"
@@ -28,9 +28,9 @@
         android:id="@+id/loginFragment"
         android:name="uca.esi.manual.ui.login.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" >
+        tools:layout="@layout/login_fragment">
         <action
-            android:id="@+id/action_loginFragment_to_labSelectionFragmentAnon"
+            android:id="@+id/action_loginFragment_to_labSelectionFragment"
             app:destination="@id/labSelectionFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -44,5 +44,9 @@
     <fragment
         android:id="@+id/labSelectionFragment"
         android:name="uca.esi.manual.ui.selection.LabSelectionFragment"
-        android:label="lab_selection_fragment" />
+        android:label="lab_selection_fragment" >
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
 </navigation>
