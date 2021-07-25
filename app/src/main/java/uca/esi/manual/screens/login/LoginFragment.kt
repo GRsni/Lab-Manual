@@ -1,4 +1,4 @@
-package uca.esi.manual.ui.login
+package uca.esi.manual.screens.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -123,12 +123,14 @@ class LoginFragment : Fragment() {
                 viewModel.username.value.toString()
             )
         )
+        viewModel.onCorrectDataComplete()
     }
 
     private fun loginAnon() {
         NavHostFragment.findNavController(this).navigate(
             LoginFragmentDirections.actionLoginFragmentToLabSelectionFragment("u99999999")
         )
+        viewModel.onCorrectDataComplete()
     }
 
     private fun print(response: UserListResponse) {

@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/titleFragment"
-        android:name="uca.esi.manual.ui.title.TitleFragment"
+        android:name="uca.esi.manual.screens.title.TitleFragment"
         android:label="title_fragment"
         tools:layout="@layout/title_fragment">
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="uca.esi.manual.ui.login.LoginFragment"
+        android:name="uca.esi.manual.screens.login.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/login_fragment">
         <action
@@ -39,14 +39,47 @@
     </fragment>
     <dialog
         android:id="@+id/aboutFragment"
-        android:name="uca.esi.manual.ui.title.AboutFragment"
-        android:label="AboutFragment" />
+        android:name="uca.esi.manual.screens.title.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/about_fragment" />
     <fragment
         android:id="@+id/labSelectionFragment"
-        android:name="uca.esi.manual.ui.selection.LabSelectionFragment"
-        android:label="lab_selection_fragment" >
+        android:name="uca.esi.manual.screens.selection.LabSelectionFragment"
+        android:label="lab_selection_fragment"
+        tools:layout="@layout/lab_selection_fragment">
         <argument
             android:name="userId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_labSelectionFragment_to_labExplanationFragment"
+            app:destination="@id/labExplanationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
+    <fragment
+        android:id="@+id/labExplanationFragment"
+        android:name="uca.esi.manual.screens.explanation.LabExplanationFragment"
+        android:label="lab_explanation_fragment"
+        tools:layout="@layout/lab_explanation_fragment">
+        <argument
+            android:name="userId"
+            app:argType="string" />
+        <argument
+            android:name="inLab"
+            app:argType="boolean" />
+        <argument
+            android:name="labType"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_labExplanationFragment_to_chestFragment"
+            app:destination="@id/chestFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/chestFragment"
+        android:name="uca.esi.manual.screens.chest.ChestFragment"
+        android:label="chest_fragment"
+        tools:layout="@layout/chest_fragment" />
 </navigation>

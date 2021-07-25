@@ -1,4 +1,4 @@
-package uca.esi.manual.ui.title
+package uca.esi.manual.screens.title
 
 import android.os.Bundle
 import android.view.LayoutInflater

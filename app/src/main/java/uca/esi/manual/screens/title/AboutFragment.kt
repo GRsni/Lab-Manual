@@ -1,4 +1,4 @@
-package uca.esi.manual.ui.title
+package uca.esi.manual.screens.title
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -11,7 +11,6 @@ import android.view.LayoutInflater
 import androidx.fragment.app.DialogFragment
 import uca.esi.manual.R
 import uca.esi.manual.databinding.AboutFragmentBinding
-import kotlin.math.min
 
 class AboutFragment : DialogFragment() {
 

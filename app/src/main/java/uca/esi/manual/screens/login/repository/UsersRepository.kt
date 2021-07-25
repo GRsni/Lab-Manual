@@ -1,4 +1,4 @@
-package uca.esi.manual.ui.login.repository
+package uca.esi.manual.screens.login.repository
 
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.database.DatabaseReference
@@ -11,6 +11,7 @@ class UsersRepository {
     private val rootRef: DatabaseReference = FirebaseDatabase.getInstance().reference
     private val usersRef: DatabaseReference = rootRef.child("Ids")
 
+    @Suppress("UNCHECKED_CAST")
     fun getResponseFromDatabase(): MutableLiveData<UserListResponse> {
         Timber.i("loading users")
         val mutableData = MutableLiveData<UserListResponse>()

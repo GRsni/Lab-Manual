@@ -2,6 +2,7 @@ package uca.esi.manual
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.NavController
 
 class MainActivity : AppCompatActivity() {
 

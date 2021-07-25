@@ -7,7 +7,7 @@
 
         <variable
             name="loginViewModel"
-            type="uca.esi.manual.ui.login.LoginViewModel" />
+            type="uca.esi.manual.screens.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

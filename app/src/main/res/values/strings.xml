@@ -57,6 +57,7 @@
     <string name="error_datos_alumno_incorrectos">El identificador o la clave
         introducidos son incorrectos</string>
     <string name="error_practica_no_implementada">Esta práctica de laboratorio aún no ha sido implementada</string>
+    <string name="error_lugar_practica_vacio">Debes seleccionar el lugar donde vas a utilizar el manual</string>
 
     <string name="boton_inicio">Comenzar</string>
     <string name="boton_ajustes">Ajustes</string>

@@ -1,4 +1,4 @@
-package uca.esi.manual.ui.login
+package uca.esi.manual.screens.login
 
 import android.text.Editable
 import androidx.lifecycle.LiveData
@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import timber.log.Timber
 import uca.esi.manual.getSHA256HashedString
 import uca.esi.manual.models.UserListResponse
-import uca.esi.manual.ui.login.repository.UsersRepository
+import uca.esi.manual.screens.login.repository.UsersRepository
 
 class LoginViewModel : ViewModel() {
 

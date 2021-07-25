@@ -7,14 +7,14 @@
 
         <variable
             name="labSelectionViewModel"
-            type="uca.esi.manual.ui.selection.LabSelectionViewModel" />
+            type="uca.esi.manual.screens.selection.LabSelectionViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        tools:context=".ui.selection.LabSelectionFragment">
+        tools:context=".screens.selection.LabSelectionFragment">
 
         <TextView
             android:id="@+id/titulo"
@@ -24,6 +24,7 @@
             android:text="@string/EligeApp"
             android:textAlignment="center"
             android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -76,6 +77,8 @@
             android:layout_margin="8dp"
             android:layout_marginBottom="128dp"
             android:background="@drawable/back"
+            android:checkedButton="@id/radioButtonLab"
+            android:onCheckedChanged="@{labSelectionViewModel::onSplitTypeChanged}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -83,6 +86,7 @@
             app:layout_constraintVertical_bias="0.0">
 
             <RadioButton
+                android:id="@+id/radioButtonLab"
                 style="@android:style/Widget.CompoundButton.RadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,6 +94,7 @@
                 android:text="@string/boton_en_lab" />
 
             <RadioButton
+                android:id="@+id/radioButtonFuera"
                 style="@android:style/Widget.CompoundButton.RadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,6 +146,7 @@
             android:layout_margin="8dp"
             android:layout_marginStart="14dp"
             android:layout_marginEnd="8dp"
+            android:onClick="@{()->labSelectionViewModel.onTorsionClick()}"
             android:text="@string/manual_torsion"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/buttonPandeo"
@@ -156,6 +162,7 @@
             android:layout_margin="8dp"
             android:layout_marginEnd="14dp"
             android:gravity="center"
+            android:onClick="@{()->labSelectionViewModel.onPandeoClick()}"
             android:text="@string/manual_pandeo"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -171,6 +178,7 @@
             android:layout_margin="8dp"
             android:layout_marginEnd="14dp"
             android:gravity="center"
+            android:onClick="@{()->labSelectionViewModel.onFlexionClick()}"
             android:text="@string/manual_flexión"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/flow"
@@ -189,6 +197,7 @@
             android:layout_marginStart="14dp"
             android:layout_marginEnd="8dp"
             android:gravity="center"
+            android:onClick="@{()->labSelectionViewModel.onTraccionClick()}"
             android:text="@string/manual_traccion"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/flow"
