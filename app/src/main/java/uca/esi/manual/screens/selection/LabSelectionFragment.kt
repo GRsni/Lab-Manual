@@ -34,10 +34,6 @@ class LabSelectionFragment : Fragment() {
             false
         )
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            binding.explicacion.justificationMode = JUSTIFICATION_MODE_INTER_WORD
-        }
-
         viewModelFactory = LabSelectionViewModelFactory(
             LabSelectionFragmentArgs.fromBundle(requireArguments()).userId
         )
@@ -47,6 +43,10 @@ class LabSelectionFragment : Fragment() {
 
         binding.labSelectionViewModel = viewModel
         binding.lifecycleOwner = this
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            binding.explicacion.justificationMode = JUSTIFICATION_MODE_INTER_WORD
+        }
 
         addEventEmptyDataObserver()
 

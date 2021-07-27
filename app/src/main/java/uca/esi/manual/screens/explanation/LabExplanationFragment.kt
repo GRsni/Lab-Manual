@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import uca.esi.manual.R
 import uca.esi.manual.databinding.LabExplanationFragmentBinding
 
@@ -41,7 +42,24 @@ class LabExplanationFragment : Fragment() {
         binding.labExplanationViewModel = viewModel
         binding.lifecycleOwner = this
 
+        binding.textoIntroManual.text = viewModel.introText.resolve(requireContext())
+
+        viewModel.eventButtonPress.observe(viewLifecycleOwner, { buttonIsPressed ->
+            if (buttonIsPressed) {
+                launchChest()
+                viewModel.onButtonPressComplete()
+            }
+        })
+
         return binding.root
     }
 
+
+    private fun launchChest() {
+        NavHostFragment.findNavController(this).navigate(
+            LabExplanationFragmentDirections.actionLabExplanationFragmentToChestFragment(
+                viewModel.lab.value!!
+            )
+        )
+    }
 }

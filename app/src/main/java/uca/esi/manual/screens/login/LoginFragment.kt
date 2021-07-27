@@ -100,7 +100,6 @@ class LoginFragment : Fragment() {
 
     private fun addDatabaseResponseObserver() {
         viewModel.response.observe(viewLifecycleOwner, {
-
             if (it.exception != null) {
                 Toast.makeText(
                     activity,

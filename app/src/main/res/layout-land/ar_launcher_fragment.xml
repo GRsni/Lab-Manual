@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:text="@string/RA"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/textoPreparaMaquina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/back"
+        android:hint="sample text"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imagenPosicionQR"
+        android:layout_width="590dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:src="@drawable/horizontal_maq" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button14"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="lanzarARView"
+            android:text="@string/boton_comenzarAR" />
+
+        <Button
+            android:id="@+id/button15"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="lanzarFormulasActivity"
+            android:text="@string/boton_terminado" />
+    </LinearLayout>
+</LinearLayout>

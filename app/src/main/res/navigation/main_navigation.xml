@@ -74,12 +74,44 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_labExplanationFragment_to_chestFragment"
-            app:destination="@id/chestFragment" />
+            app:destination="@id/chestFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
 
     </fragment>
     <fragment
         android:id="@+id/chestFragment"
         android:name="uca.esi.manual.screens.chest.ChestFragment"
         android:label="chest_fragment"
-        tools:layout="@layout/chest_fragment" />
+        tools:layout="@layout/chest_fragment">
+        <argument
+            android:name="lab"
+            app:argType="uca.esi.manual.models.labs.BaseLab" />
+        <action
+            android:id="@+id/action_chestFragment_to_materialsPandeo"
+            app:destination="@id/materialsPandeoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/materialsPandeoFragment"
+        android:name="uca.esi.manual.screens.materials.MaterialsPandeoFragment"
+        android:label="materials_pandeo_fragment"
+        tools:layout="@layout/materials_pandeo_fragment">
+        <argument
+            android:name="lab"
+            app:argType="uca.esi.manual.models.labs.BaseLab" />
+        <action
+            android:id="@+id/action_materialsPandeoFragment_to_chestFragment"
+            app:destination="@id/chestFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/chestFragment" />
+    </fragment>
 </navigation>

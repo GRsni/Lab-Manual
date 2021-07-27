@@ -9,6 +9,8 @@ class LabExplanationViewModelFactory(
     private val labType: Int
 ) :
     ViewModelProvider.Factory {
+
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(LabExplanationViewModel::class.java)) {
             return LabExplanationViewModel(userId, inLab, labType) as T

@@ -58,6 +58,10 @@
         introducidos son incorrectos</string>
     <string name="error_practica_no_implementada">Esta práctica de laboratorio aún no ha sido implementada</string>
     <string name="error_lugar_practica_vacio">Debes seleccionar el lugar donde vas a utilizar el manual</string>
+    <string name="error_datos_practicas">Se ha producido un error cargando los datos de la práctica</string>
+    <string name="error_barra_pandeo">Te has equivocado eligiendo la barra</string>
+    <string name="error_apoyos_pandeo">Te has equivocado eligiendo los apoyos</string>
+    <string name="error_materiales_vacios">Tienes que seleccionar los materiales necesarios para la práctica</string>
 
     <string name="boton_inicio">Comenzar</string>
     <string name="boton_ajustes">Ajustes</string>
@@ -82,7 +86,7 @@
     <string name="selecciona_app">Elige si estás en el laboratorio C13 de la ESI o en otro lugar, y
         seguidamente selecciona la práctica que quieres realizar:</string>
 
-    <string name="manualIntroduccion">Hola, somos Laura y Dave. Con esta aplicación te vamos a ayudar
+    <string name="manual_introduccion">Hola, somos Laura y Dave. Con esta aplicación te vamos a ayudar
         para que puedas realizar la práctica de %1$s de esta asignatura.</string>
 
     <string name="manual_materiales_intro">Estos son todos los materiales disponibles para realizar la práctica.</string>
@@ -209,4 +213,6 @@
         <item>Verdadero</item>
         <item>Falso</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

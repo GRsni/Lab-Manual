@@ -52,6 +52,7 @@ class LabSelectionViewModel(var userId: String) : ViewModel() {
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun onSplitTypeChanged(rg: RadioGroup, id: Int) {
         _inLab.value = id == Constants.IN_LAB_RADIO_INDEX
     }

@@ -2,9 +2,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".screens.chest.ChestFragment">
+
+    <data>
+
+        <variable
+            name="chestViewModel"
+            type="uca.esi.manual.screens.chest.ChestViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -48,15 +53,17 @@
 
         <ImageView
             android:id="@+id/imagenBaul"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="8dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/portico_pandeo_small"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.45"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textoBaulIntro"
+            app:layout_constraintWidth_percent="0.70"
             tools:ignore="ContentDescription" />
 
         <TextView
@@ -78,11 +85,12 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/button11"
+            android:id="@+id/button_chest"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:onClick="@{()->chestViewModel.onButtonPressed()}"
             android:text="@string/boton_continuar"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
