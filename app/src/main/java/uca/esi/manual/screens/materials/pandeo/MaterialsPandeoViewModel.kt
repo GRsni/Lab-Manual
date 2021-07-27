@@ -1,4 +1,4 @@
-package uca.esi.manual.screens.materials
+package uca.esi.manual.screens.materials.pandeo
 
 import android.text.Editable
 import android.widget.RadioGroup

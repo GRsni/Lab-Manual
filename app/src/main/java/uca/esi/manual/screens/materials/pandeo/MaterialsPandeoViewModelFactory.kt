@@ -1,4 +1,4 @@
-package uca.esi.manual.screens.materials
+package uca.esi.manual.screens.materials.pandeo
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

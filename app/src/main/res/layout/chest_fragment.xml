@@ -59,10 +59,13 @@
             android:layout_margin="8dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/portico_pandeo_small"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.45"
+            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textoBaulIntro"
+            app:layout_constraintVertical_bias="0.084"
             app:layout_constraintWidth_percent="0.70"
             tools:ignore="ContentDescription" />
 
@@ -72,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="8dp"
-            android:layout_marginBottom="156dp"
+            android:layout_marginTop="28dp"
             android:background="@drawable/back"
             android:padding="10dp"
             android:text="placeholder"
@@ -95,8 +98,10 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textoBaul" />
+            app:layout_constraintTop_toBottomOf="@+id/textoBaul"
+            app:layout_constraintVertical_bias="0.212" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

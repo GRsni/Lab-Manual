@@ -96,10 +96,17 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_chestFragment_to_materialsTorsionFragment"
+            app:destination="@id/materialsTorsionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/materialsPandeoFragment"
-        android:name="uca.esi.manual.screens.materials.MaterialsPandeoFragment"
+        android:name="uca.esi.manual.screens.materials.pandeo.MaterialsPandeoFragment"
         android:label="materials_pandeo_fragment"
         tools:layout="@layout/materials_pandeo_fragment">
         <argument
@@ -107,6 +114,23 @@
             app:argType="uca.esi.manual.models.labs.BaseLab" />
         <action
             android:id="@+id/action_materialsPandeoFragment_to_chestFragment"
+            app:destination="@id/chestFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/chestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/materialsTorsionFragment"
+        android:name="uca.esi.manual.screens.materials.torsion.MaterialsTorsionFragment"
+        android:label="materials_torsion_fragment"
+        tools:layout="@layout/materials_torsion_fragment">
+        <argument
+            android:name="lab"
+            app:argType="uca.esi.manual.models.labs.BaseLab" />
+        <action
+            android:id="@+id/action_materialsTorsionFragment_to_chestFragment"
             app:destination="@id/chestFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"

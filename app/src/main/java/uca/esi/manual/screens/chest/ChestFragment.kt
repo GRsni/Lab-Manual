@@ -72,11 +72,11 @@ class ChestFragment : Fragment() {
                 )
             }
             BaseLab.LabType.TORSION -> {
-                Toast.makeText(
-                    activity,
-                    "Lanzando materiales torsion",
-                    Toast.LENGTH_SHORT
-                ).show()
+                NavHostFragment.findNavController(this).navigate(
+                    ChestFragmentDirections.actionChestFragmentToMaterialsTorsionFragment(
+                        viewModel.lab.value!!
+                    )
+                )
             }
             else -> Toast.makeText(
                 activity,

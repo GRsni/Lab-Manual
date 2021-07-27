@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".screens.materials.MaterialsPandeoFragment">
+    tools:context=".screens.materials.pandeo.MaterialsPandeoFragment">
 
     <data>
 
         <variable
             name="materialsPandeoViewModel"
-            type="uca.esi.manual.screens.materials.MaterialsPandeoViewModel" />
+            type="uca.esi.manual.screens.materials.pandeo.MaterialsPandeoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -149,7 +149,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="14dp"
-            android:layout_weight="1"
             android:text="@string/boton_anterior"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
