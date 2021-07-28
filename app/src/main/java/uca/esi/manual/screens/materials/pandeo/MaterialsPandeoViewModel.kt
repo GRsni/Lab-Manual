@@ -53,6 +53,11 @@ class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel() {
         _barSelected500.value = true
         _looseJoints.value = "0"
         _fixedJoints.value = "0"
+
+        _eventCorrectData.value = false
+        _eventEmptyData.value = false
+        _eventWrongBarData.value = false
+        _eventWrongJointData.value = false
     }
 
     @Suppress("UNUSED_PARAMETER")
@@ -76,7 +81,9 @@ class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel() {
                 onWrongJointData()
             }
         } else {
-            onWrongBarData()
+            if (!_eventEmptyData.value!!) {
+                onWrongBarData()
+            }
         }
     }
 

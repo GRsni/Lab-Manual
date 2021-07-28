@@ -10,9 +10,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
+import uca.esi.manual.BuildConfig
 import uca.esi.manual.R
 import uca.esi.manual.databinding.ChestFragmentBinding
 import uca.esi.manual.models.labs.BaseLab
+import uca.esi.manual.utils.printLab
 
 class ChestFragment : Fragment() {
 
@@ -59,6 +61,13 @@ class ChestFragment : Fragment() {
             }
         })
 
+        if (BuildConfig.DEBUG) {
+            viewModel.lab.observe(viewLifecycleOwner, {
+                if (it != null) {
+                    printLab(it)
+                }
+            })
+        }
         return binding.root
     }
 

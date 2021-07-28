@@ -5,6 +5,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import timber.log.Timber
 import uca.esi.manual.screens.chest.ChestFragment
+import uca.esi.manual.utils.currentNavigationFragment
 
 class MainActivity : AppCompatActivity() {
 

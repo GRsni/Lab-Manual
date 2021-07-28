@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import uca.esi.manual.R
 import uca.esi.manual.databinding.LabExplanationFragmentBinding
+import uca.esi.manual.utils.printLabIfDebug
 
 class LabExplanationFragment : Fragment() {
 
@@ -49,6 +50,10 @@ class LabExplanationFragment : Fragment() {
                 launchChest()
                 viewModel.onButtonPressComplete()
             }
+        })
+
+        viewModel.lab.observe(viewLifecycleOwner, {
+            printLabIfDebug(it)
         })
 
         return binding.root

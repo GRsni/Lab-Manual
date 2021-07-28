@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import timber.log.Timber
 import uca.esi.manual.R
-import uca.esi.manual.ViewModelString
+import uca.esi.manual.utils.ViewModelString
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.PandeoLab
 

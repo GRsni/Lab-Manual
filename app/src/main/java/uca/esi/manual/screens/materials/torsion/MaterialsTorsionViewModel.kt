@@ -27,9 +27,32 @@ class MaterialsTorsionViewModel(labIN: BaseLab) : ViewModel() {
     val eventCorrectData: LiveData<Boolean>
         get() = _eventCorrectData
 
+    private val checkboxes = Array(8) { false }
 
     init {
         _lab.value = labIN
+        _eventCorrectData.value = false
+        _eventEmptyData.value = false
+        _eventWrongData.value = false
+    }
+
+    fun checkMaterials() {
+        if (checkCheckboxesAreCorrect()) {
+            onCorrectData()
+        } else {
+            if (!_eventEmptyData.value!!) {
+                onWrongData()
+            }
+        }
+    }
+
+    private fun checkCheckboxesAreCorrect(): Boolean {
+        return !checkboxes[0] && checkboxes[1] && !checkboxes[2] && checkboxes[3]
+                && !checkboxes[4] && !checkboxes[5] && checkboxes[6] && checkboxes[7]
+    }
+
+    fun onCheckBoxClicked(id: Int, value: Boolean) {
+        checkboxes[id] = value
     }
 
     //------------------Event handlers ------------------------

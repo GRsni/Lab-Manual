@@ -3,6 +3,8 @@ package uca.esi.manual.models.labs;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -212,6 +214,24 @@ public abstract class BaseLab implements Parcelable {
     protected abstract void setData();
 
     public abstract String getData();
+
+    @Override
+    public @NotNull String toString() {
+        return "BaseLab{" +
+                "userID='" + userID + '\'' +
+                ", labType=" + labType +
+                ", date='" + date + '\'' +
+                ", manual=" + manual +
+                ", inLab=" + inLab +
+                ", valTeo=" + valTeo +
+                ", valExp=" + valExp +
+                ", errVal=" + errVal +
+                ", q1=" + q1 +
+                ", q2=" + q2 +
+                ", q3=" + q3 +
+                ", q4=" + q4 +
+                '}';
+    }
 
     public enum LabType {
         TORSION,

@@ -1,4 +1,4 @@
-package uca.esi.manual
+package uca.esi.manual.utils
 
 import android.content.Context
 import androidx.annotation.StringRes

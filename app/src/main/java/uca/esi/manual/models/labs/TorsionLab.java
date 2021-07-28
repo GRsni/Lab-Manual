@@ -3,6 +3,8 @@ package uca.esi.manual.models.labs;
 
 import android.os.Parcel;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -102,5 +104,16 @@ public class TorsionLab extends BaseLab {
 
     public void setAmpliExp(float ampliExp) {
         this.ampliExp = ampliExp;
+    }
+
+    @Override
+    public @NotNull String toString() {
+        return super.toString() + ", " +
+                "TorsionLab{" +
+                "weights='" + weights + '\'' +
+                ", errWeights=" + errWeights +
+                ", ampliTeo=" + ampliTeo +
+                ", ampliExp=" + ampliExp +
+                '}';
     }
 }

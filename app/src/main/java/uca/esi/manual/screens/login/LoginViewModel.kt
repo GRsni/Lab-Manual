@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import timber.log.Timber
-import uca.esi.manual.getSHA256HashedString
+import uca.esi.manual.utils.getSHA256HashedString
 import uca.esi.manual.models.UserListResponse
 import uca.esi.manual.screens.login.repository.UsersRepository
 

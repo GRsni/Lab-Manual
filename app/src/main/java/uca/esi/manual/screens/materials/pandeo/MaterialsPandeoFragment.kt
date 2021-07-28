@@ -10,8 +10,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
+import uca.esi.manual.BuildConfig
 import uca.esi.manual.R
 import uca.esi.manual.databinding.MaterialsPandeoFragmentBinding
+import uca.esi.manual.utils.printLab
 
 
 class MaterialsPandeoFragment : Fragment() {
@@ -59,12 +61,19 @@ class MaterialsPandeoFragment : Fragment() {
             }
         }
 
-        binding.buttonAnt.setOnClickListener{
+        binding.buttonAnt.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(
                 MaterialsPandeoFragmentDirections.actionMaterialsPandeoFragmentToChestFragment(
                     viewModel.lab.value!!
                 )
             )
+        }
+        if (BuildConfig.DEBUG) {
+            viewModel.lab.observe(viewLifecycleOwner, {
+                if (it != null) {
+                    printLab(it)
+                }
+            })
         }
 
         return binding.root

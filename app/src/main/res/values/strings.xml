@@ -61,6 +61,7 @@
     <string name="error_datos_practicas">Se ha producido un error cargando los datos de la práctica</string>
     <string name="error_barra_pandeo">Te has equivocado eligiendo la barra</string>
     <string name="error_apoyos_pandeo">Te has equivocado eligiendo los apoyos</string>
+    <string name="error_materiales_torsion">Te has equivocado eligiendo los materiales para la práctica de torsión</string>
     <string name="error_materiales_vacios">Tienes que seleccionar los materiales necesarios para la práctica</string>
 
     <string name="boton_inicio">Comenzar</string>
@@ -215,4 +216,5 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="zero">0</string>
 </resources>

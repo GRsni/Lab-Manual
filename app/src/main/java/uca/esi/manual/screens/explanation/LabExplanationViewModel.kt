@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import uca.esi.manual.R
-import uca.esi.manual.ViewModelString
+import uca.esi.manual.utils.ViewModelString
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.LabFactory
 

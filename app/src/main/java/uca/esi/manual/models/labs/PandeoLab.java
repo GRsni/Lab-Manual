@@ -3,6 +3,8 @@ package uca.esi.manual.models.labs;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -110,4 +112,14 @@ public class PandeoLab extends BaseLab {
         this.errFixtures = errFixtures;
     }
 
+    @Override
+    public @NotNull String toString() {
+        return super.toString() +
+                ", PandeoLab{" +
+                "bar=" + bar +
+                ", errBar=" + errBar +
+                ", fixtures='" + fixtures + '\'' +
+                ", errFixtures=" + errFixtures +
+                '}';
+    }
 }
