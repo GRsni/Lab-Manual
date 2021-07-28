@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
+import timber.log.Timber
 import uca.esi.manual.BuildConfig
 import uca.esi.manual.R
 import uca.esi.manual.databinding.MaterialsPandeoFragmentBinding
@@ -87,6 +89,11 @@ class MaterialsPandeoFragment : Fragment() {
                     "Datos correctos, ",
                     Toast.LENGTH_SHORT
                 ).show()
+                NavHostFragment.findNavController(this).navigate(
+                    MaterialsPandeoFragmentDirections.actionMaterialsPandeoFragmentToARLauncherFragment(
+                        viewModel.lab.value!!
+                    )
+                )
                 viewModel.onCorrectDataComplete()
             }
         })

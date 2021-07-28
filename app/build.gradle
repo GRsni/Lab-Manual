@@ -74,6 +74,7 @@ dependencies {
 
     // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-play-services
     runtimeOnly 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.1'
     // Google services tasks

@@ -78,6 +78,7 @@
     <string name="boton_sin_manual">Sin el manual</string>
     <string name="boton_comenzarAR">Comenzar Realidad Aumentada</string>
     <string name="boton_terminado">Terminado</string>
+    <string name="boton_saltar">Saltar Realidad Aumentada</string>
     <string name="boton_vuelta_inicio">Volver al inicio</string>
     <string name="boton_fin_aplicacion">Salir de la aplicación</string>
     <string name="boton_aceptar">Aceptar</string>
@@ -112,6 +113,7 @@
     <string name="prepara_maquina_pandeo_casa">Coloca el marcador 4 sobre una superficie horizontal y bien iluminada.</string>
 
     <string name="movil_posicion_horizontal">Pon el móvil en posición horizontal y presiona el botón de comenzar.</string>
+    <string name="movil_posicion_vertical">Mantén el móvil en posición vertical y presiona el botón de comenzar</string>
 
     <string name="introCalculosTorsion">Ahora te voy a mostrar los datos necesarios para que realices el cálculo del momento de torsión.</string>
 

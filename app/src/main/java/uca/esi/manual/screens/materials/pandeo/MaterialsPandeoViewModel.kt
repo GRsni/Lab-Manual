@@ -23,9 +23,13 @@ class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel() {
     val fixedJoints: LiveData<String>
         get() = _fixedJoints
 
+    var fixedJointsEdited = false
+
     private val _looseJoints = MutableLiveData<String>()
     val looseJoints: LiveData<String>
         get() = _looseJoints
+
+    var looseJointsEditted = false
 
     // Event variable for empty user data handler
     private val _eventEmptyData = MutableLiveData<Boolean>()

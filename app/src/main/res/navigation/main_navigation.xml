@@ -120,6 +120,13 @@
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/chestFragment" />
+        <action
+            android:id="@+id/action_materialsPandeoFragment_to_ARLauncherFragment"
+            app:destination="@id/ARLauncherFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/materialsTorsionFragment"
@@ -137,5 +144,14 @@
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/chestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ARLauncherFragment"
+        android:name="uca.esi.manual.screens.ar.ARLauncherFragment"
+        android:label="ar_launcher_fragment"
+        tools:layout="@layout/ar_launcher_fragment">
+        <argument
+            android:name="lab"
+            app:argType="uca.esi.manual.models.labs.BaseLab" />
     </fragment>
 </navigation>

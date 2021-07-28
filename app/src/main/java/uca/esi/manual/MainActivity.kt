@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import timber.log.Timber
+import uca.esi.manual.screens.ar.ARLauncherFragment
 import uca.esi.manual.screens.chest.ChestFragment
 import uca.esi.manual.utils.currentNavigationFragment
 
@@ -19,7 +20,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         when (val fragment = supportFragmentManager.currentNavigationFragment) {
-            is ChestFragment -> Timber.i("Press back arrow on fragment $fragment")
+            is ChestFragment, is ARLauncherFragment
+            -> Timber.i("Press back arrow on fragment $fragment")
             else -> super.onBackPressed()
         }
     }
