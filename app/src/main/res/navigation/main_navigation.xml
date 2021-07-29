@@ -144,6 +144,13 @@
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/chestFragment" />
+        <action
+            android:id="@+id/action_materialsTorsionFragment_to_weightsFragment"
+            app:destination="@id/weightsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/ARLauncherFragment"
@@ -153,5 +160,24 @@
         <argument
             android:name="lab"
             app:argType="uca.esi.manual.models.labs.BaseLab" />
+    </fragment>
+    <fragment
+        android:id="@+id/weightsFragment"
+        android:name="uca.esi.manual.screens.materials.weights.WeightsFragment"
+        android:label="weights_fragment"
+        tools:layout="@layout/weights_fragment">
+        <action
+            android:id="@+id/action_weightsFragment_to_ARLauncherFragment"
+            app:destination="@id/ARLauncherFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <argument
+            android:name="lab"
+            app:argType="uca.esi.manual.models.labs.BaseLab" />
+        <action
+            android:id="@+id/action_weightsFragment_to_materialsTorsionFragment"
+            app:destination="@id/materialsTorsionFragment" />
     </fragment>
 </navigation>

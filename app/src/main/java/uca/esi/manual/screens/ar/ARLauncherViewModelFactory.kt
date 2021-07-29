@@ -6,7 +6,7 @@ import uca.esi.manual.R
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.PandeoLab
 import uca.esi.manual.models.labs.TorsionLab
-import uca.esi.manual.screens.ar.repository.ARResourceIds
+import uca.esi.manual.models.ARResourceIds
 
 class ARLauncherViewModelFactory(
     private val lab: BaseLab

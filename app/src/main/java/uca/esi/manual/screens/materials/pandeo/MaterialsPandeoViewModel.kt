@@ -8,8 +8,9 @@ import androidx.lifecycle.ViewModel
 import uca.esi.manual.models.Constants
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.PandeoLab
+import uca.esi.manual.screens.materials.MaterialsI
 
-class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel() {
+class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
 
     private val _lab = MutableLiveData<BaseLab>()
     val lab: LiveData<BaseLab>
@@ -77,7 +78,7 @@ class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel() {
         _looseJoints.value = s.toString()
     }
 
-    fun checkMaterials() {
+    override fun checkMaterials() {
         if (checkBarIsCorrect()) {
             if (checkJoints()) {
                 onCorrectData()

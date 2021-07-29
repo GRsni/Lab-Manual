@@ -5,8 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.TorsionLab
+import uca.esi.manual.screens.materials.MaterialsI
 
-class MaterialsTorsionViewModel(labIN: BaseLab) : ViewModel() {
+class MaterialsTorsionViewModel(labIN: BaseLab) : ViewModel(), MaterialsI{
 
     private val _lab = MutableLiveData<BaseLab>()
     val lab: LiveData<BaseLab>
@@ -36,7 +37,7 @@ class MaterialsTorsionViewModel(labIN: BaseLab) : ViewModel() {
         _eventWrongData.value = false
     }
 
-    fun checkMaterials() {
+    override fun checkMaterials() {
         if (checkCheckboxesAreCorrect()) {
             onCorrectData()
         } else {

@@ -96,9 +96,14 @@ class MaterialsTorsionFragment : Fragment() {
             if (it) {
                 Toast.makeText(
                     activity,
-                    "Datos correctos, ",
+                    R.string.datos_correctos,
                     Toast.LENGTH_SHORT
                 ).show()
+                NavHostFragment.findNavController(this).navigate(
+                    MaterialsTorsionFragmentDirections.actionMaterialsTorsionFragmentToWeightsFragment(
+                        viewModel.lab.value!!
+                    )
+                )
                 viewModel.onCorrectDataComplete()
             }
         })

@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import uca.esi.manual.R
+import uca.esi.manual.activities.main.MainActivityViewModel
 import uca.esi.manual.databinding.ArLauncherFragmentBinding
 import uca.esi.manual.utils.ViewModelString
 
@@ -19,10 +21,15 @@ class ARLauncherFragment : Fragment() {
 
     private lateinit var binding: ArLauncherFragmentBinding
 
+    private lateinit var activityViewModel: MainActivityViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        activityViewModel =
+            ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
 
         binding = DataBindingUtil.inflate(
             inflater,
@@ -50,7 +57,20 @@ class ARLauncherFragment : Fragment() {
             )
         )
 
+        binding.buttonBack.text = getBackButtonText().resolve(requireContext())
+
+        addEventLaunchObserver()
+
         return binding.root
+    }
+
+
+    private fun getBackButtonText(): ViewModelString {
+        return if (activityViewModel.arModule.executed) {
+            ViewModelString(R.string.boton_terminado)
+        } else {
+            ViewModelString(R.string.boton_saltar)
+        }
     }
 
     private fun getFullText(machineText: ViewModelString, positionText: ViewModelString): String {
@@ -58,5 +78,18 @@ class ARLauncherFragment : Fragment() {
                 positionText.resolve(requireContext())
     }
 
+
+    private fun addEventLaunchObserver() {
+        viewModel.eventLaunchAR.observe(viewLifecycleOwner, { launch ->
+            if (launch) {
+                Toast.makeText(
+                    activity,
+                    "Lanzando RA", Toast.LENGTH_SHORT
+                ).show()
+                activityViewModel.arModule.executed = true
+                binding.buttonBack.text = getBackButtonText().resolve(requireContext())
+            }
+        })
+    }
 
 }

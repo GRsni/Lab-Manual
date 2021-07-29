@@ -51,6 +51,7 @@
     <string name="titulo_cuestionario">Cuestionario</string>
     <string name="titulo_fin">Final del manual</string>
     <string name="guion">- %1$s</string>
+    <string name="datos_correctos">Datos correctos</string>
 
     <string name="error_lectura_firebase">Error a leer la base de datos</string>
     <string name="error_datos_alumno_vacios">Debes introducir el identicador y la clave de acceso</string>
@@ -62,6 +63,8 @@
     <string name="error_barra_pandeo">Te has equivocado eligiendo la barra</string>
     <string name="error_apoyos_pandeo">Te has equivocado eligiendo los apoyos</string>
     <string name="error_materiales_torsion">Te has equivocado eligiendo los materiales para la práctica de torsión</string>
+    <string name="error_pesas_torsion">Te has equivocado eligiendo las pesas necesarias para tu carga que se te ha asignado</string>
+    <string name="error_soporte_pesas_vacio">Tienes que incluir el soporte de las pesas</string>
     <string name="error_materiales_vacios">Tienes que seleccionar los materiales necesarios para la práctica</string>
 
     <string name="boton_inicio">Comenzar</string>
@@ -101,6 +104,8 @@
     <string name="eligeMateriales">Marca aquellos materiales que vayas a necesitar:</string>
 
     <string name="manualCargaIntro1">Para esta práctica se te ha asignado la siguiente carga en N:</string>
+
+    <string name="manualTorsionCarga">Carga: %1$s N</string>
 
     <string name="manualCargaIntro2">Elige las pesas necesarias para conseguir esa carga. Recuerda que el soporte es necesario.</string>
 
@@ -216,7 +221,7 @@
         <item>Verdadero</item>
         <item>Falso</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="zero">0</string>
 </resources>

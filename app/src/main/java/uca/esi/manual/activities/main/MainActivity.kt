@@ -1,14 +1,17 @@
-package uca.esi.manual
+package uca.esi.manual.activities.main
 
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import timber.log.Timber
+import uca.esi.manual.R
 import uca.esi.manual.screens.ar.ARLauncherFragment
 import uca.esi.manual.screens.chest.ChestFragment
 import uca.esi.manual.utils.currentNavigationFragment
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var viewModel: MainActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

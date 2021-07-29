@@ -28,7 +28,7 @@ public class TorsionLab extends BaseLab {
     private static final int[] LOADS_TORSION = {5, 10, 15, 20};
     private static final float[] LOAD_MOMENT = {.5f, 1.0f, 1.5f, 2.0f};
     private static final float[] AMPLI_VALUES = {-.035f, -.073f, -.112f, -.15f};
-    private String weights = "";
+    private int weights = 0;
     private int errWeights = 0;
     private float ampliTeo = 0;
     private float ampliExp = 0;
@@ -42,7 +42,7 @@ public class TorsionLab extends BaseLab {
         super(in);
         String[] data = in.createStringArray();
         if (data != null) {
-            this.weights = data[0];
+            this.weights = Integer.parseInt(data[0]);
             this.errWeights = Integer.parseInt(data[1]);
             this.ampliTeo = Float.parseFloat(data[2]);
             this.ampliExp = Float.parseFloat(data[3]);
@@ -57,7 +57,7 @@ public class TorsionLab extends BaseLab {
 
     private List<String> torsionToStringList() {
         List<String> data = new ArrayList<>();
-        data.add(weights);
+        data.add(String.valueOf(weights));
         data.add(String.valueOf(errWeights));
         data.add(String.valueOf(ampliTeo));
         data.add(String.valueOf(ampliExp));
@@ -68,21 +68,21 @@ public class TorsionLab extends BaseLab {
     @Override
     protected void setData() {
         int index = (new Random().nextInt(LOADS_TORSION.length));
-        this.weights = (String.valueOf(LOADS_TORSION[index]));
+        this.weights = LOADS_TORSION[index];
         setValTeo(LOAD_MOMENT[index]);
         this.ampliTeo = AMPLI_VALUES[index];
     }
 
     @Override
     public String getData() {
-        return getWeights();
+        return String.valueOf(weights);
     }
 
-    public String getWeights() {
+    public int getWeights() {
         return weights;
     }
 
-    public void setWeights(String weights) {
+    public void setWeights(int weights) {
         this.weights = weights;
     }
 
