@@ -9,6 +9,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import uca.esi.manual.R
 import uca.esi.manual.activities.main.MainActivityViewModel
 import uca.esi.manual.databinding.ArLauncherFragmentBinding
@@ -57,7 +58,15 @@ class ARLauncherFragment : Fragment() {
             )
         )
 
-        binding.buttonBack.text = getBackButtonText().resolve(requireContext())
+        binding.buttonNext.text = getBackButtonText().resolve(requireContext())
+
+        binding.buttonNext.setOnClickListener {
+            NavHostFragment.findNavController(this).navigate(
+                ARLauncherFragmentDirections.actionARLauncherFragmentToCalculationsDataFragment(
+                    viewModel.lab.value!!
+                )
+            )
+        }
 
         addEventLaunchObserver()
 
@@ -87,7 +96,7 @@ class ARLauncherFragment : Fragment() {
                     "Lanzando RA", Toast.LENGTH_SHORT
                 ).show()
                 activityViewModel.arModule.executed = true
-                binding.buttonBack.text = getBackButtonText().resolve(requireContext())
+                binding.buttonAR.text = getBackButtonText().resolve(requireContext())
             }
         })
     }

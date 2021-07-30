@@ -1,3 +1,5 @@
+<!DOCTYPE resources [<!ENTITY nbsp "&#160;"><!-- non-breaking space, U+00A0 -->
+    ]>
 <resources>
     <string name="app_name">Manual de laboratorio</string>
     <string name="app_subtitle">Escu</string>
@@ -45,6 +47,7 @@
     <string name="pesa20N">Pesa de 20 N</string>
     <string name="cargaAleatoria">Carga: %1$d N</string>
     <string name="RA">Realidad Aumentada</string>
+    <string name="calculos">Cálculos</string>
     <string name="momento_torsor">Momento Torsor\nexperimental en Nm:</string>
     <string name="carga_critica_pandeo">Carga crítica de Euler\nexperimental en N:</string>
     <string name="ValorAmplificador">Indicación del\namplificador en mv/V:</string>
@@ -122,18 +125,8 @@
 
     <string name="introCalculosTorsion">Ahora te voy a mostrar los datos necesarios para que realices el cálculo del momento de torsión.</string>
 
-    <string name="introCalculosPandeo">Ahora te voy a mostrar los datos necesarios para que realices el cálculo de la carga crítica de Euler.</string>
-
-    <string name="valoresAsignadosTorsion">Estos son los valores que se te han asignado para esta práctica:\n\n\t\t\tCarga en N: %1$d N\n\n
-        Módulo de resistencia: \n\n\t\t\tWp = 196.3 mm^3\n\nMódulo de Elasticidad Transversal: \n\n\t\t\tG = 80 000 N/mm^2\n\nCoeficiente de la galga
-        extensiométrica:\n\n\t\t\tk = 2.05</string>
-
-    <string name="valoresAsignadosPandeo">Estos son los valores que se te ha asignado para esta práctica:\n\n\t\t\tBarra de prueba: %1$s Acero
-        \n\n\t\t\tLongitud (Lp): %2$s mm\n\nMomento de inercia de superficie:\n\n\t\t\t Imin = 106.6 mm^4\n\nMódulo de elasticidad:\n\n\t\t\tE = 210 000 N/mm^2</string>
-
-    <string name="finalCalculosTorsion">Recuerda/Apunta estos datos. Los vas a necesitar para calcular el Momento Torsor.</string>
-
-    <string name="finalCalculosPandeo">Recuerda/Apunta estos datos. Los vas a necesitar para calcular la carga crítica.</string>
+    <string name="introCalculosPandeo">Ahora te voy a mostrar los datos relevantes al cálculo de la deformación por pandeo. No los vas a necesitar,
+        pero es bueno recordarlos.</string>
 
     <string name="horaDeCalcular">Es hora de que realices los cálculos.</string>
 
@@ -224,4 +217,5 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="zero">0</string>
+    <string name="placeholder">placeholder</string>
 </resources>

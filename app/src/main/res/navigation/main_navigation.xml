@@ -160,6 +160,13 @@
         <argument
             android:name="lab"
             app:argType="uca.esi.manual.models.labs.BaseLab" />
+        <action
+            android:id="@+id/action_ARLauncherFragment_to_calculationsDataFragment"
+            app:destination="@id/calculationsDataFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/weightsFragment"
@@ -179,5 +186,14 @@
         <action
             android:id="@+id/action_weightsFragment_to_materialsTorsionFragment"
             app:destination="@id/materialsTorsionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculationsDataFragment"
+        android:name="uca.esi.manual.screens.calcs.data.CalculationsDataFragment"
+        android:label="calculations_data_fragment"
+        tools:layout="@layout/calculations_data_fragment">
+        <argument
+            android:name="lab"
+            app:argType="uca.esi.manual.models.labs.BaseLab" />
     </fragment>
 </navigation>

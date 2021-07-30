@@ -1,10 +1,10 @@
 package uca.esi.manual.activities.main
 
 import androidx.lifecycle.ViewModel
-import uca.esi.manual.models.ARModule
+import uca.esi.manual.models.ARModuleVariables
 
 class MainActivityViewModel : ViewModel() {
 
-    var arModule = ARModule(executed = false, solved = false)
+    var arModule = ARModuleVariables(executed = false, solved = false)
 
 }

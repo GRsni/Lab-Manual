@@ -35,6 +35,13 @@ class ViewModelString private constructor(
     //constructor for multiple var args
     constructor(@StringRes stringResId: Int, args: ArrayList<Any>) : this(null, stringResId, args)
 
+    fun resolveCharSeq(context: Context): CharSequence {
+        return when {
+            string != null -> string
+            else -> context.getString(stringResId)
+        }
+    }
+
     fun resolve(context: Context): String {
         return when {
             string != null -> string

@@ -71,7 +71,7 @@
             app:layout_constraintWidth_percent=".4" />
 
         <Button
-            android:id="@+id/buttonNext"
+            android:id="@+id/buttonAR"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
             app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
         <Button
-            android:id="@+id/buttonBack"
+            android:id="@+id/buttonNext"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
