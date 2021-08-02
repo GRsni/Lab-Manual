@@ -20,7 +20,7 @@ class AboutFragment : DialogFragment() {
         val binding = AboutFragmentBinding.inflate(LayoutInflater.from(context))
         return AlertDialog.Builder(requireActivity())
             .setView(binding.root)
-            .setMessage(R.string.textAcercaDe)
+            .setMessage(R.string.text_acerca_de)
             .setPositiveButton(R.string.boton_enviar_email,
                 DialogInterface.OnClickListener { _, _ ->
                     sendEmailIntent()

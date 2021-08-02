@@ -1,10 +1,10 @@
 package uca.esi.manual.screens.ar
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -12,8 +12,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import uca.esi.manual.R
 import uca.esi.manual.activities.main.MainActivityViewModel
+import uca.esi.manual.ar.UnityPlayerActivity
 import uca.esi.manual.databinding.ArLauncherFragmentBinding
+import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.utils.ViewModelString
+import uca.esi.manual.utils.printLabIfDebug
 
 class ARLauncherFragment : Fragment() {
 
@@ -45,6 +48,10 @@ class ARLauncherFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(ARLauncherViewModel::class.java)
 
+        viewModel.lab.observe(viewLifecycleOwner, {
+            printLabIfDebug(it)
+        })
+
         binding.arLauncherViewModel = viewModel
         binding.lifecycleOwner = this
 
@@ -58,9 +65,9 @@ class ARLauncherFragment : Fragment() {
             )
         )
 
-        binding.buttonNext.text = getBackButtonText().resolve(requireContext())
+        binding.buttonExit.text = getBackButtonText().resolve(requireContext())
 
-        binding.buttonNext.setOnClickListener {
+        binding.buttonExit.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(
                 ARLauncherFragmentDirections.actionARLauncherFragmentToCalculationsDataFragment(
                     viewModel.lab.value!!
@@ -76,7 +83,7 @@ class ARLauncherFragment : Fragment() {
 
     private fun getBackButtonText(): ViewModelString {
         return if (activityViewModel.arModule.executed) {
-            ViewModelString(R.string.boton_terminado)
+            ViewModelString(R.string.boton_continuar)
         } else {
             ViewModelString(R.string.boton_saltar)
         }
@@ -91,14 +98,19 @@ class ARLauncherFragment : Fragment() {
     private fun addEventLaunchObserver() {
         viewModel.eventLaunchAR.observe(viewLifecycleOwner, { launch ->
             if (launch) {
-                Toast.makeText(
-                    activity,
-                    "Lanzando RA", Toast.LENGTH_SHORT
-                ).show()
                 activityViewModel.arModule.executed = true
-                binding.buttonAR.text = getBackButtonText().resolve(requireContext())
+                viewModel.onLaunchARComplete()
+                binding.buttonExit.text=getBackButtonText().resolve(requireContext())
+                launchARActivity(viewModel.lab.value!!)
             }
         })
     }
 
+    private fun launchARActivity(lab: BaseLab){
+        val i = Intent(activity, UnityPlayerActivity::class.java)
+        i.putExtra("data", lab.data)
+        i.putExtra("type", BaseLab.getIntFromType(lab.labType))
+        i.putExtra("place", lab.isInLab)
+        startActivity(i)
+    }
 }

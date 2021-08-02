@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import uca.esi.manual.R
 import uca.esi.manual.databinding.CalculationsDataFragmentBinding
+import uca.esi.manual.utils.printLabIfDebug
 
 class CalculationsDataFragment : Fragment() {
 
@@ -36,6 +37,9 @@ class CalculationsDataFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(CalculationsDataViewModel::class.java)
 
+        viewModel.lab.observe(viewLifecycleOwner, {
+            printLabIfDebug(it)
+        })
         binding.valoresFormula.text = viewModel.dataText
         binding.textoIntroFormulas.text = viewModel.introText.resolve(requireContext())
 

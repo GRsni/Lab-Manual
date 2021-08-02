@@ -40,6 +40,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation files('../libs/AR_module.aar')
+
     // KTXon androidx.lifecycle
     implementation 'androidx.core:core-ktx:1.6.0'
 

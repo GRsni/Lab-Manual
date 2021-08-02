@@ -17,10 +17,6 @@ class ARLauncherViewModel(
     val lab: LiveData<BaseLab>
         get() = _lab
 
-//    private val _arModule = MutableLiveData<ARModule>()
-//    val arModule: LiveData<ARModule>
-//        get() = _arModule
-
     private val _eventLaunchAR = MutableLiveData<Boolean>()
     val eventLaunchAR: LiveData<Boolean>
         get() = _eventLaunchAR
@@ -31,7 +27,6 @@ class ARLauncherViewModel(
 
     init {
         _lab.value = labIN
-        //_arModule.value = ARModule(executed = false, solved = false)
         _eventLaunchAR.value = false
         textMachine = ViewModelString(arResourceIds.machineTextId)
         textPosition = ViewModelString(arResourceIds.positionTextId)

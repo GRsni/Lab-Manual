@@ -1,5 +1,3 @@
-<!DOCTYPE resources [<!ENTITY nbsp "&#160;"><!-- non-breaking space, U+00A0 -->
-    ]>
 <resources>
     <string name="app_name">Manual de laboratorio</string>
     <string name="app_subtitle">Escu</string>
@@ -7,7 +5,7 @@
     <string name="logotipo_esi">Logotipo ESI</string>
     <string name="logotipo_gunt">Logotipo GUNT</string>
 
-    <string name="textAcercaDe">Esta aplicación ha sido desarrollada por Santiago J. Mas Peña,
+    <string name="text_acerca_de">Esta aplicación ha sido desarrollada por Santiago J. Mas Peña,
         para uso como manual de laboratorio, para la asignatura de Resistencia de Materiales y Estructuras.
         Para cualquier duda o consulta, enviar un correo a santiago.maspena@alum.uca.es.</string>
 

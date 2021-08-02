@@ -3,9 +3,10 @@
     <color name="primary">#FF008577</color>
     <color name="primary20P">#28008577</color>
     <color name="primary_dark">#FF00655c</color>
-    <color name="primaryDark20P">#2000574B</color>
+    <color name="primary_dark_20p">#2000574B</color>
     <color name="secondary">#FFF5B000</color>
-    <color name="secondaryDark">#FFb88400</color>
+    <color name="secondary_background">#efbf46</color>
+    <color name="secondary_dark">#FFb88400</color>
     <color name="accent_dark">#FFAAAAAA</color>
     <color name="accent">#FFCCCCCC</color>
     <color name="accent_light">#FFDDDDDD</color>

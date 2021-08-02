@@ -46,8 +46,8 @@ class ARLauncherViewModelFactory(
                     )
                 } else {
                     ARResourceIds(
-                        R.string.prepara_maquina_pandeo_lab,
-                        R.string.movil_posicion_vertical,
+                        R.string.prepara_maquina_torsion_casa,
+                        R.string.movil_posicion_horizontal,
                         R.drawable.qr_mesa
                     )
                 }
