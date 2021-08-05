@@ -2,7 +2,6 @@ package uca.esi.manual.screens.title
 
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.Intent.ACTION_SEND
 import android.net.Uri
@@ -21,14 +20,13 @@ class AboutFragment : DialogFragment() {
         return AlertDialog.Builder(requireActivity())
             .setView(binding.root)
             .setMessage(R.string.text_acerca_de)
-            .setPositiveButton(R.string.boton_enviar_email,
-                DialogInterface.OnClickListener { _, _ ->
-                    sendEmailIntent()
-                })
-            .setNegativeButton(R.string.boton_salir,
-                DialogInterface.OnClickListener { _, _ ->
-                    // User cancelled the Dialog
-                })
+            .setPositiveButton(
+                R.string.boton_enviar_email
+            ) { _, _ ->
+                sendEmailIntent()
+            }
+            .setNeutralButton(R.string.boton_salir) { _, _ -> //User cancelled the dialog
+            }
             .create()
     }
 

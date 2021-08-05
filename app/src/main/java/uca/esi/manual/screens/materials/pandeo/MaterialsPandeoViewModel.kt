@@ -1,7 +1,6 @@
 package uca.esi.manual.screens.materials.pandeo
 
 import android.text.Editable
-import android.widget.RadioGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -65,9 +64,12 @@ class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
         _eventWrongJointData.value = false
     }
 
-    @Suppress("UNUSED_PARAMETER")
-    fun onSplitTypeChanged(rg: RadioGroup, id: Int) {
-        _barSelected500.value = id == Constants.BAR_500_INDEX
+    fun onClickBar500() {
+        _barSelected500.value = true
+    }
+
+    fun onClickBar1000() {
+        _barSelected500.value = false
     }
 
     fun setFixedJoints(s: Editable) {

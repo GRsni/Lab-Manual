@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import uca.esi.manual.R
 import uca.esi.manual.databinding.CalculationsDataFragmentBinding
 import uca.esi.manual.utils.printLabIfDebug
@@ -22,7 +23,7 @@ class CalculationsDataFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(
             inflater,
             R.layout.calculations_data_fragment,
@@ -40,9 +41,17 @@ class CalculationsDataFragment : Fragment() {
         viewModel.lab.observe(viewLifecycleOwner, {
             printLabIfDebug(it)
         })
+
         binding.valoresFormula.text = viewModel.dataText
         binding.textoIntroFormulas.text = viewModel.introText.resolve(requireContext())
 
+        binding.buttonNext.setOnClickListener {
+            NavHostFragment.findNavController(this).navigate(
+                CalculationsDataFragmentDirections.actionCalculationsDataFragmentToCalculationsTorsionFragment(
+                    viewModel.lab.value!!
+                )
+            )
+        }
         return binding.root
     }
 }

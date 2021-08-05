@@ -15,11 +15,11 @@
     <string name="clave">Clave</string>
     <string name="inicio_de_sesion">Inicio de sesión</string>
     <string name="acceder_alumno">Acceder como alumno</string>
-    <string name="AccederAnonimo">Acceder como usuario anónimo</string>
-    <string name="EligeApp">Elige el manual de laboratorio.</string>
+    <string name="acceder_anonimo">Acceder como usuario anónimo</string>
+    <string name="elige_app">Elige el manual de laboratorio.</string>
     <string name="elige_practica">Elige la práctica a realizar</string>
-    <string name="DondeEstas">¿Dónde estás?</string>
-    <string name="tipoPractica">¿Cómo quieres hacer la práctica?</string>
+    <string name="donde_estas">¿Dónde estás?</string>
+    <string name="tipo_practica">¿Cómo quieres hacer la práctica?</string>
     <string name="manual_pandeo">Práctica de Pandeo</string>
     <string name="manual_torsion">Práctica de Torsión</string>
     <string name="manual_traccion">Práctica de Tracción</string>
@@ -27,14 +27,14 @@
     <string name="baul">Baúl</string>
     <string name="test">Test</string>
     <string name="pesas">Pesas</string>
-    <string name="BarraDosGanchos"> Barra de dos ganchos.</string>
-    <string name="BarraCircular"> Barra de sección circular.</string>
-    <string name="BarraRectangular"> Barra de sección rectangular.</string>
-    <string name="PesasGrandes"> Juego de pesas grandes.</string>
-    <string name="PesasPequeñas"> Juego de pesas pequeñas.</string>
+    <string name="barra_dos_ganchos"> Barra de dos ganchos.</string>
+    <string name="barra_circular"> Barra de sección circular.</string>
+    <string name="barra_rectangular"> Barra de sección rectangular.</string>
+    <string name="pesas_grandes"> Juego de pesas grandes.</string>
+    <string name="pesas_pequeñas"> Juego de pesas pequeñas.</string>
     <string name="Llaves"> Llaves.</string>
-    <string name="Ampli"> Amplificador.</string>
-    <string name="Cable"> Cable de conexión.</string>
+    <string name="ampli"> Amplificador.</string>
+    <string name="cable"> Cable de conexión.</string>
     <string name="apoyo_articulado">Apoyo articulado.</string>
     <string name="apoyo_empotrado">Apoyo empotrado.</string>
     <string name="barra_cuad_500mm">Barra cuadrada de 500 m</string>
@@ -43,12 +43,12 @@
     <string name="pesa5N">Pesa de 5 N</string>
     <string name="pesa10N">Pesa de 10 N</string>
     <string name="pesa20N">Pesa de 20 N</string>
-    <string name="cargaAleatoria">Carga: %1$d N</string>
+    <string name="carga_aleatoria">Carga: %1$d N</string>
     <string name="RA">Realidad Aumentada</string>
     <string name="calculos">Cálculos</string>
     <string name="momento_torsor">Momento Torsor\nexperimental en Nm:</string>
     <string name="carga_critica_pandeo">Carga crítica de Euler\nexperimental en N:</string>
-    <string name="ValorAmplificador">Indicación del\namplificador en mv/V:</string>
+    <string name="valor_amplificador">Indicación del\namplificador en mv/V:</string>
     <string name="titulo_cuestionario">Cuestionario</string>
     <string name="titulo_fin">Final del manual</string>
     <string name="guion">- %1$s</string>
@@ -67,6 +67,7 @@
     <string name="error_pesas_torsion">Te has equivocado eligiendo las pesas necesarias para tu carga que se te ha asignado</string>
     <string name="error_soporte_pesas_vacio">Tienes que incluir el soporte de las pesas</string>
     <string name="error_materiales_vacios">Tienes que seleccionar los materiales necesarios para la práctica</string>
+    <string name="error_valores_vacios">"Tienes que introducir los valores pedidos."</string>
 
     <string name="boton_inicio">Comenzar</string>
     <string name="boton_ajustes">Ajustes</string>
@@ -102,37 +103,37 @@
 
     <string name="manual_materiales_pandeo">Para la práctica de pandeo se te ha asignado:\n- Barra de acero S2 de %1$s mm\n- %2$s\n- %3$s</string>
 
-    <string name="eligeMateriales">Marca aquellos materiales que vayas a necesitar:</string>
+    <string name="elige_materiales">Marca aquellos materiales que vayas a necesitar:</string>
 
-    <string name="manualCargaIntro1">Para esta práctica se te ha asignado la siguiente carga en N:</string>
+    <string name="manual_carga_intro1">Para esta práctica se te ha asignado la siguiente carga en N:</string>
 
-    <string name="manualTorsionCarga">Carga: %1$s N</string>
+    <string name="manual_torsion_carga">Carga: %1$s N</string>
 
-    <string name="manualCargaIntro2">Elige las pesas necesarias para conseguir esa carga. Recuerda que el soporte es necesario.</string>
+    <string name="manual_carga_intro2">Elige las pesas necesarias para conseguir esa carga. Recuerda que el soporte es necesario.</string>
 
-    <string name="prepara_maquina_torsion_lab">Coloca el marcador 0 sobre la máquina tal como se ve en la imagen. </string>
+    <string name="prepara_maquina_torsion_lab">Coloca el marcador TORSION LABORATORIO sobre la máquina tal como se ve en la imagen. </string>
 
-    <string name="prepara_maquina_pandeo_lab">Coloca el marcador 1  sobre la máquina tal como se ve en la imagen.</string>
+    <string name="prepara_maquina_pandeo_lab">Coloca el marcador PANDEO LABORATORIO  sobre la máquina tal como se ve en la imagen.</string>
 
-    <string name="prepara_maquina_torsion_casa">Coloca el marcador 2 sobre una superficie horizontal y bien iluminada.</string>
+    <string name="prepara_maquina_torsion_casa">Coloca el marcador TORSION FUERA sobre una superficie horizontal y bien iluminada.</string>
 
-    <string name="prepara_maquina_pandeo_casa">Coloca el marcador 4 sobre una superficie horizontal y bien iluminada.</string>
+    <string name="prepara_maquina_pandeo_casa">Coloca el marcador PANDEO FUERA sobre una superficie horizontal y bien iluminada.</string>
 
     <string name="movil_posicion_horizontal">Pon el móvil en posición horizontal y presiona el botón de comenzar.</string>
     <string name="movil_posicion_vertical">Mantén el móvil en posición vertical y presiona el botón de comenzar</string>
 
-    <string name="introCalculosTorsion">Ahora te voy a mostrar los datos necesarios para que realices el cálculo del momento de torsión.</string>
+    <string name="intro_calculos_torsion">Ahora te voy a mostrar los datos necesarios para que realices el cálculo del momento de torsión.</string>
 
-    <string name="introCalculosPandeo">Ahora te voy a mostrar los datos relevantes al cálculo de la deformación por pandeo. No los vas a necesitar,
+    <string name="intro_calculos_pandeo">Ahora te voy a mostrar los datos relevantes al cálculo de la deformación por pandeo. No los vas a necesitar,
         pero es bueno recordarlos.</string>
 
-    <string name="horaDeCalcular">Es hora de que realices los cálculos.</string>
+    <string name="realizar_calculos">Cálculos</string>
 
     <string name="resolver_ecuacion_torsion">Para calcular el Momento Torsor, emplea esta ecuación:</string>
 
-    <string name="resolver_ecuacion_pandeo">Para calcular la carga crítica, emplea esta ecuación:</string>
+    <string name="introduce_resultado_pandeo">Introduce el valor experimental de desviación por pandeo que hayas registrado:</string>
 
-    <string name="introduceResultados">Introduce la solución cuando la tengas calculada:</string>
+    <string name="introduce_resultados">Introduce la solución cuando la tengas calculada:</string>
 
     <string name="datos_automaticos">Se han introducido automáticamente los datos que se obtendrían al realizar el experimento en el laboratorio.</string>
 

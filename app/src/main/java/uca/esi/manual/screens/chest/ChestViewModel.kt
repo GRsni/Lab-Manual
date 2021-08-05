@@ -3,11 +3,10 @@ package uca.esi.manual.screens.chest
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import timber.log.Timber
 import uca.esi.manual.R
-import uca.esi.manual.utils.ViewModelString
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.PandeoLab
+import uca.esi.manual.utils.ViewModelString
 
 class ChestViewModel(labIN: BaseLab) : ViewModel() {
     private val _lab = MutableLiveData<BaseLab>()
@@ -29,7 +28,6 @@ class ChestViewModel(labIN: BaseLab) : ViewModel() {
     }
 
     private fun getIntroText(labType: BaseLab.LabType): ViewModelString {
-        Timber.i("creating content with labType: $labType")
         return when (labType) {
             BaseLab.LabType.TORSION ->
                 ViewModelString(R.string.manual_materiales_torsion)

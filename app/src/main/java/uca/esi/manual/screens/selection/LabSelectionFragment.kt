@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
+import timber.log.Timber
 import uca.esi.manual.R
 import uca.esi.manual.databinding.LabSelectionFragmentBinding
 import uca.esi.manual.models.Constants
@@ -118,6 +119,7 @@ class LabSelectionFragment : Fragment() {
 
     private fun launchLab(labType: Int) {
         if (viewModel.checkPlaceSelectedNotEmpty()) {
+            Timber.i("Inlab: ${viewModel.inLab.value}")
             NavHostFragment.findNavController(this).navigate(
                 LabSelectionFragmentDirections.actionLabSelectionFragmentToLabExplanationFragment(
                     viewModel.userId, viewModel.inLab.value!!, labType

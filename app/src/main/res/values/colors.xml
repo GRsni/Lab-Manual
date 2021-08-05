@@ -5,7 +5,7 @@
     <color name="primary_dark">#FF00655c</color>
     <color name="primary_dark_20p">#2000574B</color>
     <color name="secondary">#FFF5B000</color>
-    <color name="secondary_background">#efbf46</color>
+    <color name="secondary_20p">#50F5B000</color>
     <color name="secondary_dark">#FFb88400</color>
     <color name="accent_dark">#FFAAAAAA</color>
     <color name="accent">#FFCCCCCC</color>

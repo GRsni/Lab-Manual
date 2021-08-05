@@ -2,7 +2,6 @@ package uca.esi.manual.screens.calcs.data.repository
 
 import android.text.Spanned
 import androidx.core.text.HtmlCompat
-import timber.log.Timber
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.PandeoLab
 import uca.esi.manual.models.labs.TorsionLab
@@ -32,7 +31,6 @@ class CalcDataRepository {
 
 
     fun getCalcDataString(lab: BaseLab): Spanned {
-        Timber.i("Generating calculations data text")
         return when (lab) {
             is TorsionLab -> HtmlCompat.fromHtml(
                 TORSION_DATA.replace(

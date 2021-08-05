@@ -3,7 +3,6 @@ package uca.esi.manual.screens.materials.weights
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import uca.esi.manual.models.labs.BaseLab
-import uca.esi.manual.utils.printLabIfDebug
 
 class WeightsViewModelFactory(
     private val lab: BaseLab

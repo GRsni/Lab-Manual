@@ -195,5 +195,17 @@
         <argument
             android:name="lab"
             app:argType="uca.esi.manual.models.labs.BaseLab" />
+        <action
+            android:id="@+id/action_calculationsDataFragment_to_calculationsTorsionFragment"
+            app:destination="@id/calculationsTorsionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculationsTorsionFragment"
+        android:name="uca.esi.manual.screens.calcs.calculation.torsion.CalculationsTorsionFragment"
+        android:label="calculations_torsion_fragment"
+        tools:layout="@layout/calculations_torsion_fragment" >
+        <argument
+            android:name="lab"
+            app:argType="uca.esi.manual.models.labs.BaseLab" />
     </fragment>
 </navigation>

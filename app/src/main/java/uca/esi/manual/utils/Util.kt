@@ -1,5 +1,8 @@
 package uca.esi.manual.utils
 
+import android.content.Context
+import android.content.res.Configuration
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.common.hash.Hashing
@@ -30,4 +33,9 @@ fun printLabIfDebug(lab: BaseLab) {
     if (BuildConfig.DEBUG) {
         printLab(lab)
     }
+}
+
+fun Context.isDarkThemeOn(): Boolean {
+    return resources.configuration.uiMode and
+            Configuration.UI_MODE_NIGHT_MASK == UI_MODE_NIGHT_YES
 }

@@ -55,7 +55,7 @@ class WeightsViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
         _load5N.value = 0
         _load10N.value = 0
         _load20N.value = 0
-        loadText = ViewModelString(R.string.manualTorsionCarga)
+        loadText = ViewModelString(R.string.manual_torsion_carga)
     }
 
     fun setSupport(s: Editable) {
@@ -96,6 +96,7 @@ class WeightsViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
                 onCorrectData()
             } else {
                 onWrongData()
+                (_lab.value as TorsionLab).errWeights += 1
             }
         } else {
             onEmptyData()
@@ -118,7 +119,6 @@ class WeightsViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
 
     private fun onWrongData() {
         _eventWrongData.value = true
-        (_lab.value as TorsionLab).errWeights += 1
     }
 
     fun onWrongDataComplete() {

@@ -1,11 +1,9 @@
 package uca.esi.manual.screens.selection
 
-import android.widget.RadioGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import timber.log.Timber
-import uca.esi.manual.models.Constants
 
 class LabSelectionViewModel(var userId: String) : ViewModel() {
 
@@ -52,9 +50,12 @@ class LabSelectionViewModel(var userId: String) : ViewModel() {
         }
     }
 
-    @Suppress("UNUSED_PARAMETER")
-    fun onSplitTypeChanged(rg: RadioGroup, id: Int) {
-        _inLab.value = id == Constants.IN_LAB_RADIO_INDEX
+    fun onClickInLab() {
+        _inLab.value = true
+    }
+
+    fun onClickOutside() {
+        _inLab.value = false
     }
 
     private fun onEmptyData() {
