@@ -147,7 +147,7 @@
 
     <string name="titulo_mensaje_error_carga_pandeo">La carga crítica calculada no es correcta.</string>
 
-    <string name="cuerpo_mensaje_error_carga_padeno">Tu carga calculada está fuera del rango de ± 5%. Puedes modificar tu resultado o continuar con la práctica.</string>
+    <string name="cuerpo_mensaje_error_carga_pandeo">Tu carga calculada está fuera del rango de ± 5%. Puedes modificar tu resultado o continuar con la práctica.</string>
 
     <string name="respuesta_fallidas">A continuación se muestran tus respuestas correctas, en verde, y erróneas en rojo:</string>
 

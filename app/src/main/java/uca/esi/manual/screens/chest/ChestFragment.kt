@@ -89,7 +89,7 @@ class ChestFragment : Fragment() {
             }
             else -> Toast.makeText(
                 activity,
-                "Practica no implementada",
+                R.string.error_practica_no_implementada,
                 Toast.LENGTH_SHORT
             ).show()
         }

@@ -6,13 +6,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.TorsionLab
-import kotlin.math.abs
+import uca.esi.manual.utils.valueNotInThreshold
 
 class CalculationsTorsionViewModel(labIN: BaseLab) : ViewModel() {
     private val _lab = MutableLiveData<BaseLab>()
     val lab: LiveData<BaseLab>
         get() = _lab
-
 
     private val _valueAmpli = MutableLiveData<String>()
     val valueAmpli: LiveData<String>
@@ -54,16 +53,18 @@ class CalculationsTorsionViewModel(labIN: BaseLab) : ViewModel() {
     }
 
     private fun getDefaultMomentValue(lab: BaseLab): String {
-        return when (lab.isInLab) {
-            true -> ""
-            else -> lab.valTeo.toString()
+        return if (lab.isInLab) {
+            ""
+        } else {
+            lab.valTeo.toString()
         }
     }
 
     private fun getDefaultAmpliValue(lab: BaseLab): String {
-        return when (lab.isInLab) {
-            true -> ""
-            else -> (lab as TorsionLab).ampliTeo.toString()
+        return if (lab.isInLab) {
+            ""
+        } else {
+            (lab as TorsionLab).ampliTeo.toString()
         }
     }
 
@@ -82,7 +83,7 @@ class CalculationsTorsionViewModel(labIN: BaseLab) : ViewModel() {
             } else if (valueNotInThreshold(
                     torsionLab.valTeo,
                     _valueMoment.value!!.toFloat(),
-                    10f
+                    5f
                 )
                 && !errorMoment
             ) {
@@ -97,14 +98,6 @@ class CalculationsTorsionViewModel(labIN: BaseLab) : ViewModel() {
         } else {
             onEmptyData()
         }
-    }
-
-    private fun valueNotInThreshold(
-        theoretical: Float,
-        experimental: Float,
-        thresholdPercent: Float
-    ): Boolean {
-        return abs(theoretical - experimental) > abs(theoretical * thresholdPercent / 100)
     }
 
 

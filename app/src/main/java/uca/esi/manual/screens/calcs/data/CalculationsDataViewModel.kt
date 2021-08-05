@@ -21,7 +21,6 @@ class CalculationsDataViewModel(
 
     var dataText: Spanned
 
-
     init {
         _lab.value = labIN
         dataText = calcDataRepository.getCalcDataString(labIN)

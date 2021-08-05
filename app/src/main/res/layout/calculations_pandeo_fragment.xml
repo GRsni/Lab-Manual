@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.calcs.calculation.pandeo.CalculationsPandeoFragment">
 
+    <data>
 
+        <variable
+            name="calculationsPandeoViewModel"
+            type="uca.esi.manual.screens.calcs.calculation.pandeo.CalculationsPandeoViewModel" />
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,6 +19,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <TextView
                 android:id="@+id/textView14"
@@ -29,8 +35,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
+                app:layout_constraintVertical_bias="0.023" />
 
             <TextView
                 android:id="@+id/resolverEcuacion"
@@ -47,7 +52,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView14"
-                app:layout_constraintVertical_bias="0.013" />
+                app:layout_constraintVertical_bias="0.03" />
 
             <LinearLayout
                 android:id="@+id/linearLayout7"
@@ -95,19 +100,18 @@
                 android:src="@drawable/dave"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline9"
-                app:layout_constraintHorizontal_bias="0.478"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
-                app:layout_constraintVertical_bias="0.889" />
+                app:layout_constraintVertical_bias="0.663" />
 
             <Button
-                android:id="@+id/button17"
+                android:id="@+id/buttonNext"
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="14dp"
-                android:onClick="compruebaResultadosPandeo"
                 android:text="@string/boton_continuar"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -115,10 +119,10 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/guideline9"
                 app:layout_constraintTop_toTopOf="@+id/guideline8"
-                app:layout_constraintVertical_bias="0.104" />
+                app:layout_constraintVertical_bias="0.15" />
 
             <Button
-                android:id="@+id/button18"
+                android:id="@+id/buttonBack"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -127,7 +131,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline9"
-                app:layout_constraintTop_toBottomOf="@+id/button17" />
+                app:layout_constraintTop_toBottomOf="@+id/buttonNext" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline8"

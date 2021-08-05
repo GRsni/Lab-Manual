@@ -1,4 +1,4 @@
-package uca.esi.manual.screens.calcs.calculation.torsion
+package uca.esi.manual.screens.calcs.calculation.pandeo
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,63 +11,51 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import uca.esi.manual.R
-import uca.esi.manual.databinding.CalculationsTorsionFragmentBinding
-import uca.esi.manual.screens.calcs.data.CalculationsDataFragmentArgs
+import uca.esi.manual.databinding.CalculationsPandeoFragmentBinding
 import uca.esi.manual.utils.showErrorDialog
 
-class CalculationsTorsionFragment : Fragment() {
+class CalculationsPandeoFragment : Fragment() {
 
-    private lateinit var viewModel: CalculationsTorsionViewModel
+    private lateinit var viewModel: CalculationsPandeoViewModel
+    private lateinit var viewModelFactory: CalculationsPandeoViewModelFactory
 
-    private lateinit var viewModelFactory: CalculationsTorsionViewModelFactory
-
-    private lateinit var binding: CalculationsTorsionFragmentBinding
+    private lateinit var binding: CalculationsPandeoFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.calculations_torsion_fragment,
+            R.layout.calculations_pandeo_fragment,
             container,
             false
         )
 
-        viewModelFactory = CalculationsTorsionViewModelFactory(
-            CalculationsDataFragmentArgs.fromBundle(requireArguments()).lab
+        viewModelFactory = CalculationsPandeoViewModelFactory(
+            CalculationsPandeoFragmentArgs.fromBundle(requireArguments()).lab
         )
 
         viewModel = ViewModelProvider(this, viewModelFactory)
-            .get(CalculationsTorsionViewModel::class.java)
+            .get(CalculationsPandeoViewModel::class.java)
 
-
-        binding.calculationsTorsionViewModel = viewModel
+        binding.calculationsPandeoViewModel = viewModel
         binding.lifecycleOwner = this
 
         addEventCorrectDataObserver()
-
         addEventEmptyDataObserver()
+        addEventWrongDataObserver()
 
-        addEventWrongAmpliDataObserver()
-
-        addEventWrongMomentDataObserver()
-
-        binding.campoMomento.addTextChangedListener {
+        binding.campoCargaCritica.addTextChangedListener {
             if (it != null) {
-                viewModel.setMomentValue(it)
-            }
-        }
-
-        binding.campoAmplificador.addTextChangedListener {
-            if (it != null) {
-                viewModel.setAmpliValue(it)
+                viewModel.setLoadValue(it)
             }
         }
 
         binding.buttonBack.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(
-                CalculationsTorsionFragmentDirections.actionCalculationsTorsionFragmentBackwards(
+                CalculationsPandeoFragmentDirections.actionCalculationsPandeoFragmentBackwards(
                     viewModel.lab.value!!
                 )
             )
@@ -75,6 +63,7 @@ class CalculationsTorsionFragment : Fragment() {
 
         return binding.root
     }
+
 
     private fun addEventCorrectDataObserver() {
         viewModel.eventCorrectData.observe(viewLifecycleOwner, { dataIsCorrect ->
@@ -85,28 +74,15 @@ class CalculationsTorsionFragment : Fragment() {
         })
     }
 
-    private fun addEventWrongAmpliDataObserver() {
-        viewModel.eventWrongAmpliData.observe(viewLifecycleOwner, { dataIsWrong ->
+    private fun addEventWrongDataObserver() {
+        viewModel.eventWrongData.observe(viewLifecycleOwner, { dataIsWrong ->
             if (dataIsWrong) {
                 showErrorDialog(
-                    requireContext(),
-                    R.string.titulo_mensaje_error_ampli_torsion,
-                    R.string.cuerpo_mensaje_error_ampli_torsion
+                    requireActivity(),
+                    R.string.titulo_mensaje_error_carga_pandeo,
+                    R.string.cuerpo_mensaje_error_carga_pandeo
                 )
-                viewModel.onWrongAmpliDataComplete()
-            }
-        })
-    }
-
-    private fun addEventWrongMomentDataObserver() {
-        viewModel.eventWrongMomentData.observe(viewLifecycleOwner, { dataIsWrong ->
-            if (dataIsWrong) {
-                showErrorDialog(
-                    requireContext(),
-                    R.string.titulo_mensaje_error_momento_torsion,
-                    R.string.cuerpo_mensaje_error_momento_torsion
-                )
-                viewModel.onWrongMomentDataComplete()
+                viewModel.onWrongDataComplete()
             }
         })
     }
@@ -123,6 +99,5 @@ class CalculationsTorsionFragment : Fragment() {
             }
         })
     }
-
 
 }

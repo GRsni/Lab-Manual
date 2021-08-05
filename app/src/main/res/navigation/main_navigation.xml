@@ -185,7 +185,12 @@
             app:argType="uca.esi.manual.models.labs.BaseLab" />
         <action
             android:id="@+id/action_weightsFragment_to_materialsTorsionFragment"
-            app:destination="@id/materialsTorsionFragment" />
+            app:destination="@id/materialsTorsionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/materialsTorsionFragment" />
     </fragment>
     <fragment
         android:id="@+id/calculationsDataFragment"
@@ -197,15 +202,51 @@
             app:argType="uca.esi.manual.models.labs.BaseLab" />
         <action
             android:id="@+id/action_calculationsDataFragment_to_calculationsTorsionFragment"
-            app:destination="@id/calculationsTorsionFragment" />
+            app:destination="@id/calculationsTorsionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_calculationsDataFragment_to_calculationsPandeoFragment"
+            app:destination="@id/calculationsPandeoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/calculationsTorsionFragment"
         android:name="uca.esi.manual.screens.calcs.calculation.torsion.CalculationsTorsionFragment"
         android:label="calculations_torsion_fragment"
-        tools:layout="@layout/calculations_torsion_fragment" >
+        tools:layout="@layout/calculations_torsion_fragment">
         <argument
             android:name="lab"
             app:argType="uca.esi.manual.models.labs.BaseLab" />
+        <action
+            android:id="@+id/action_calculationsTorsionFragment_backwards"
+            app:destination="@id/calculationsDataFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/calculationsDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculationsPandeoFragment"
+        android:name="uca.esi.manual.screens.calcs.calculation.pandeo.CalculationsPandeoFragment"
+        android:label="calculations_pandeo_fragment"
+        tools:layout="@layout/calculations_pandeo_fragment">
+        <argument
+            android:name="lab"
+            app:argType="uca.esi.manual.models.labs.BaseLab" />
+        <action
+            android:id="@+id/action_calculationsPandeoFragment_backwards"
+            app:destination="@id/calculationsDataFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/calculationsDataFragment" />
     </fragment>
 </navigation>
