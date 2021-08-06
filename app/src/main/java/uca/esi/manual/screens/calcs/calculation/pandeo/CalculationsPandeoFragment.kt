@@ -68,7 +68,11 @@ class CalculationsPandeoFragment : Fragment() {
     private fun addEventCorrectDataObserver() {
         viewModel.eventCorrectData.observe(viewLifecycleOwner, { dataIsCorrect ->
             if (dataIsCorrect) {
-                Toast.makeText(activity, R.string.datos_correctos, Toast.LENGTH_SHORT).show()
+                NavHostFragment.findNavController(this).navigate(
+                    CalculationsPandeoFragmentDirections.actionCalculationsPandeoFragmentToQuestionsFragment(
+                        viewModel.lab.value!!
+                    )
+                )
                 viewModel.onCorrectDataComplete()
             }
         })

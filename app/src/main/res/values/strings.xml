@@ -197,7 +197,8 @@
     </string-array>
     <string-array name="pregunta_pandeo1">
         <item>1</item>
-        <item>La barra del experimento pandea siempre hacia el mismo lado y no se puede cambiar la dirección de la deformación:</item>
+        <item>La barra del experimento pandea siempre hacia el mismo lado y no se puede cambiar la
+            dirección de la deformación:</item>
         <item>Verdadero</item>
         <item>Falso</item>
     </string-array>

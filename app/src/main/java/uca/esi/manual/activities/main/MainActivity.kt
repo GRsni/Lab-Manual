@@ -8,6 +8,7 @@ import uca.esi.manual.R
 import uca.esi.manual.screens.ar.ARLauncherFragment
 import uca.esi.manual.screens.calcs.data.CalculationsDataFragment
 import uca.esi.manual.screens.chest.ChestFragment
+import uca.esi.manual.screens.examination.questions.QuestionsFragment
 import uca.esi.manual.utils.currentNavigationFragment
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         when (val fragment = supportFragmentManager.currentNavigationFragment) {
-            is ChestFragment, is ARLauncherFragment, is CalculationsDataFragment
+            is ChestFragment, is ARLauncherFragment, is CalculationsDataFragment, is QuestionsFragment
             -> Timber.i("Press back arrow on fragment $fragment")
             else -> super.onBackPressed()
         }

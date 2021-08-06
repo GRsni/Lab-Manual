@@ -8,7 +8,7 @@ import uca.esi.manual.models.labs.TorsionLab
 
 class CalcDataRepository {
 
-    private val TORSION_DATA =
+    private val torsionData =
         "<div>Estos son los valores que se te han asignado para esta práctica:</div>" +
                 "<span><b>&emsp;Carga en N: %1 N</b></span>" +
                 "<div>Módulo de resistencia: </div>" +
@@ -18,7 +18,7 @@ class CalcDataRepository {
                 "<div>Coeficiente de la galga extensiométrica:</div>" +
                 "<span><b>&emsp;k = 2.05</b></span>"
 
-    private val PANDEO_DATA =
+    private val pandeoData =
         "<div>Estos son los valores que se te ha asignado para esta práctica:</div>\n" +
                 "<span><b>&emsp;Barra de prueba: S2 Acero</b></span><br>\n" +
                 "<span><b>&emsp;Longitud (Lp): %1 mm</b></span>\n" +
@@ -27,13 +27,13 @@ class CalcDataRepository {
                 "<div>Módulo de elasticidad:</div>\n" +
                 "<span><b>&emsp;E = 210 000 N/mm<sup>2</sup></b></span>"
 
-    private val ERROR_STRING = "Error cargando los datos para la práctica"
+    private val errorString = "Error cargando los datos para la práctica"
 
 
     fun getCalcDataString(lab: BaseLab): Spanned {
         return when (lab) {
             is TorsionLab -> HtmlCompat.fromHtml(
-                TORSION_DATA.replace(
+                torsionData.replace(
                     "%1",
                     lab.weights.toString()
                 ),
@@ -41,14 +41,14 @@ class CalcDataRepository {
             )
             is PandeoLab
             -> HtmlCompat.fromHtml(
-                PANDEO_DATA.replace(
+                pandeoData.replace(
                     "%1",
                     lab.bar.toString()
                 ),
                 HtmlCompat.FROM_HTML_SEPARATOR_LINE_BREAK_PARAGRAPH
             )
             else -> HtmlCompat.fromHtml(
-                ERROR_STRING,
+                errorString,
                 HtmlCompat.FROM_HTML_SEPARATOR_LINE_BREAK_PARAGRAPH
             )
         }

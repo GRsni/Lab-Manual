@@ -79,7 +79,11 @@ class CalculationsTorsionFragment : Fragment() {
     private fun addEventCorrectDataObserver() {
         viewModel.eventCorrectData.observe(viewLifecycleOwner, { dataIsCorrect ->
             if (dataIsCorrect) {
-                Toast.makeText(activity, R.string.datos_correctos, Toast.LENGTH_SHORT).show()
+                NavHostFragment.findNavController(this).navigate(
+                    CalculationsTorsionFragmentDirections.actionCalculationsTorsionFragmentToQuestionsFragment(
+                        viewModel.lab.value!!
+                    )
+                )
                 viewModel.onCorrectDataComplete()
             }
         })

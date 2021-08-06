@@ -231,6 +231,13 @@
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/calculationsDataFragment" />
+        <action
+            android:id="@+id/action_calculationsTorsionFragment_to_questionsFragment"
+            app:destination="@id/questionsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/calculationsPandeoFragment"
@@ -248,5 +255,21 @@
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/calculationsDataFragment" />
+        <action
+            android:id="@+id/action_calculationsPandeoFragment_to_questionsFragment"
+            app:destination="@id/questionsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsFragment"
+        android:name="uca.esi.manual.screens.examination.questions.QuestionsFragment"
+        android:label="questions_fragment"
+        tools:layout="@layout/questions_fragment">
+        <argument
+            android:name="lab"
+            app:argType="uca.esi.manual.models.labs.BaseLab" />
     </fragment>
 </navigation>
