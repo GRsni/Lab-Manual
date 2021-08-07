@@ -48,15 +48,14 @@ class QuestionsViewModel(labIN: BaseLab) : ViewModel() {
         if (_checkedAnswer.value != null) {
             correctAnswers[counter] = _checkedAnswer.value == questionList[counter].correctIndex
         }
-        if (counter < questionList.size) {
+        if (counter < questionList.size - 1) {
             counter++
+            // Reset the checkedAnswer index for the next question
+            _checkedAnswer.value = -1
+            onEventNextQuestion()
         } else {
             onEventTestDone()
         }
-
-        // Reset the checkedAnswer index for the next question
-        _checkedAnswer.value = -1
-        onEventNextQuestion()
     }
 
     private fun onEventNextQuestion() {

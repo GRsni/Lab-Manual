@@ -1,5 +1,7 @@
 package uca.esi.manual.screens.calcs.calculation.torsion
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -52,6 +54,8 @@ class CalculationsTorsionFragment : Fragment() {
         addEventWrongAmpliDataObserver()
 
         addEventWrongMomentDataObserver()
+
+        addEventAutocompleteDataObserver()
 
         binding.campoMomento.addTextChangedListener {
             if (it != null) {
@@ -128,5 +132,18 @@ class CalculationsTorsionFragment : Fragment() {
         })
     }
 
+    private fun addEventAutocompleteDataObserver() {
+        viewModel.eventAutocompleteData.observe(viewLifecycleOwner, { dataAutocompleted ->
+            if (dataAutocompleted) {
+                AlertDialog.Builder(activity)
+                    .setTitle(R.string.datos_experimento)
+                    .setMessage(R.string.datos_automaticos)
+                    .setPositiveButton(
+                        R.string.boton_aceptar
+                    ) { _, _ -> viewModel.onAutocompleteDataComplete() }
+                    .show()
+            }
+        })
+    }
 
 }

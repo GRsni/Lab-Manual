@@ -27,14 +27,14 @@
     <string name="baul">Baúl</string>
     <string name="test">Test</string>
     <string name="pesas">Pesas</string>
-    <string name="barra_dos_ganchos"> Barra de dos ganchos.</string>
-    <string name="barra_circular"> Barra de sección circular.</string>
-    <string name="barra_rectangular"> Barra de sección rectangular.</string>
-    <string name="pesas_grandes"> Juego de pesas grandes.</string>
-    <string name="pesas_pequeñas"> Juego de pesas pequeñas.</string>
-    <string name="Llaves"> Llaves.</string>
-    <string name="ampli"> Amplificador.</string>
-    <string name="cable"> Cable de conexión.</string>
+    <string name="barra_dos_ganchos">1 - Barra de dos ganchos.</string>
+    <string name="barra_circular">2 - Barra de sección circular.</string>
+    <string name="barra_rectangular">3 - Barra de sección rectangular.</string>
+    <string name="pesas_grandes">4 - Juego de pesas grandes.</string>
+    <string name="pesas_pequeñas">5 - Juego de pesas pequeñas.</string>
+    <string name="Llaves">6 - Llaves.</string>
+    <string name="ampli">7 - Amplificador.</string>
+    <string name="cable">8 -  Cable de conexión.</string>
     <string name="apoyo_articulado">Apoyo articulado.</string>
     <string name="apoyo_empotrado">Apoyo empotrado.</string>
     <string name="barra_cuad_500mm">Barra cuadrada de 500 m</string>
@@ -98,8 +98,8 @@
 
     <string name="manual_materiales_intro">Estos son todos los materiales disponibles para realizar la práctica.</string>
 
-    <string name="manual_materiales_torsion">Para la práctica de torsión solo vas a necesitar:\n- Barra de sección circular.
-        \n- Juego de pesas grandes.\n- Amplificador.\n- Cable.</string>
+    <string name="manual_materiales_torsion">Para la práctica de torsión solo vas a necesitar:\n2 - Barra de sección circular.
+        \n4 - Juego de pesas grandes.\n7 - Amplificador.\n8 - Cable.</string>
 
     <string name="manual_materiales_pandeo">Para la práctica de pandeo se te ha asignado:\n- Barra de acero S2 de %1$s mm\n- %2$s\n- %3$s</string>
 
@@ -134,6 +134,8 @@
     <string name="introduce_resultado_pandeo">Introduce el valor experimental de desviación por pandeo que hayas registrado:</string>
 
     <string name="introduce_resultados">Introduce la solución cuando la tengas calculada:</string>
+
+    <string name="datos_experimento">Datos experimentales</string>
 
     <string name="datos_automaticos">Se han introducido automáticamente los datos que se obtendrían al realizar el experimento en el laboratorio.</string>
 

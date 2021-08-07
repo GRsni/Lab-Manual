@@ -1,5 +1,6 @@
 package uca.esi.manual.screens.calcs.calculation.pandeo
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -46,6 +47,7 @@ class CalculationsPandeoFragment : Fragment() {
         addEventCorrectDataObserver()
         addEventEmptyDataObserver()
         addEventWrongDataObserver()
+        addEventAutocompleteDataObserver()
 
         binding.campoCargaCritica.addTextChangedListener {
             if (it != null) {
@@ -100,6 +102,20 @@ class CalculationsPandeoFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
                 viewModel.onEmptyDataComplete()
+            }
+        })
+    }
+
+    private fun addEventAutocompleteDataObserver() {
+        viewModel.eventAutocompleteData.observe(viewLifecycleOwner, { dataAutocompleted ->
+            if (dataAutocompleted) {
+                AlertDialog.Builder(activity)
+                    .setTitle(R.string.datos_experimento)
+                    .setMessage(R.string.datos_automaticos)
+                    .setPositiveButton(
+                        R.string.boton_aceptar
+                    ) { _, _ -> viewModel.onAutocompleteDataComplete() }
+                    .show()
             }
         })
     }

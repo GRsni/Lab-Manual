@@ -51,6 +51,11 @@ class QuestionsFragment : Fragment() {
     private fun loadQuestionsLinearLayout(counter: Int) {
         binding.textoEnunciado.text = viewModel.questionList[counter].title
 
+        //Clear the radio group of the previous radio buttons
+        if (counter > 0) {
+            binding.questionsRadioGroup.removeAllViews()
+        }
+
         val radioButtonList = mutableListOf<RadioButton>()
         for (i in viewModel.questionList[counter].answers.indices) {
             radioButtonList.add(RadioButton(activity))

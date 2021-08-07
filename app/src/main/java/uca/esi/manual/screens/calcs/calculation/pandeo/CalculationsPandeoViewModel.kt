@@ -33,9 +33,17 @@ class CalculationsPandeoViewModel(labIN: BaseLab) : ViewModel() {
     val eventCorrectData: LiveData<Boolean>
         get() = _eventCorrectData
 
+    private val _eventAutocompletedData = MutableLiveData<Boolean>()
+    val eventAutocompleteData: LiveData<Boolean>
+        get() = _eventAutocompletedData
+
+
     init {
         _lab.value = labIN
         _valueLoad.value = getDefaultLoadValue(labIN)
+        if (!labIN.isInLab) {
+            onAutocompleteData()
+        }
     }
 
     private fun getDefaultLoadValue(lab: BaseLab): String {
@@ -61,9 +69,10 @@ class CalculationsPandeoViewModel(labIN: BaseLab) : ViewModel() {
                 lab.value!!.valExp = _valueLoad.value!!.toFloat()
                 onCorrectData()
             }
+        } else {
+            onEmptyData()
         }
     }
-
 
     fun setLoadValue(s: Editable) {
         if (s.toString().isNotEmpty()) {
@@ -96,5 +105,13 @@ class CalculationsPandeoViewModel(labIN: BaseLab) : ViewModel() {
 
     fun onCorrectDataComplete() {
         _eventCorrectData.value = false
+    }
+
+    private fun onAutocompleteData() {
+        _eventAutocompletedData.value = true
+    }
+
+    fun onAutocompleteDataComplete() {
+        _eventAutocompletedData.value = false
     }
 }

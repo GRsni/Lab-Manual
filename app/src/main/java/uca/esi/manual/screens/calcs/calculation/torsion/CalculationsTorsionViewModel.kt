@@ -45,11 +45,18 @@ class CalculationsTorsionViewModel(labIN: BaseLab) : ViewModel() {
     val eventCorrectData: LiveData<Boolean>
         get() = _eventCorrectData
 
+    private val _eventAutocompletedData = MutableLiveData<Boolean>()
+    val eventAutocompleteData: LiveData<Boolean>
+        get() = _eventAutocompletedData
+
 
     init {
         _lab.value = labIN
         _valueMoment.value = getDefaultMomentValue(labIN)
         _valueAmpli.value = getDefaultAmpliValue(labIN)
+        if (!labIN.isInLab) {
+            onAutocompleteData()
+        }
     }
 
     private fun getDefaultMomentValue(lab: BaseLab): String {
@@ -148,5 +155,13 @@ class CalculationsTorsionViewModel(labIN: BaseLab) : ViewModel() {
 
     fun onCorrectDataComplete() {
         _eventCorrectData.value = false
+    }
+
+    private fun onAutocompleteData() {
+        _eventAutocompletedData.value = true
+    }
+
+    fun onAutocompleteDataComplete() {
+        _eventAutocompletedData.value = false
     }
 }
