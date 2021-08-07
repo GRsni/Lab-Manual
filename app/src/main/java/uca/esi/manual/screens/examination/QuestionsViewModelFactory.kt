@@ -1,4 +1,4 @@
-package uca.esi.manual.screens.examination.questions
+package uca.esi.manual.screens.examination
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

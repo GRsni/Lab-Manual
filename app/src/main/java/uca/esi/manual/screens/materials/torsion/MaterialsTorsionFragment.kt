@@ -49,17 +49,14 @@ class MaterialsTorsionFragment : Fragment() {
         binding.buttonAnt.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(
                 MaterialsTorsionFragmentDirections.actionMaterialsTorsionFragmentToChestFragment(
-                    viewModel.lab.value!!
+                    viewModel.lab
                 )
             )
         }
 
         addCheckBoxListeners()
 
-        viewModel.lab.observe(viewLifecycleOwner, {
-            printLabIfDebug(it)
-        })
-
+        printLabIfDebug(viewModel.lab)
 
         return binding.root
     }
@@ -101,7 +98,7 @@ class MaterialsTorsionFragment : Fragment() {
                 ).show()
                 NavHostFragment.findNavController(this).navigate(
                     MaterialsTorsionFragmentDirections.actionMaterialsTorsionFragmentToWeightsFragment(
-                        viewModel.lab.value!!
+                        viewModel.lab
                     )
                 )
                 viewModel.onCorrectDataComplete()

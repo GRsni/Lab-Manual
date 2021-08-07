@@ -72,7 +72,7 @@ class CalculationsTorsionFragment : Fragment() {
         binding.buttonBack.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(
                 CalculationsTorsionFragmentDirections.actionCalculationsTorsionFragmentBackwards(
-                    viewModel.lab.value!!
+                    viewModel.lab
                 )
             )
         }
@@ -85,7 +85,7 @@ class CalculationsTorsionFragment : Fragment() {
             if (dataIsCorrect) {
                 NavHostFragment.findNavController(this).navigate(
                     CalculationsTorsionFragmentDirections.actionCalculationsTorsionFragmentToQuestionsFragment(
-                        viewModel.lab.value!!
+                        viewModel.lab
                     )
                 )
                 viewModel.onCorrectDataComplete()

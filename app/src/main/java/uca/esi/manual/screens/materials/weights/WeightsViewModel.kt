@@ -10,11 +10,7 @@ import uca.esi.manual.models.labs.TorsionLab
 import uca.esi.manual.screens.materials.MaterialsI
 import uca.esi.manual.utils.ViewModelString
 
-class WeightsViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
-
-    private val _lab = MutableLiveData<BaseLab>()
-    val lab: LiveData<BaseLab>
-        get() = _lab
+class WeightsViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
 
     private val _support = MutableLiveData<Int>()
     val support: LiveData<Int>
@@ -50,7 +46,6 @@ class WeightsViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
         get() = _eventCorrectData
 
     init {
-        _lab.value = labIN
         _support.value = 1
         _load5N.value = 0
         _load10N.value = 0
@@ -92,11 +87,11 @@ class WeightsViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
 
     override fun checkMaterials() {
         if (_support.value != 0) {
-            if ((lab.value!! as TorsionLab).weights == getCombinedLoad()) {
+            if ((lab as TorsionLab).weights == getCombinedLoad()) {
                 onCorrectData()
             } else {
                 onWrongData()
-                (_lab.value as TorsionLab).errWeights += 1
+                (lab as TorsionLab).errWeights += 1
             }
         } else {
             onEmptyData()

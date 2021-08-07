@@ -89,6 +89,7 @@
     <string name="boton_aceptar">Aceptar</string>
     <string name="boton_salir">Salir</string>
     <string name="boton_enviar_email">Enviar email</string>
+    <string name="boton_finalizar">Finalizar</string>
 
     <string name="selecciona_app">Elige si estás en el laboratorio C13 de la ESI o en otro lugar, y
         seguidamente selecciona la práctica que quieres realizar:</string>
@@ -151,7 +152,11 @@
 
     <string name="cuerpo_mensaje_error_carga_pandeo">Tu carga calculada está fuera del rango de ± 5%. Puedes modificar tu resultado o continuar con la práctica.</string>
 
-    <string name="respuesta_fallidas">A continuación se muestran tus respuestas correctas, en verde, y erróneas en rojo:</string>
+    <string name="introduccion_cuestionario">Ahora vas a realizar un cuestionario sobre la práctica que acabas de realizar. Serán 4 preguntas de respuesta múltiple, de las que
+    tendrás que elegir una de la posibles respuestas. ¡Suerte!</string>
+
+    <string name="resultado_cuestionario">¡Has finalizado el cuestionario! ¿Cómo te ha salido? A continuación
+        se muestran tus respuestas correctas, en verde, y erróneas en rojo:</string>
 
     <string name="texto_final_bien">Enhorabuena, has acertado todas las preguntas. Esperamos que te haya gustado realizar la práctica con nosotros.
         Si quieres volver a utilizar el manual, pulsa el botón de volver al inicio y podrás realizar la práctica desde cero otra vez.</string>

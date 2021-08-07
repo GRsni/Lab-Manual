@@ -9,11 +9,7 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.PandeoLab
 import uca.esi.manual.screens.materials.MaterialsI
 
-class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
-
-    private val _lab = MutableLiveData<BaseLab>()
-    val lab: LiveData<BaseLab>
-        get() = _lab
+class MaterialsPandeoViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
 
     private val _barSelected500 = MutableLiveData<Boolean>()
     val barSelected500: LiveData<Boolean>
@@ -29,7 +25,7 @@ class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
     val looseJoints: LiveData<String>
         get() = _looseJoints
 
-    var looseJointsEditted = false
+    var looseJointsEdited = false
 
     // Event variable for empty user data handler
     private val _eventEmptyData = MutableLiveData<Boolean>()
@@ -53,7 +49,6 @@ class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
 
 
     init {
-        _lab.value = labIN
         _barSelected500.value = true
         _looseJoints.value = "0"
         _fixedJoints.value = "0"
@@ -86,16 +81,18 @@ class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
                 onCorrectData()
             } else {
                 onWrongJointData()
+                (lab as PandeoLab).errFixtures += 1
             }
         } else {
             if (!_eventEmptyData.value!!) {
                 onWrongBarData()
+                (lab as PandeoLab).errBar += 1
             }
         }
     }
 
     private fun checkBarIsCorrect(): Boolean {
-        val labBar = (_lab.value as PandeoLab).bar
+        val labBar = (lab as PandeoLab).bar
 
         return if (_barSelected500.value != null) {
             if (labBar == Constants.BAR_500_VALUE) {
@@ -110,7 +107,7 @@ class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
     }
 
     private fun checkJoints(): Boolean {
-        val joints = countLabJoints((lab.value as PandeoLab).fixtures)
+        val joints = countLabJoints((lab as PandeoLab).fixtures)
         val looseJointsLab = joints[0]
         val fixedJointsLab = joints[1]
         return if (_looseJoints.value != null && _fixedJoints.value != null) {
@@ -145,7 +142,6 @@ class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
 
     private fun onWrongBarData() {
         _eventWrongBarData.value = true
-        (_lab.value as PandeoLab).errBar += 1
     }
 
     fun onWrongDataBarComplete() {
@@ -154,7 +150,6 @@ class MaterialsPandeoViewModel(labIN: BaseLab) : ViewModel(), MaterialsI {
 
     private fun onWrongJointData() {
         _eventWrongJointData.value = true
-        (_lab.value as PandeoLab).errFixtures += 1
     }
 
     fun onWrongDataJointComplete() {

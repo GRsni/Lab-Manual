@@ -4,15 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import uca.esi.manual.R
-import uca.esi.manual.utils.ViewModelString
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.LabFactory
+import uca.esi.manual.utils.ViewModelString
 
 class LabExplanationViewModel(var userId: String, inLab: Boolean, labType: Int) : ViewModel() {
 
-    private val _lab = MutableLiveData<BaseLab>()
-    val lab: LiveData<BaseLab>
-        get() = _lab
+    var lab: BaseLab
 
     var introText: ViewModelString
 
@@ -22,8 +20,8 @@ class LabExplanationViewModel(var userId: String, inLab: Boolean, labType: Int) 
 
     init {
         val labFactory = LabFactory()
-        _lab.value = labFactory.createFromLabType(userId, labType)
-        _lab.value!!.isInLab = inLab
+        lab = labFactory.createFromLabType(userId, labType)
+        lab.isInLab = inLab
         introText = getIntroText(labType)
     }
 

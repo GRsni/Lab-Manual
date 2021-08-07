@@ -52,9 +52,7 @@ class LabExplanationFragment : Fragment() {
             }
         })
 
-        viewModel.lab.observe(viewLifecycleOwner, {
-            printLabIfDebug(it)
-        })
+        printLabIfDebug(viewModel.lab)
 
         return binding.root
     }
@@ -63,7 +61,7 @@ class LabExplanationFragment : Fragment() {
     private fun launchChest() {
         NavHostFragment.findNavController(this).navigate(
             LabExplanationFragmentDirections.actionLabExplanationFragmentToChestFragment(
-                viewModel.lab.value!!
+                viewModel.lab
             )
         )
     }

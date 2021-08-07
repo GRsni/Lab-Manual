@@ -7,11 +7,7 @@ import androidx.lifecycle.ViewModel
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.utils.valueNotInThreshold
 
-class CalculationsPandeoViewModel(labIN: BaseLab) : ViewModel() {
-    private val _lab = MutableLiveData<BaseLab>()
-    val lab: LiveData<BaseLab>
-        get() = _lab
-
+class CalculationsPandeoViewModel(var lab: BaseLab) : ViewModel() {
     private val _valueLoad = MutableLiveData<String>()
     val valueLoad: LiveData<String>
         get() = _valueLoad
@@ -39,9 +35,8 @@ class CalculationsPandeoViewModel(labIN: BaseLab) : ViewModel() {
 
 
     init {
-        _lab.value = labIN
-        _valueLoad.value = getDefaultLoadValue(labIN)
-        if (!labIN.isInLab) {
+        _valueLoad.value = getDefaultLoadValue(lab)
+        if (!lab.isInLab) {
             onAutocompleteData()
         }
     }
@@ -57,16 +52,16 @@ class CalculationsPandeoViewModel(labIN: BaseLab) : ViewModel() {
     fun checkValue() {
         if (!_valueLoad.value.isNullOrEmpty()) {
             if (valueNotInThreshold(
-                    _lab.value!!.valTeo,
+                    lab.valTeo,
                     _valueLoad.value!!.toFloat(),
                     5f
                 ) && !errorLoad
             ) {
                 errorLoad = true
-                _lab.value!!.errVal += 1
+                lab.errVal += 1
                 onWrongData()
             } else {
-                lab.value!!.valExp = _valueLoad.value!!.toFloat()
+                lab.valExp = _valueLoad.value!!.toFloat()
                 onCorrectData()
             }
         } else {

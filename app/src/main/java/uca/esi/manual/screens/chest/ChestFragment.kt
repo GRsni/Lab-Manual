@@ -10,11 +10,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
-import uca.esi.manual.BuildConfig
 import uca.esi.manual.R
 import uca.esi.manual.databinding.ChestFragmentBinding
 import uca.esi.manual.models.labs.BaseLab
-import uca.esi.manual.utils.printLab
+import uca.esi.manual.utils.printLabIfDebug
 
 class ChestFragment : Fragment() {
 
@@ -61,29 +60,24 @@ class ChestFragment : Fragment() {
             }
         })
 
-        if (BuildConfig.DEBUG) {
-            viewModel.lab.observe(viewLifecycleOwner, {
-                if (it != null) {
-                    printLab(it)
-                }
-            })
-        }
+        printLabIfDebug(viewModel.lab)
+
         return binding.root
     }
 
     private fun launchMaterialSelector() {
-        when (viewModel.lab.value!!.labType) {
+        when (viewModel.lab.labType) {
             BaseLab.LabType.PANDEO -> {
                 NavHostFragment.findNavController(this).navigate(
                     ChestFragmentDirections.actionChestFragmentToMaterialsPandeo(
-                        viewModel.lab.value!!
+                        viewModel.lab
                     )
                 )
             }
             BaseLab.LabType.TORSION -> {
                 NavHostFragment.findNavController(this).navigate(
                     ChestFragmentDirections.actionChestFragmentToMaterialsTorsionFragment(
-                        viewModel.lab.value!!
+                        viewModel.lab
                     )
                 )
             }

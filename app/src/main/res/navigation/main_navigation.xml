@@ -265,7 +265,7 @@
     </fragment>
     <fragment
         android:id="@+id/questionsFragment"
-        android:name="uca.esi.manual.screens.examination.questions.QuestionsFragment"
+        android:name="uca.esi.manual.screens.examination.QuestionsFragment"
         android:label="questions_fragment"
         tools:layout="@layout/questions_fragment">
         <argument

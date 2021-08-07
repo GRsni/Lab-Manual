@@ -1,4 +1,4 @@
-package uca.esi.manual.screens.examination.questions.repository
+package uca.esi.manual.screens.examination.repository
 
 import uca.esi.manual.models.Question
 import uca.esi.manual.models.labs.BaseLab
@@ -47,21 +47,21 @@ class QuestionsRepository {
 
     private val pandeoQuestions = listOf(
         Question(
-            "La carga crítica de Euler depende del límite elástico del material:",
+            "La carga crítica de Euler depende del límite elástico del material.",
             listOf("Verdadero", "Falso"), 1
         ),
         Question(
             "La barra del experimento pandea siempre hacia el mismo lado y" +
-                    " no se puede cambiar la dirección de la deformación:",
+                    " no se puede cambiar la dirección de la deformación.",
             listOf("Verdadero", "Falso"), 1
         ),
         Question(
             "Un elemento sometido a compresión pandeará en el plano que" +
-                    " presente menor rigidez a la flexión:",
+                    " presente menor rigidez a la flexión.",
             listOf("Verdadero", "Falso"), 0
         ),
         Question(
-            "La longitud de pandeo de una viga depende de los apoyos que tenga:",
+            "La longitud de pandeo de una viga depende de los apoyos que tenga.",
             listOf("Verdadero", "Falso"), 0
         )
     )

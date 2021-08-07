@@ -8,10 +8,7 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.PandeoLab
 import uca.esi.manual.utils.ViewModelString
 
-class ChestViewModel(labIN: BaseLab) : ViewModel() {
-    private val _lab = MutableLiveData<BaseLab>()
-    val lab: LiveData<BaseLab>
-        get() = _lab
+class ChestViewModel(var lab: BaseLab) : ViewModel() {
 
     private val _eventButtonPressed = MutableLiveData<Boolean>()
     val eventButtonPressed: LiveData<Boolean>
@@ -22,9 +19,8 @@ class ChestViewModel(labIN: BaseLab) : ViewModel() {
     var chestImage: Int
 
     init {
-        _lab.value = labIN
-        materialsText = getIntroText(_lab.value!!.labType)
-        chestImage = getChestImage(_lab.value!!.labType)
+        materialsText = getIntroText(lab.labType)
+        chestImage = getChestImage(lab.labType)
     }
 
     private fun getIntroText(labType: BaseLab.LabType): ViewModelString {
@@ -32,9 +28,9 @@ class ChestViewModel(labIN: BaseLab) : ViewModel() {
             BaseLab.LabType.TORSION ->
                 ViewModelString(R.string.manual_materiales_torsion)
             BaseLab.LabType.PANDEO -> {
-                val bar = (lab.value as PandeoLab).bar
+                val bar = (lab as PandeoLab).bar
                 val fixturesList: Array<String> =
-                    getFixturesStringList((lab.value as PandeoLab).fixtures)
+                    getFixturesStringList((lab as PandeoLab).fixtures)
                 ViewModelString(
                     R.string.manual_materiales_pandeo,
                     arrayListOf(

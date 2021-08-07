@@ -8,10 +8,7 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.TorsionLab
 import uca.esi.manual.utils.valueNotInThreshold
 
-class CalculationsTorsionViewModel(labIN: BaseLab) : ViewModel() {
-    private val _lab = MutableLiveData<BaseLab>()
-    val lab: LiveData<BaseLab>
-        get() = _lab
+class CalculationsTorsionViewModel(var lab: BaseLab) : ViewModel() {
 
     private val _valueAmpli = MutableLiveData<String>()
     val valueAmpli: LiveData<String>
@@ -51,10 +48,9 @@ class CalculationsTorsionViewModel(labIN: BaseLab) : ViewModel() {
 
 
     init {
-        _lab.value = labIN
-        _valueMoment.value = getDefaultMomentValue(labIN)
-        _valueAmpli.value = getDefaultAmpliValue(labIN)
-        if (!labIN.isInLab) {
+        _valueMoment.value = getDefaultMomentValue(lab)
+        _valueAmpli.value = getDefaultAmpliValue(lab)
+        if (!lab.isInLab) {
             onAutocompleteData()
         }
     }
@@ -76,7 +72,7 @@ class CalculationsTorsionViewModel(labIN: BaseLab) : ViewModel() {
     }
 
     fun checkValues() {
-        val torsionLab = _lab.value as TorsionLab
+        val torsionLab = lab as TorsionLab
         if (!_valueMoment.value.isNullOrEmpty() && !_valueAmpli.value.isNullOrEmpty()) {
             if (valueNotInThreshold(
                     torsionLab.ampliTeo,

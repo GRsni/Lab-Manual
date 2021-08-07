@@ -58,7 +58,7 @@ class CalculationsPandeoFragment : Fragment() {
         binding.buttonBack.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(
                 CalculationsPandeoFragmentDirections.actionCalculationsPandeoFragmentBackwards(
-                    viewModel.lab.value!!
+                    viewModel.lab
                 )
             )
         }
@@ -72,7 +72,7 @@ class CalculationsPandeoFragment : Fragment() {
             if (dataIsCorrect) {
                 NavHostFragment.findNavController(this).navigate(
                     CalculationsPandeoFragmentDirections.actionCalculationsPandeoFragmentToQuestionsFragment(
-                        viewModel.lab.value!!
+                        viewModel.lab
                     )
                 )
                 viewModel.onCorrectDataComplete()

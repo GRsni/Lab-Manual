@@ -48,9 +48,7 @@ class ARLauncherFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(ARLauncherViewModel::class.java)
 
-        viewModel.lab.observe(viewLifecycleOwner, {
-            printLabIfDebug(it)
-        })
+        printLabIfDebug(viewModel.lab)
 
         binding.arLauncherViewModel = viewModel
         binding.lifecycleOwner = this
@@ -70,7 +68,7 @@ class ARLauncherFragment : Fragment() {
         binding.buttonExit.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(
                 ARLauncherFragmentDirections.actionARLauncherFragmentToCalculationsDataFragment(
-                    viewModel.lab.value!!
+                    viewModel.lab
                 )
             )
         }
@@ -100,13 +98,13 @@ class ARLauncherFragment : Fragment() {
             if (launch) {
                 activityViewModel.arModule.executed = true
                 viewModel.onLaunchARComplete()
-                binding.buttonExit.text=getBackButtonText().resolve(requireContext())
-                launchARActivity(viewModel.lab.value!!)
+                binding.buttonExit.text = getBackButtonText().resolve(requireContext())
+                launchARActivity(viewModel.lab)
             }
         })
     }
 
-    private fun launchARActivity(lab: BaseLab){
+    private fun launchARActivity(lab: BaseLab) {
         val i = Intent(activity, UnityPlayerActivity::class.java)
         i.putExtra("data", lab.data)
         i.putExtra("type", BaseLab.getIntFromType(lab.labType))

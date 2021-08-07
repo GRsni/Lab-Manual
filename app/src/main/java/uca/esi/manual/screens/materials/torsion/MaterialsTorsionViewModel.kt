@@ -7,11 +7,7 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.TorsionLab
 import uca.esi.manual.screens.materials.MaterialsI
 
-class MaterialsTorsionViewModel(labIN: BaseLab) : ViewModel(), MaterialsI{
-
-    private val _lab = MutableLiveData<BaseLab>()
-    val lab: LiveData<BaseLab>
-        get() = _lab
+class MaterialsTorsionViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
 
     // Event variable for empty user data handler
     private val _eventEmptyData = MutableLiveData<Boolean>()
@@ -31,7 +27,6 @@ class MaterialsTorsionViewModel(labIN: BaseLab) : ViewModel(), MaterialsI{
     private val checkboxes = Array(8) { false }
 
     init {
-        _lab.value = labIN
         _eventCorrectData.value = false
         _eventEmptyData.value = false
         _eventWrongData.value = false
@@ -43,6 +38,7 @@ class MaterialsTorsionViewModel(labIN: BaseLab) : ViewModel(), MaterialsI{
         } else {
             if (!_eventEmptyData.value!!) {
                 onWrongData()
+                (lab as TorsionLab).errWeights += 1
             }
         }
     }
@@ -67,7 +63,6 @@ class MaterialsTorsionViewModel(labIN: BaseLab) : ViewModel(), MaterialsI{
 
     private fun onWrongData() {
         _eventWrongData.value = true
-        (_lab.value as TorsionLab).errWeights += 1
     }
 
     fun onWrongDataComplete() {

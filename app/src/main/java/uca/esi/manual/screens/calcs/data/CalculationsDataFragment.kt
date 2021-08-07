@@ -40,9 +40,8 @@ class CalculationsDataFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(CalculationsDataViewModel::class.java)
 
-        viewModel.lab.observe(viewLifecycleOwner, {
-            printLabIfDebug(it)
-        })
+        printLabIfDebug(viewModel.lab)
+
 
         binding.valoresFormula.text = viewModel.dataText
         binding.textoIntroFormulas.text = viewModel.introText.resolve(requireContext())
@@ -54,18 +53,18 @@ class CalculationsDataFragment : Fragment() {
     }
 
     private fun launchCalculations() {
-        when (viewModel.lab.value!!.labType) {
+        when (viewModel.lab.labType) {
             BaseLab.LabType.PANDEO -> {
                 NavHostFragment.findNavController(this).navigate(
                     CalculationsDataFragmentDirections.actionCalculationsDataFragmentToCalculationsPandeoFragment(
-                        viewModel.lab.value!!
+                        viewModel.lab
                     )
                 )
             }
             BaseLab.LabType.TORSION -> {
                 NavHostFragment.findNavController(this).navigate(
                     CalculationsDataFragmentDirections.actionCalculationsDataFragmentToCalculationsTorsionFragment(
-                        viewModel.lab.value!!
+                        viewModel.lab
                     )
                 )
             }

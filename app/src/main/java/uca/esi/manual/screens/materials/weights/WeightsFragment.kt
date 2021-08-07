@@ -77,7 +77,7 @@ class WeightsFragment : Fragment() {
         binding.buttonBack.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(
                 WeightsFragmentDirections.actionWeightsFragmentToMaterialsTorsionFragment(
-                    viewModel.lab.value!!
+                    viewModel.lab
                 )
             )
         }
@@ -89,7 +89,7 @@ class WeightsFragment : Fragment() {
 
     private fun setLoadText(): String {
         val baseString = viewModel.loadText.resolve(requireContext())
-        return String.format(baseString, (viewModel.lab.value!! as TorsionLab).weights)
+        return String.format(baseString, (viewModel.lab as TorsionLab).weights)
     }
 
     private fun addEventCorrectDataObserver() {
@@ -97,7 +97,7 @@ class WeightsFragment : Fragment() {
             if (dataIsCorrect) {
                 NavHostFragment.findNavController(this).navigate(
                     WeightsFragmentDirections.actionWeightsFragmentToARLauncherFragment(
-                        viewModel.lab.value!!
+                        viewModel.lab
                     )
                 )
                 viewModel.onCorrectDataComplete()
