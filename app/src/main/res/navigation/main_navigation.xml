@@ -271,5 +271,30 @@
         <argument
             android:name="lab"
             app:argType="uca.esi.manual.models.labs.BaseLab" />
+        <action
+            android:id="@+id/action_questionsFragment_to_endFragment"
+            app:destination="@id/endFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/endFragment"
+        android:name="uca.esi.manual.screens.end.EndFragment"
+        android:label="end_fragment"
+        tools:layout="@layout/end_fragment">
+        <argument
+            android:name="allCorrect"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_endFragment_to_titleFragment"
+            app:destination="@id/titleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

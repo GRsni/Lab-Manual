@@ -17,6 +17,8 @@ class QuestionsViewModel(var lab: BaseLab) : ViewModel() {
 
     var correctAnswers: BooleanArray
 
+    var allCorrect = true
+
     var counter = -1
 
     private val _checkedAnswer = MutableLiveData<Int>()
@@ -54,6 +56,9 @@ class QuestionsViewModel(var lab: BaseLab) : ViewModel() {
          * answers is checked, the counter increments, and the
          * new question is loaded.
          *
+         * From 0 to 3, the questions are shown, and the user
+         * selects one of the possible answers
+         *
          * Once the counter gets to 4, the last question is checked
          * and the answers are shown
          *
@@ -64,26 +69,29 @@ class QuestionsViewModel(var lab: BaseLab) : ViewModel() {
             counter == 0 -> {
                 onEventTestBegin()
             }
-            counter < questionList.size -> {
+            counter <= questionList.size -> {
                 checkAnswer(counter - 1)
-                onEventNextQuestion()
-            }
-            counter == questionList.size -> {
-                checkAnswer(counter - 1)
-                saveAnswers()
-                onEventTestDone()
+                if (counter < questionList.size) {
+                    onEventNextQuestion()
+                } else {
+                    saveAnswers()
+                    onEventTestDone()
+                    dbHandler.uploadData(lab)
+                }
             }
             else -> {
-                dbHandler.uploadData(lab)
                 onEventFinished()
             }
         }
     }
 
     private fun checkAnswer(index: Int) {
-        Timber.i("Checked answer $counter is: ${_checkedAnswer.value}, correct is ${questionList[index].correctIndex}")
+        Timber.i("Checked answer $index is: ${_checkedAnswer.value}, correct is ${questionList[index].correctIndex}")
         if (_checkedAnswer.value != null) {
             correctAnswers[index] = _checkedAnswer.value == questionList[index].correctIndex
+            if (!correctAnswers[index]) {
+                allCorrect = false
+            }
         }
         // Reset the checkedAnswer index for the next question
         _checkedAnswer.value = -1

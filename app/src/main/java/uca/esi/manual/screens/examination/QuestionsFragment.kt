@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import uca.esi.manual.R
 import uca.esi.manual.databinding.QuestionsFragmentBinding
 
@@ -53,6 +54,8 @@ class QuestionsFragment : Fragment() {
         addEventTestBeginObserver()
 
         addEventTestDoneObserver()
+
+        addEventFinishedObserver()
 
         return binding.root
     }
@@ -135,6 +138,18 @@ class QuestionsFragment : Fragment() {
                 binding.buttonNext.text = resources.getString(R.string.boton_finalizar)
                 binding.textoEnunciado.text = resources.getString(R.string.resultado_cuestionario)
                 viewModel.onEventTestDoneComplete()
+            }
+        })
+    }
+
+    private fun addEventFinishedObserver() {
+        viewModel.eventFinished.observe(viewLifecycleOwner, { finished ->
+            if (finished) {
+                NavHostFragment.findNavController(this).navigate(
+                    QuestionsFragmentDirections.actionQuestionsFragmentToEndFragment(
+                        viewModel.allCorrect
+                    )
+                )
             }
         })
     }

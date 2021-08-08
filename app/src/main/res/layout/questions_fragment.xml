@@ -57,6 +57,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView5"
                 app:layout_constraintVertical_bias="0.025" />
 
+
             <LinearLayout
                 android:id="@+id/linearLayoutTipoTest"
                 android:layout_width="wrap_content"
@@ -66,10 +67,10 @@
                 android:padding="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textoEnunciado"
-                app:layout_constraintVertical_bias="0.055">
+                app:layout_constraintVertical_bias="0.022">
 
                 <RadioGroup
                     android:id="@+id/questionsRadioGroup"
@@ -81,7 +82,6 @@
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="4dp" />
             </LinearLayout>
-
 
             <Button
                 android:id="@+id/buttonNext"

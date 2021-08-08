@@ -90,6 +90,7 @@
     <string name="boton_salir">Salir</string>
     <string name="boton_enviar_email">Enviar email</string>
     <string name="boton_finalizar">Finalizar</string>
+    <string name="boton_realizar_encuesta">Realizar encuesta de satisfacción</string>
 
     <string name="selecciona_app">Elige si estás en el laboratorio C13 de la ESI o en otro lugar, y
         seguidamente selecciona la práctica que quieres realizar:</string>
@@ -159,69 +160,13 @@
         se muestran tus respuestas correctas, en verde, y erróneas en rojo:</string>
 
     <string name="texto_final_bien">Enhorabuena, has acertado todas las preguntas. Esperamos que te haya gustado realizar la práctica con nosotros.
-        Si quieres volver a utilizar el manual, pulsa el botón de volver al inicio y podrás realizar la práctica desde cero otra vez.</string>
+        Si quieres, puedes realizar una pequeña encuesta sobre esta aplicación. Para ello, pulsa el botón de Realizar encuesta.\nTambién puedes repetir
+    la práctica o hacer otra distinta pulsando el botón de Volver al inicio.</string>
 
     <string name="texto_final_mal">Has llegado al final de la practica de laboratorio. Has fallado algunas preguntas, así que tienes que esforzarte un poco más.
-        Si quieres volver a utilizar el manual, pulsa el botón de volver al inicio y podrás realizar cualquier práctica desde cero otra vez.</string>
-
-
-    <string-array name="pregunta_torsion0">
-        <item>0</item>
-        <item>¿Para el cálculo teórico de la deformada por torsión, qué valor de los siguiente hay que aplicar?</item>
-        <item>El módulo de la elasticidad transversal(G)</item>
-        <item>El módulo de la elasticidad longitudinal (E)</item>
-        <item>Ninguno de los dos valores es necesario</item>
-        <item>Ambos valores son necesarios</item>
-    </string-array>
-    <string-array name="pregunta_torsion1">
-        <item>2</item>
-        <item>¿Sabrías decir, para la barra sometida sólo a torsión, qué tipo de deformación se produce?</item>
-        <item>Deformación longitudinal en mm</item>
-        <item>Deformación longitudinal en radianes</item>
-        <item>Deformación angular en radianes</item>
-        <item>Deformación angular en mm</item>
-    </string-array>
-    <string-array name="pregunta_torsion2">
-        <item>1</item>
-        <item>¿Cómo se produce la deformación?</item>
-        <item>Alrededor del eje perpendicular de la barra</item>
-        <item>Alrededor del eje longitudinal de la barra</item>
-        <item>Alrededor del plano en el que está contenida la barra</item>
-    </string-array>
-    <string-array name="pregunta_torsion3">
-        <item>1</item>
-        <item>¿Qué distancia hay que tomar para calcular el momento torsor aplicado a la barra?</item>
-        <item>Desde la carga hasta la galga extensiométrica</item>
-        <item>Desde la carga hasta el extremo inicial del brazo de palanca</item>
-        <item>Desde la carga hasta el extremo izquierdo de la barra</item>
-    </string-array>
-
-    <string-array name="pregunta_pandeo0">
-        <item>1</item>
-        <item>La carga crítica de Euler depende del límite elástico del material:</item>
-        <item>Verdadero</item>
-        <item>Falso</item>
-    </string-array>
-    <string-array name="pregunta_pandeo1">
-        <item>1</item>
-        <item>La barra del experimento pandea siempre hacia el mismo lado y no se puede cambiar la
-            dirección de la deformación:</item>
-        <item>Verdadero</item>
-        <item>Falso</item>
-    </string-array>
-    <string-array name="pregunta_pandeo2">
-        <item>0</item>
-        <item>Un elemento sometido a compresión pandeará en el plano que presente menor rigidez a la flexión:</item>
-        <item>Verdadero</item>
-        <item>Falso</item>
-    </string-array>
-    <string-array name="pregunta_pandeo3">
-        <item>0</item>
-        <item>La longitud de pandeo de una viga depende de los apoyos que tenga:</item>
-        <item>Verdadero</item>
-        <item>Falso</item>
-    </string-array>
-
+        Si quieres, puedes realizar una pequeña encuesta sobre esta aplicación. Para ello, pulsa el botón de Realizar encuesta.\nTambién puedes repetir
+    la práctica o hacer otra distinta pulsando el botón de Volver al inicio.</string>
+    
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="zero">0</string>
     <string name="placeholder">placeholder</string>

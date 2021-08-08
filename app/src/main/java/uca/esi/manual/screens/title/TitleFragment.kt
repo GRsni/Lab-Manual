@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
+import timber.log.Timber
 import uca.esi.manual.R
 import uca.esi.manual.databinding.TitleFragmentBinding
 import uca.esi.manual.utils.isDarkThemeOn
