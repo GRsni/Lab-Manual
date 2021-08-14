@@ -296,5 +296,52 @@
             app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/titleFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_endFragment_to_surveyIntroFragment"
+            app:destination="@id/surveyIntroFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyIntroFragment"
+        android:name="uca.esi.manual.screens.survey.intro.SurveyIntroFragment"
+        android:label="survey_intro_fragment"
+        tools:layout="@layout/survey_intro_fragment">
+        <action
+            android:id="@+id/action_surveyIntroFragment_to_dichotomicSurveyFragment"
+            app:destination="@id/dichotomicSurveyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_surveyIntroFragment_to_titleFragment"
+            app:destination="@id/titleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dichotomicSurveyFragment"
+        android:name="uca.esi.manual.screens.survey.dichotomic.DichotomicSurveyFragment"
+        android:label="dichotomic_survey_fragment"
+        tools:layout="@layout/dichotomic_survey_fragment">
+        <argument
+            android:name="survey"
+            app:argType="uca.esi.manual.models.Survey" />
+        <action
+            android:id="@+id/action_dichotomicSurveyFragment_to_titleFragment"
+            app:destination="@id/titleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

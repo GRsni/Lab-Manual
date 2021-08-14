@@ -147,7 +147,7 @@ class QuestionsFragment : Fragment() {
             if (finished) {
                 NavHostFragment.findNavController(this).navigate(
                     QuestionsFragmentDirections.actionQuestionsFragmentToEndFragment(
-                        viewModel.allCorrect
+                        viewModel.correctAnswers.all { b -> b }
                     )
                 )
             }

@@ -13,7 +13,7 @@ import uca.esi.manual.databinding.AboutFragmentBinding
 
 class AboutFragment : DialogFragment() {
 
-    private val recipient: String = "santiago.maspena@alum.uca.es"
+    private val recipient: String = "manual.laboratorio.rme.uca@gmail.com"
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val binding = AboutFragmentBinding.inflate(LayoutInflater.from(context))

@@ -44,6 +44,11 @@ class EndFragment : Fragment() {
             )
         }
 
+        binding.buttonNext.setOnClickListener {
+            NavHostFragment.findNavController(this).navigate(
+                EndFragmentDirections.actionEndFragmentToSurveyIntroFragment()
+            )
+        }
         return binding.root
     }
 }

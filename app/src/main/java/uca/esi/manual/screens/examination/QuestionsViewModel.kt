@@ -17,8 +17,6 @@ class QuestionsViewModel(var lab: BaseLab) : ViewModel() {
 
     var correctAnswers: BooleanArray
 
-    var allCorrect = true
-
     var counter = -1
 
     private val _checkedAnswer = MutableLiveData<Int>()
@@ -89,9 +87,6 @@ class QuestionsViewModel(var lab: BaseLab) : ViewModel() {
         Timber.i("Checked answer $index is: ${_checkedAnswer.value}, correct is ${questionList[index].correctIndex}")
         if (_checkedAnswer.value != null) {
             correctAnswers[index] = _checkedAnswer.value == questionList[index].correctIndex
-            if (!correctAnswers[index]) {
-                allCorrect = false
-            }
         }
         // Reset the checkedAnswer index for the next question
         _checkedAnswer.value = -1

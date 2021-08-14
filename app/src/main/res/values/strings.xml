@@ -7,7 +7,7 @@
 
     <string name="text_acerca_de">Esta aplicación ha sido desarrollada por Santiago J. Mas Peña,
         para uso como manual de laboratorio, para la asignatura de Resistencia de Materiales y Estructuras.
-        Para cualquier duda o consulta, enviar un correo a santiago.maspena@alum.uca.es.</string>
+        Para cualquier duda o consulta, enviar un correo a manual.laboratorio.rme.uca@gmail.com.</string>
 
     <string name="identificador_uca">Identificador UCA</string>
     <string name="clave_uca">Clave</string>
@@ -53,6 +53,7 @@
     <string name="titulo_fin">Final del manual</string>
     <string name="guion">- %1$s</string>
     <string name="datos_correctos">Datos correctos</string>
+    <string name="titulo_encuesta">Encuesta</string>
 
     <string name="error_lectura_firebase">Error a leer la base de datos</string>
     <string name="error_datos_alumno_vacios">Debes introducir el identicador y la clave de acceso</string>
@@ -69,7 +70,7 @@
     <string name="error_materiales_vacios">Tienes que seleccionar los materiales necesarios para la práctica</string>
     <string name="error_valores_vacios">"Tienes que introducir los valores pedidos."</string>
 
-    <string name="boton_inicio">Comenzar</string>
+    <string name="boton_comenzar">Comenzar</string>
     <string name="boton_ajustes">Ajustes</string>
     <string name="boton_acercaDe">Acerca de…</string>
     <string name="boton_continuar">Continuar</string>
@@ -91,6 +92,7 @@
     <string name="boton_enviar_email">Enviar email</string>
     <string name="boton_finalizar">Finalizar</string>
     <string name="boton_realizar_encuesta">Realizar encuesta de satisfacción</string>
+    <string name="boton_comenzar_encuesta">Comenzar encuesta</string>
 
     <string name="selecciona_app">Elige si estás en el laboratorio C13 de la ESI o en otro lugar, y
         seguidamente selecciona la práctica que quieres realizar:</string>
@@ -111,63 +113,99 @@
 
     <string name="manual_torsion_carga">Carga: %1$s N</string>
 
-    <string name="manual_carga_intro2">Elige las pesas necesarias para conseguir esa carga. Recuerda que el soporte es necesario.</string>
+    <string name="manual_carga_intro2">Elige las pesas necesarias para conseguir esa carga. Recuerda
+        que el soporte es necesario.</string>
 
-    <string name="prepara_maquina_torsion_lab">Coloca el marcador TORSION LABORATORIO sobre la máquina tal como se ve en la imagen. </string>
+    <string name="prepara_maquina_torsion_lab">Coloca el marcador TORSION LABORATORIO sobre la máquina
+        tal como se ve en la imagen. </string>
 
-    <string name="prepara_maquina_pandeo_lab">Coloca el marcador PANDEO LABORATORIO  sobre la máquina tal como se ve en la imagen.</string>
+    <string name="prepara_maquina_pandeo_lab">Coloca el marcador PANDEO LABORATORIO  sobre la máquina
+        tal como se ve en la imagen.</string>
 
-    <string name="prepara_maquina_torsion_casa">Coloca el marcador TORSION FUERA sobre una superficie horizontal y bien iluminada.</string>
+    <string name="prepara_maquina_torsion_casa">Coloca el marcador TORSION FUERA sobre una superficie
+        horizontal y bien iluminada.</string>
 
-    <string name="prepara_maquina_pandeo_casa">Coloca el marcador PANDEO FUERA sobre una superficie horizontal y bien iluminada.</string>
+    <string name="prepara_maquina_pandeo_casa">Coloca el marcador PANDEO FUERA sobre una superficie
+        horizontal y bien iluminada.</string>
 
-    <string name="movil_posicion_horizontal">Pon el móvil en posición horizontal y presiona el botón de comenzar.</string>
-    <string name="movil_posicion_vertical">Mantén el móvil en posición vertical y presiona el botón de comenzar</string>
+    <string name="movil_posicion_horizontal">Pon el móvil en posición horizontal y presiona el botón
+        de comenzar.</string>
+    <string name="movil_posicion_vertical">Mantén el móvil en posición vertical y presiona el botón
+        de comenzar</string>
 
-    <string name="intro_calculos_torsion">Ahora te voy a mostrar los datos necesarios para que realices el cálculo del momento de torsión.</string>
+    <string name="intro_calculos_torsion">Ahora te voy a mostrar los datos necesarios para que realices
+        el cálculo del momento de torsión.</string>
 
-    <string name="intro_calculos_pandeo">Ahora te voy a mostrar los datos relevantes al cálculo de la deformación por pandeo. No los vas a necesitar,
+    <string name="intro_calculos_pandeo">Ahora te voy a mostrar los datos relevantes al cálculo de
+        la deformación por pandeo. No los vas a necesitar,
         pero es bueno recordarlos.</string>
 
     <string name="realizar_calculos">Cálculos</string>
 
     <string name="resolver_ecuacion_torsion">Para calcular el Momento Torsor, emplea esta ecuación:</string>
 
-    <string name="introduce_resultado_pandeo">Introduce el valor experimental de desviación por pandeo que hayas registrado:</string>
+    <string name="introduce_resultado_pandeo">Introduce el valor experimental de desviación por pandeo
+        que hayas registrado:</string>
 
     <string name="introduce_resultados">Introduce la solución cuando la tengas calculada:</string>
 
     <string name="datos_experimento">Datos experimentales</string>
 
-    <string name="datos_automaticos">Se han introducido automáticamente los datos que se obtendrían al realizar el experimento en el laboratorio.</string>
+    <string name="datos_automaticos">Se han introducido automáticamente los datos que se obtendrían
+        al realizar el experimento en el laboratorio.</string>
 
     <string name="titulo_mensaje_error_momento_torsion">El momento calculado no es correcto.</string>
 
-    <string name="cuerpo_mensaje_error_momento_torsion">Tu momento resultado está fuera del rango de ± 5%. Puedes modificar tu resultado o continuar con la práctica.</string>
+    <string name="cuerpo_mensaje_error_momento_torsion">Tu momento resultado está fuera del rango de
+        ± 5%. Puedes modificar tu resultado o continuar con la práctica.</string>
 
     <string name="titulo_mensaje_error_ampli_torsion">El valor del amplificador no es correcto.</string>
 
-    <string name="cuerpo_mensaje_error_ampli_torsion">Revisa que el amplificador esté bien conectado al pórtico. Si estás seguro de tu resultado, continua con la práctica.</string>
+    <string name="cuerpo_mensaje_error_ampli_torsion">Revisa que el amplificador esté bien conectado
+        al pórtico. Si estás seguro de tu resultado, continua con la práctica.</string>
 
     <string name="titulo_mensaje_error_carga_pandeo">La carga crítica calculada no es correcta.</string>
 
-    <string name="cuerpo_mensaje_error_carga_pandeo">Tu carga calculada está fuera del rango de ± 5%. Puedes modificar tu resultado o continuar con la práctica.</string>
+    <string name="cuerpo_mensaje_error_carga_pandeo">Tu carga calculada está fuera del rango de ± 5%.
+        Puedes modificar tu resultado o continuar con la práctica.</string>
 
-    <string name="introduccion_cuestionario">Ahora vas a realizar un cuestionario sobre la práctica que acabas de realizar. Serán 4 preguntas de respuesta múltiple, de las que
+    <string name="introduccion_cuestionario">Ahora vas a realizar un cuestionario sobre la práctica
+        que acabas de realizar. Serán 4 preguntas de respuesta múltiple, de las que
     tendrás que elegir una de la posibles respuestas. ¡Suerte!</string>
 
     <string name="resultado_cuestionario">¡Has finalizado el cuestionario! ¿Cómo te ha salido? A continuación
         se muestran tus respuestas correctas, en verde, y erróneas en rojo:</string>
 
-    <string name="texto_final_bien">Enhorabuena, has acertado todas las preguntas. Esperamos que te haya gustado realizar la práctica con nosotros.
-        Si quieres, puedes realizar una pequeña encuesta sobre esta aplicación. Para ello, pulsa el botón de Realizar encuesta.\nTambién puedes repetir
-    la práctica o hacer otra distinta pulsando el botón de Volver al inicio.</string>
+    <string name="texto_final_bien">Enhorabuena, has acertado todas las preguntas. Esperamos que te
+        haya gustado realizar la práctica con nosotros. Si quieres, puedes realizar una pequeña
+        encuesta sobre esta aplicación. Para ello, pulsa el botón de Realizar encuesta.\nTambién
+        puedes repetir la práctica o hacer otra distinta pulsando el botón de Volver al inicio.</string>
 
-    <string name="texto_final_mal">Has llegado al final de la practica de laboratorio. Has fallado algunas preguntas, así que tienes que esforzarte un poco más.
-        Si quieres, puedes realizar una pequeña encuesta sobre esta aplicación. Para ello, pulsa el botón de Realizar encuesta.\nTambién puedes repetir
-    la práctica o hacer otra distinta pulsando el botón de Volver al inicio.</string>
+    <string name="texto_final_mal">Has llegado al final de la practica de laboratorio. Has fallado
+        algunas preguntas, así que tienes que esforzarte un poco más. Si quieres, puedes realizar
+        una pequeña encuesta sobre esta aplicación. Para ello, pulsa el botón de Realizar encuesta.
+        \nTambién puedes repetir la práctica o hacer otra distinta pulsando el botón de Volver al
+        inicio.</string>
+
+    <string name="introduccion_encuesta">El objetivo de esta encuesta es evaluar la calidad de esta
+        aplicación como manual de laboratorio en la Escuela Superior de Ingeniería.\n\nTus respuestas
+    serán utilizadas por el departamento de Ingeniería Mecánica de la ESI para mejorar la calidad del
+    aprendizaje de los alumnos.\n\nLa encuesta dura unos 4 minutos, y tus respuestas serán completamente
+    confidenciales. Por favor, responde honestamente.\n\nPara cualquier duda o consulta, envía un correo
+    electrónico a manual.laboratorio.rme.uca@gmail.com</string>
+
+    <string name="pregunta_gusta_aplicacion">¿Te ha gustado realizar el manual de prácticas mediante
+        una aplicación móvil?</string>
+    
+    <string name="pregunta_aprendizaje">¿Crees que has aprendido más que si hubieras utilizado un 
+        manual en papel?</string>
+
+    <string name="pregunta_usar_fuera">¿Crees que volverás a utilizar la aplicación fuera del
+        laboratorio?</string>
     
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="zero">0</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
     <string name="placeholder">placeholder</string>
 </resources>

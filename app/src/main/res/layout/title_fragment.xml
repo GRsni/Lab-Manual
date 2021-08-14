@@ -33,7 +33,7 @@
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:layout_marginHorizontal="14dp"
-            android:text="@string/boton_inicio"
+            android:text="@string/boton_comenzar"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

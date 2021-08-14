@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="14dp"
                 android:onClick="@{()->questionsViewModel.onButtonPress()}"
-                android:text="@string/boton_inicio"
+                android:text="@string/boton_comenzar"
                 app:layout_constraintBottom_toTopOf="@+id/imageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
