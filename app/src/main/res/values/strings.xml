@@ -54,6 +54,11 @@
     <string name="guion">- %1$s</string>
     <string name="datos_correctos">Datos correctos</string>
     <string name="titulo_encuesta">Encuesta</string>
+    <string name="facilidad_uso">Facilidad de uso</string>
+    <string name="ayuda_aprendizaje">Ayuda al aprendizaje</string>
+    <string name="compresion_preguntas">Facilidad de comprensión</string>
+    <string name="interfaz_usuario">Interfaz de usuario</string>
+    <string name="experiencia_usuario">Experiencia de usuario</string>
 
     <string name="error_lectura_firebase">Error a leer la base de datos</string>
     <string name="error_datos_alumno_vacios">Debes introducir el identicador y la clave de acceso</string>
@@ -68,7 +73,8 @@
     <string name="error_pesas_torsion">Te has equivocado eligiendo las pesas necesarias para tu carga que se te ha asignado</string>
     <string name="error_soporte_pesas_vacio">Tienes que incluir el soporte de las pesas</string>
     <string name="error_materiales_vacios">Tienes que seleccionar los materiales necesarios para la práctica</string>
-    <string name="error_valores_vacios">"Tienes que introducir los valores pedidos."</string>
+    <string name="error_valores_vacios">Tienes que introducir los valores pedidos</string>
+    <string name="error_respuestas_vacias">Debes seleccionar obligatoriamente una opción para cada elemento de la lista</string>
 
     <string name="boton_comenzar">Comenzar</string>
     <string name="boton_ajustes">Ajustes</string>
@@ -196,16 +202,36 @@
 
     <string name="pregunta_gusta_aplicacion">¿Te ha gustado realizar el manual de prácticas mediante
         una aplicación móvil?</string>
-    
+
     <string name="pregunta_aprendizaje">¿Crees que has aprendido más que si hubieras utilizado un 
         manual en papel?</string>
 
     <string name="pregunta_usar_fuera">¿Crees que volverás a utilizar la aplicación fuera del
         laboratorio?</string>
-    
+
+    <string name="introduccion_escala_likert">Por favor, valora estos distintos aspectos de la 
+        aplicación (muy malo a muy bueno).\nPuedes obtener más información sobre cada aspecto pulsando
+        sobre él.</string>
+
+    <string name="explicacion_facilidad_uso">Si te ha sido sencillo utilizar la aplicación y completar 
+        el manual de prácticas.</string>
+
+    <string name="explicacion_ayuda_aprendizaje">Si crees que la aplicación te ha ayudado a entender
+    mejor cómo se desarrolla el experimento, y has aprendido los conceptos explicados.</string>
+
+    <string name="explicacion_comprension_preguntas">Si has sido capaz de comprender qué te pedía la
+    aplicación en todo momento, y no te has tenido dudas con las preguntas.</string>
+
+    <string name="explicacion_interfaz_usuario">Si te ha gustado visualmente el diseño de la aplicación.</string>
+
+    <string name="explicacion_ux_feel">Si te ha parecido que la aplicación funciona correctamente, o
+    si has tenido problemas que te han impedido usarla.</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="zero">0</string>
     <string name="yes">Sí</string>
     <string name="no">No</string>
     <string name="placeholder">placeholder</string>
+    <string name="sad_smiley_face">sad smiley face</string>
+    <string name="netrual_smiley_face">netrual smiley face</string>
 </resources>

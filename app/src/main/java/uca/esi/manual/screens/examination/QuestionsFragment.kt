@@ -69,16 +69,15 @@ class QuestionsFragment : Fragment() {
             binding.questionsRadioGroup.removeAllViews()
         }
 
-        val radioButtonList = mutableListOf<RadioButton>()
         for (i in viewModel.questionList[counter].answers.indices) {
-            radioButtonList.add(RadioButton(activity))
-            radioButtonList[i].text = viewModel.questionList[counter].answers[i]
-            radioButtonList[i].textSize = 14F
-            radioButtonList[i].setOnClickListener {
+            val radioButton = RadioButton(activity)
+            radioButton.text = viewModel.questionList[counter].answers[i]
+            radioButton.textSize = 14F
+            radioButton.setOnClickListener {
                 viewModel.onChangedAnswer(i)
             }
 
-            binding.questionsRadioGroup.addView(radioButtonList[i])
+            binding.questionsRadioGroup.addView(radioButton)
         }
     }
 

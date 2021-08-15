@@ -38,7 +38,7 @@ class DichotomicSurveyFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(DichotomicSurveyViewModel::class.java)
 
-        Timber.d("Survey generated: ${viewModel.survey}")
+        binding.dichotomicViewModel = viewModel
 
         binding.switchLike.setOnCheckedChangeListener { _, b ->
             viewModel.onLikeSwitchClick(b)
@@ -54,6 +54,11 @@ class DichotomicSurveyFragment : Fragment() {
 
         binding.buttonNext.setOnClickListener {
             Timber.d("Survey: ${viewModel.survey}")
+            NavHostFragment.findNavController(this).navigate(
+                DichotomicSurveyFragmentDirections.actionDichotomicSurveyFragmentToLikertSurveyFragment(
+                    viewModel.survey
+                )
+            )
         }
 
         binding.buttonExit.setOnClickListener {

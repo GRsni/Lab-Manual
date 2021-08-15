@@ -2,13 +2,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".screens.survey.dichotomic.DichotomicSurveyFragment">
+    tools:context=".screens.survey.likert.LikertSurveyFragment">
+
 
     <data>
 
         <variable
-            name="dichotomicViewModel"
-            type="uca.esi.manual.screens.survey.dichotomic.DichotomicSurveyViewModel" />
+            name="likertSurveyViewModel"
+            type="uca.esi.manual.screens.survey.likert.LikertSurveyViewModel" />
     </data>
 
     <ScrollView
@@ -19,6 +20,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <TextView
                 android:id="@+id/titulo"
@@ -35,176 +37,234 @@
                 app:layout_constraintVertical_bias="0.023" />
 
             <TextView
-                android:id="@+id/question_like"
+                android:id="@+id/textView16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="14dp"
                 android:background="?attr/textView_background"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="4dp"
-                android:text="@string/pregunta_gusta_aplicacion"
+                android:text="@string/introduccion_escala_likert"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titulo"
-                app:layout_constraintVertical_bias="0.016" />
-
-            <LinearLayout
-                android:id="@+id/linear_like"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="14dp"
-                android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question_like"
-                app:layout_constraintVertical_bias="0.0">
+                app:layout_constraintTop_toBottomOf="@+id/titulo"
+                app:layout_constraintVertical_bias="0.023" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="14dp"
-                    android:paddingHorizontal="8dp"
-                    android:paddingVertical="4dp"
-                    android:text="@string/no"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            <ImageView
+                android:id="@+id/sad_face"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/sad_smiley_face"
+                android:src="@drawable/sad_face"
+                app:layout_constraintBottom_toTopOf="@+id/linear_ease"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.393"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16"
+                app:layout_constraintVertical_bias="1.0" />
 
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/switch_like"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:checked="@{dichotomicViewModel.survey.like}" />
+            <ImageView
+                android:id="@+id/neutral_face"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/netrual_smiley_face"
+                android:src="@drawable/neutral_face"
+                app:layout_constraintBottom_toTopOf="@+id/linear_ease"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.305"
+                app:layout_constraintStart_toEndOf="@+id/sad_face"
+                app:layout_constraintTop_toBottomOf="@+id/textView16"
+                app:layout_constraintVertical_bias="1.0" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="14dp"
-                    android:paddingHorizontal="8dp"
-                    android:paddingVertical="4dp"
-                    android:text="@string/yes"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/happy_face"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/netrual_smiley_face"
+                android:src="@drawable/happy_face"
+                app:layout_constraintBottom_toTopOf="@+id/linear_ease"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.555"
+                app:layout_constraintStart_toEndOf="@+id/neutral_face"
+                app:layout_constraintTop_toBottomOf="@+id/textView16"
+                app:layout_constraintVertical_bias="1.0" />
 
-            <TextView
-                android:id="@+id/question_learn"
+            <LinearLayout
+                android:id="@+id/linear_ease"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="14dp"
-                android:background="?attr/textView_background"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="4dp"
-                android:text="@string/pregunta_gusta_aplicacion"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16"
+                app:layout_constraintVertical_bias="0.102">
+
+                <TextView
+                    android:id="@+id/text_ease"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.35"
+                    android:background="?attr/textView_background"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:text="@string/facilidad_uso"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupEase"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_weight="0.65"
+                    android:orientation="horizontal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.571"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_ease"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/text_help"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.35"
+                    android:background="?attr/textView_background"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:text="@string/ayuda_aprendizaje"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupHelp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_weight="0.65"
+                    android:orientation="horizontal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_undestanding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_help"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/text_understanding"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.35"
+                    android:background="?attr/textView_background"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:text="@string/compresion_preguntas"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupUnderstanding"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_weight="0.65"
+                    android:orientation="horizontal">
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_ui"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.571"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_undestanding"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/text_ui"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.35"
+                    android:background="?attr/textView_background"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:text="@string/interfaz_usuario"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupUI"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_weight="0.65"
+                    android:orientation="horizontal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_ux"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.428"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/linear_like"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <LinearLayout
-                android:id="@+id/linear_learn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="14dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question_learn"
+                app:layout_constraintTop_toBottomOf="@+id/linear_ui"
                 app:layout_constraintVertical_bias="0.0">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/text_ux"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="14dp"
+                    android:layout_weight="0.35"
+                    android:background="?attr/textView_background"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="4dp"
-                    android:text="@string/no"
+                    android:text="@string/experiencia_usuario"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/switch_learn"
-                    android:layout_width="wrap_content"
+                <RadioGroup
+                    android:id="@+id/radioGroupUX"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:checked="@{dichotomicViewModel.survey.learning}" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="14dp"
-                    android:paddingHorizontal="8dp"
-                    android:paddingVertical="4dp"
-                    android:text="@string/yes"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/question_outside"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="14dp"
-                android:background="?attr/textView_background"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="4dp"
-                android:text="@string/pregunta_gusta_aplicacion"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/linear_learn"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <LinearLayout
-                android:id="@+id/linear_outside"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="14dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question_outside"
-                app:layout_constraintVertical_bias="0.0">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="14dp"
-                    android:paddingHorizontal="8dp"
-                    android:paddingVertical="4dp"
-                    android:text="@string/no"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/switch_outside"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:checked="@{dichotomicViewModel.survey.outside}" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="14dp"
-                    android:paddingHorizontal="8dp"
-                    android:paddingVertical="4dp"
-                    android:text="@string/yes"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                    android:layout_weight="0.65"
+                    android:orientation="horizontal" />
             </LinearLayout>
 
             <Button
@@ -214,12 +274,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="14dp"
+                android:onClick="@{()->likertSurveyViewModel.checkAllAnswers()}"
                 android:text="@string/boton_continuar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linear_outside"
+                app:layout_constraintTop_toBottomOf="@+id/linear_ux"
                 app:layout_constraintVertical_bias="0.072" />
 
             <Button
@@ -260,7 +321,5 @@
                 app:layout_constraintGuide_percent="0.5" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
-
 </layout>

@@ -11,6 +11,7 @@ data class Survey(
     var like: Boolean = false,
     var learning: Boolean = false,
     var outside: Boolean = false,
+    var suggestion: String = ""
 ) : Parcelable {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

@@ -14,7 +14,10 @@ class DatabaseHandler : DatabaseHandlerI {
     override fun uploadData(lab: BaseLab) {
         Timber.i("Uploading lab: $lab")
         val path = createLabPath(lab)
-        val key = labsRef.child(lab.userID).child(path).push().key
+        val key = when (lab.userID) {
+            "u99999999" -> "1"
+            else -> labsRef.child(lab.userID).child(path).push().key
+        }
 
         val labUpdate = mapOf((path + key) to lab)
 
