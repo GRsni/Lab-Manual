@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
-import timber.log.Timber
 import uca.esi.manual.R
 import uca.esi.manual.databinding.DichotomicSurveyFragmentBinding
 
@@ -53,7 +52,6 @@ class DichotomicSurveyFragment : Fragment() {
         }
 
         binding.buttonNext.setOnClickListener {
-            Timber.d("Survey: ${viewModel.survey}")
             NavHostFragment.findNavController(this).navigate(
                 DichotomicSurveyFragmentDirections.actionDichotomicSurveyFragmentToLikertSurveyFragment(
                     viewModel.survey
@@ -67,6 +65,11 @@ class DichotomicSurveyFragment : Fragment() {
             )
         }
 
+        binding.buttonBack.setOnClickListener {
+            NavHostFragment.findNavController(this).navigate(
+                DichotomicSurveyFragmentDirections.actionDichotomicSurveyFragmentToSurveyIntroFragment()
+            )
+        }
         return binding.root
     }
 }

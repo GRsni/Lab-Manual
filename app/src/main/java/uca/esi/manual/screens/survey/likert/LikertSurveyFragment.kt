@@ -1,7 +1,7 @@
 package uca.esi.manual.screens.survey.likert
 
 import android.os.Bundle
-import android.view.Gravity.CENTER_VERTICAL
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +26,9 @@ class LikertSurveyFragment : Fragment() {
     private lateinit var viewModelFactory: LikertSurveyViewModelFactory
 
     private lateinit var binding: LikertSurveyFragmentBinding
+    private lateinit var rgList: List<RadioGroup>
+    private var checkedIndexRbMap = mutableMapOf<Int, Int>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,12 +54,14 @@ class LikertSurveyFragment : Fragment() {
         binding.likertSurveyViewModel = viewModel
         binding.lifecycleOwner = this
 
+        rgList = loadRadioGroupsList()
 
         setSmileyIconsWithTheme()
 
         setExplanationAlertDialogs()
 
-        loadRadioGroups()
+        loadRadioButtons()
+        setCheckedRadioButtons()
 
         binding.buttonBack.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(
@@ -164,17 +169,24 @@ class LikertSurveyFragment : Fragment() {
         }
     }
 
-    private fun loadRadioGroups() {
-        val layoutParams = RadioGroup.LayoutParams(
-            0, RadioGroup.LayoutParams.WRAP_CONTENT, 1f
-        )
-        val rgList = listOf(
+    private fun loadRadioGroupsList(): List<RadioGroup> {
+        return listOf(
             binding.radioGroupEase,
             binding.radioGroupHelp,
             binding.radioGroupUnderstanding,
             binding.radioGroupUI,
             binding.radioGroupUX
         )
+    }
+
+    private fun loadRadioButtons() {
+        val layoutParams = RadioGroup.LayoutParams(
+            0, RadioGroup.LayoutParams.WRAP_CONTENT
+        ).apply {
+            weight = 1f
+            gravity = Gravity.CENTER_VERTICAL
+        }
+
         /**
          * For each question in the likert survey, create 5 radio buttons
          * associated to their corresponding radio groups
@@ -182,12 +194,13 @@ class LikertSurveyFragment : Fragment() {
         for (likertIndex in viewModel.survey.likert.indices) {
             for (rbIndex in 1..5) {
                 val rb = RadioButton(activity)
+                rb.id = View.generateViewId()
                 rb.layoutParams = layoutParams
-                rb.gravity = CENTER_VERTICAL
                 setOnclickListener(rb, likertIndex, rbIndex)
+
+                //We save the checked button index to set it after all buttons are created
                 if (viewModel.survey.likert[likertIndex] == rbIndex) {
-                    Timber.d("rb: $rbIndex in radiogroup $likertIndex is checked")
-                    rb.isChecked = true
+                    checkedIndexRbMap[likertIndex] = rb.id
                 }
                 rgList[likertIndex].addView(rb)
             }
@@ -202,8 +215,15 @@ class LikertSurveyFragment : Fragment() {
                 2 -> viewModel.onUnderstandingRadioButtonPress(rbIndex)
                 3 -> viewModel.onUIRadioButtonPress(rbIndex)
                 4 -> viewModel.onUXRadioButtonPress(rbIndex)
-                else -> Timber.e(IllegalArgumentException("Unknown likert index"))
+                else -> Timber.e("Unknown likert index")
             }
         }
     }
+
+    private fun setCheckedRadioButtons() {
+        for (entry in checkedIndexRbMap.entries) {
+            rgList[entry.key].check(entry.value)
+        }
+    }
+
 }

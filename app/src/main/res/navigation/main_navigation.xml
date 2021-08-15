@@ -353,6 +353,10 @@
         <action
             android:id="@+id/action_dichotomicSurveyFragment_to_surveyIntroFragment"
             app:destination="@id/surveyIntroFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/dichotomicSurveyFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -376,6 +380,10 @@
         <action
             android:id="@+id/action_likertSurveyFragment_to_dichotomicSurveyFragment"
             app:destination="@id/dichotomicSurveyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/likertSurveyFragment"
             app:popUpToInclusive="true" />
     </fragment>

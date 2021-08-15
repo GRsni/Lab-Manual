@@ -3,7 +3,6 @@ package uca.esi.manual.screens.survey.likert
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import timber.log.Timber
 import uca.esi.manual.models.Survey
 
 class LikertSurveyViewModel(val survey: Survey) : ViewModel() {
@@ -17,11 +16,6 @@ class LikertSurveyViewModel(val survey: Survey) : ViewModel() {
     private val _eventCorrectData = MutableLiveData<Boolean>()
     val eventCorrectData: LiveData<Boolean>
         get() = _eventCorrectData
-
-    init {
-        survey.likert = IntArray(5) { 0 }
-    }
-
 
     fun onEaseRadioButtonPress(index: Int) {
         survey.likert[0] = index
