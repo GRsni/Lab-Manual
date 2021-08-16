@@ -33,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="14dp"
                 android:background="?attr/textView_background"
+                android:justificationMode="inter_word"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="4dp"
                 android:text="@string/introduccion_encuesta"

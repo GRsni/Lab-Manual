@@ -41,6 +41,8 @@ class LoginViewModel : ViewModel() {
     val eventCorrectData: LiveData<Boolean>
         get() = _eventCorrectData
 
+    var isPasswordMasked = true
+
     init {
         _username.value = ""
         _password.value = ""
@@ -76,6 +78,10 @@ class LoginViewModel : ViewModel() {
                 onEmptyData()
             }
         }
+    }
+
+    fun changePasswordMask() {
+        isPasswordMasked = !isPasswordMasked
     }
 
     private fun keyMatchWithID(id: String, key: String): Boolean {

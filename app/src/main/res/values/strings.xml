@@ -249,4 +249,6 @@
     <string name="placeholder">placeholder</string>
     <string name="sad_smiley_face">sad smiley face</string>
     <string name="netrual_smiley_face">netrual smiley face</string>
+    <string name="eye_icon">eye_icon</string>
+    <string name="one">1</string>
 </resources>

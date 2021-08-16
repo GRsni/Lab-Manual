@@ -1,10 +1,12 @@
 package uca.esi.manual.screens.login
 
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -60,7 +62,41 @@ class LoginFragment : Fragment() {
             }
         }
 
+        binding.buttonShowPass.setOnClickListener {
+            changePasswordVisibility()
+        }
+
         return binding.root
+    }
+
+    private fun changePasswordVisibility() {
+        viewModel.changePasswordMask()
+
+        //Change the password text visibility
+        binding.campoClave.inputType = when (viewModel.isPasswordMasked) {
+            true -> InputType.TYPE_TEXT_VARIATION_PASSWORD or InputType.TYPE_CLASS_TEXT
+            false -> InputType.TYPE_CLASS_TEXT
+        }
+        // Set the cursor back to where the user was typing
+        binding.campoClave.setSelection(binding.campoClave.text.length)
+
+        /**
+         * Change the icon to show according to the setting:
+         * The icon should show the state of the system
+         * In this case, when the password is hidden, the eye is closed
+         * When the password is visible, then the eye is open
+         *
+         * Reference: https://ux.stackexchange.com/questions/1318/should-a-toggle-button-show-its-current-state-or-the-state-to-which-it-will-chan
+         */
+        binding.buttonShowPass.setImageDrawable(
+            AppCompatResources.getDrawable(
+                requireContext(),
+                when (viewModel.isPasswordMasked) {
+                    true -> R.drawable.ic_icon_crossed_eye
+                    false -> R.drawable.ic_icon_eye
+                }
+            )
+        )
     }
 
     private fun addEventCorrectDataObserver() {

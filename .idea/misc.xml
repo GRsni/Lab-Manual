@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Santiago Mas/StudioProjects/Manual_lab/app/src/main/res/drawable/ic_icon_crossed_eye.xml" value="0.4203125" />
+        <entry key="..\:/Users/Santiago Mas/StudioProjects/Manual_lab/app/src/main/res/drawable/ic_icon_eye.xml" value="0.4203125" />
+        <entry key="..\:/Users/Santiago Mas/StudioProjects/Manual_lab/app/src/main/res/layout/login_fragment.xml" value="0.4043772798332465" />
+        <entry key="..\:/Users/Santiago Mas/StudioProjects/Manual_lab/app/src/main/res/layout/materials_pandeo_fragment.xml" value="0.4359375" />
+        <entry key="..\:/Users/Santiago Mas/StudioProjects/Manual_lab/app/src/main/res/layout/materials_torsion_fragment.xml" value="0.4359375" />
+        <entry key="..\:/Users/Santiago Mas/StudioProjects/Manual_lab/app/src/main/res/layout/survey_intro_fragment.xml" value="0.4359375" />
+        <entry key="..\:/Users/Santiago Mas/StudioProjects/Manual_lab/app/src/main/res/layout/weights_fragment.xml" value="0.35" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="true" project-jdk-name="12" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

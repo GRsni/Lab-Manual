@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.text.InputType" />
+
         <variable
             name="loginViewModel"
             type="uca.esi.manual.screens.login.LoginViewModel" />
@@ -17,7 +19,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:context=".ui.login.LoginFragment">
 
             <TextView
@@ -87,7 +89,6 @@
                 android:id="@+id/campoClave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:backgroundTint="@color/accent_light"
                 android:ems="10"
                 android:hint="@string/clave_uca"
@@ -95,10 +96,28 @@
                 android:inputType="textPassword"
                 android:text="@{loginViewModel.password}"
                 android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.059"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:layout_constraintVertical_bias="0.032" />
+
+            <ImageButton
+                android:id="@+id/button_show_pass"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/campoClave"
+                android:background="@null"
+                android:contentDescription="@string/eye_icon"
+                android:src="@drawable/ic_icon_crossed_eye"
+                app:layout_constraintBottom_toBottomOf="@+id/campoClave"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/campoClave"
+                app:layout_constraintTop_toTopOf="@+id/campoClave"
+                app:layout_constraintVertical_bias="0.0" />
 
             <Button
                 android:id="@+id/button_login_id"
