@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -45,6 +46,7 @@ class SuggestionSurveyFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(SuggestionSurveyViewModel::class.java)
 
+        addEventOverflowObserver()
         addEventSendSurveyObserver()
 
         binding.suggestionSurveyViewModel = viewModel
@@ -72,6 +74,18 @@ class SuggestionSurveyFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun addEventOverflowObserver() {
+        viewModel.eventOverflow.observe(viewLifecycleOwner, {
+            if (it) {
+                Toast.makeText(
+                    activity,
+                    R.string.error_demasiados_caracteres,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
     }
 
     private fun addEventSendSurveyObserver() {

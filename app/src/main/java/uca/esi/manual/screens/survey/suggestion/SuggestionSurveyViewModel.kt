@@ -15,12 +15,20 @@ class SuggestionSurveyViewModel(val survey: Survey) : ViewModel() {
     val eventSendSurvey: LiveData<Boolean>
         get() = _eventSendSurvey
 
+    private val _eventOverflow = MutableLiveData<Boolean>()
+    val eventOverflow: LiveData<Boolean>
+        get() = _eventOverflow
+
     fun setSuggestionText(s: Editable) {
         survey.suggestion = s.toString()
     }
 
     fun onButtonFinishPress() {
-        onEventSendSurvey()
+        if (survey.suggestion.length > 300) {
+            onEventOverflow()
+        } else {
+            onEventSendSurvey()
+        }
     }
 
     fun uploadSurvey() {
@@ -33,5 +41,13 @@ class SuggestionSurveyViewModel(val survey: Survey) : ViewModel() {
 
     fun onEventSendSurveyComplete() {
         _eventSendSurvey.value = false
+    }
+
+    private fun onEventOverflow() {
+        _eventOverflow.value = true
+    }
+
+    fun onEventOverflowComplete() {
+        _eventOverflow.value = false
     }
 }

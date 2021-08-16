@@ -75,6 +75,7 @@
     <string name="error_materiales_vacios">Tienes que seleccionar los materiales necesarios para la práctica</string>
     <string name="error_valores_vacios">Tienes que introducir los valores pedidos</string>
     <string name="error_respuestas_vacias">Debes seleccionar obligatoriamente una opción para cada elemento de la lista</string>
+    <string name="error_demasiados_caracteres">Has sobrepasado el número máximo de caracteres permitidos.</string>
 
     <string name="boton_comenzar">Comenzar</string>
     <string name="boton_ajustes">Ajustes</string>
@@ -196,7 +197,8 @@
         inicio.</string>
 
     <string name="texto_final_completo">Gracias por realizar la encuesta, tu opinión es muy importante
-    para mejorar los recursos disponibles para los alumnos de ingeniería. ¡Esperamos volver a verte pronto!</string>
+    para mejorar los recursos disponibles para los alumnos de la Escuela Superior de Ingeniería.
+        ¡Esperamos volver a verte muy pronto!</string>
 
     <string name="introduccion_encuesta">El objetivo de esta encuesta es evaluar la calidad de esta
         aplicación como manual de laboratorio en la Escuela Superior de Ingeniería.\n\nTus respuestas
