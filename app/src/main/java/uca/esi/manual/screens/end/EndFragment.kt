@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import uca.esi.manual.R
+import uca.esi.manual.activities.main.MainActivityViewModel
 import uca.esi.manual.databinding.EndFragmentBinding
 
 class EndFragment : Fragment() {
@@ -17,6 +18,8 @@ class EndFragment : Fragment() {
     private lateinit var viewModelFactory: EndViewModelFactory
 
     private lateinit var binding: EndFragmentBinding
+
+    private lateinit var activityViewModel: MainActivityViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,13 +33,20 @@ class EndFragment : Fragment() {
             false
         )
 
+        activityViewModel =
+            ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
+
+        val args = EndFragmentArgs.fromBundle(requireArguments())
+
         viewModelFactory = EndViewModelFactory(
-            EndFragmentArgs.fromBundle(requireArguments()).allCorrect
+            args.allCorrect, args.surveyDone
         )
 
         viewModel = ViewModelProvider(this, viewModelFactory).get(EndViewModel::class.java)
 
         binding.textoFinal.text = viewModel.introString.resolve(requireContext())
+
+        binding.buttonNext.text = viewModel.buttonNextString.resolve(requireContext())
 
         binding.buttonReturn.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(
@@ -45,9 +55,15 @@ class EndFragment : Fragment() {
         }
 
         binding.buttonNext.setOnClickListener {
-            NavHostFragment.findNavController(this).navigate(
-                EndFragmentDirections.actionEndFragmentToSurveyIntroFragment()
-            )
+            if (activityViewModel.surveyDone) {
+                //Exit the app from button
+                requireActivity().moveTaskToBack(true)
+                requireActivity().finish()
+            } else {
+                NavHostFragment.findNavController(this).navigate(
+                    EndFragmentDirections.actionEndFragmentToSurveyIntroFragment()
+                )
+            }
         }
         return binding.root
     }

@@ -1,4 +1,4 @@
-package uca.esi.manual.screens.examination
+package uca.esi.manual.screens.questionary
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import timber.log.Timber
 import uca.esi.manual.models.Question
 import uca.esi.manual.models.labs.BaseLab
-import uca.esi.manual.screens.examination.repository.QuestionsRepository
-import uca.esi.manual.screens.examination.repository.database.DatabaseHandler
+import uca.esi.manual.screens.questionary.repository.QuestionsRepository
+import uca.esi.manual.database.DatabaseHandler
 
 class QuestionsViewModel(var lab: BaseLab) : ViewModel() {
     private val repository = QuestionsRepository()

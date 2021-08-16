@@ -83,7 +83,12 @@ class LikertSurveyFragment : Fragment() {
     private fun addEventCorrectDataObserver() {
         viewModel.eventCorrectData.observe(viewLifecycleOwner, {
             if (it) {
-                Timber.d("Survey values: ${viewModel.survey.likert.asList()}")
+                Timber.d("Survey values: ${viewModel.survey.likert}")
+                NavHostFragment.findNavController(this).navigate(
+                    LikertSurveyFragmentDirections.actionLikertSurveyFragmentToSuggestionSurveyFragment(
+                        viewModel.survey
+                    )
+                )
                 viewModel.onCorrectDataComplete()
             }
         })

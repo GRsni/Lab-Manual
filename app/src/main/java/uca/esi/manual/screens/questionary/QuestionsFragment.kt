@@ -1,4 +1,4 @@
-package uca.esi.manual.screens.examination
+package uca.esi.manual.screens.questionary
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle

@@ -5,13 +5,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import timber.log.Timber
-import uca.esi.manual.utils.getSHA256HashedString
+import uca.esi.manual.database.DatabaseHandler
 import uca.esi.manual.models.UserListResponse
-import uca.esi.manual.screens.login.repository.UsersRepository
+import uca.esi.manual.utils.getSHA256HashedString
 
 class LoginViewModel : ViewModel() {
 
-    private val repository: UsersRepository = UsersRepository()
+    private val dbHandler = DatabaseHandler()
 
     // The user id typed by the user
     private val _username = MutableLiveData<String>()
@@ -49,7 +49,7 @@ class LoginViewModel : ViewModel() {
 
     private fun readStudentList() {
         Timber.i("Reading students from database")
-        response = repository.getResponseFromDatabase()
+        response = dbHandler.getUserListFromDatabase()
     }
 
     fun setUsername(s: Editable) {

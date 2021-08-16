@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".screens.examination.QuestionsFragment">
+    tools:context=".screens.questionary.QuestionsFragment">
 
     <data>
 
         <variable
             name="questionsViewModel"
-            type="uca.esi.manual.screens.examination.QuestionsViewModel" />
+            type="uca.esi.manual.screens.questionary.QuestionsViewModel" />
     </data>
 
     <ScrollView

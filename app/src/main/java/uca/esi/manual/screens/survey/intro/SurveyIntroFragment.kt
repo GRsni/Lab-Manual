@@ -32,7 +32,7 @@ class SurveyIntroFragment : Fragment() {
             NavHostFragment.findNavController(this).navigate(
                 SurveyIntroFragmentDirections.actionSurveyIntroFragmentToDichotomicSurveyFragment(
                     Survey(
-                        Date(), IntArray(5) { 0 }
+                        Date().toString(), MutableList(5) { 0 }
                     ))
             )
         }

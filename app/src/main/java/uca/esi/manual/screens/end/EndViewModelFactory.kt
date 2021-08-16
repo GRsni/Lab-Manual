@@ -2,14 +2,14 @@ package uca.esi.manual.screens.end
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import java.lang.IllegalArgumentException
 
-class EndViewModelFactory(private var allCorrect: Boolean) : ViewModelProvider.Factory {
+class EndViewModelFactory(private var allCorrect: Boolean, private val surveyDone: Boolean) :
+    ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(EndViewModel::class.java)){
-            return EndViewModel(allCorrect) as T
+        if (modelClass.isAssignableFrom(EndViewModel::class.java)) {
+            return EndViewModel(allCorrect, surveyDone) as T
         }
         throw IllegalArgumentException("Unknown EndViewModel class")
     }

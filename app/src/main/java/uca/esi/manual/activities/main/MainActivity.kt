@@ -8,7 +8,7 @@ import uca.esi.manual.R
 import uca.esi.manual.screens.ar.ARLauncherFragment
 import uca.esi.manual.screens.calcs.data.CalculationsDataFragment
 import uca.esi.manual.screens.chest.ChestFragment
-import uca.esi.manual.screens.examination.QuestionsFragment
+import uca.esi.manual.screens.questionary.QuestionsFragment
 import uca.esi.manual.screens.survey.dichotomic.DichotomicSurveyFragment
 import uca.esi.manual.utils.currentNavigationFragment
 

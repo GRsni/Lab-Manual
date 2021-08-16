@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".screens.end.EndFragment">
+    tools:context=".screens.survey.suggestion.SuggestionSurveyFragment">
 
     <data>
 
         <variable
-            name="endViewModel"
-            type="uca.esi.manual.screens.end.EndViewModel" />
+            name="suggestionSurveyViewModel"
+            type="uca.esi.manual.screens.survey.suggestion.SuggestionSurveyViewModel" />
     </data>
 
     <ScrollView
@@ -22,68 +22,58 @@
 
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:text="@string/titulo_fin"
-                android:textColor="@android:color/black"
+                android:text="@string/titulo_encuesta"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="48sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.022" />
+                app:layout_constraintVertical_bias="0.023" />
 
             <TextView
-                android:id="@+id/textoFinal"
+                android:id="@+id/intro_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="14dp"
                 android:background="?attr/textView_background"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="4dp"
-                android:text="@string/placeholder"
-                android:textAlignment="center"
+                android:text="@string/texto_sugerencia_encuesta"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15"
-                app:layout_constraintVertical_bias="0.033" />
+                app:layout_constraintTop_toBottomOf="@+id/titulo"
+                app:layout_constraintVertical_bias="0.032" />
 
-            <ImageView
-                android:id="@+id/imageView12"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_suggestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="14dp"
-                android:paddingVertical="8dp"
-                android:src="@drawable/personajes"
+                app:counterEnabled="true"
+                app:counterMaxLength="300"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.571"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buttonNext"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/intro_text"
+                app:layout_constraintVertical_bias="0.053">
 
-            <Button
-                android:id="@+id/buttonReturn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="14dp"
-                android:text="@string/boton_vuelta_inicio"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline10"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guideline11"
-                app:layout_constraintVertical_bias="0.028" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_suggestion_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{suggestionSurveyViewModel.survey.suggestion}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <Button
                 android:id="@+id/buttonNext"
@@ -92,13 +82,44 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="14dp"
-                android:text="@string/boton_realizar_encuesta"
+                android:onClick="@{()->suggestionSurveyViewModel.onButtonFinishPress()}"
+                android:text="@string/boton_finalizar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.481"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_input_suggestion"
+                app:layout_constraintVertical_bias="0.072" />
+
+            <Button
+                android:id="@+id/buttonExit"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="14dp"
+                android:text="@string/boton_salir"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonNext"
+                app:layout_constraintVertical_bias="0.089" />
+
+            <Button
+                android:id="@+id/buttonBack"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="14dp"
+                android:text="@string/boton_anterior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/guideline10"
-                app:layout_constraintTop_toTopOf="@+id/guideline11"
-                app:layout_constraintVertical_bias="0.031" />
+                app:layout_constraintTop_toBottomOf="@+id/buttonNext"
+                app:layout_constraintVertical_bias="0.089" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline10"
@@ -107,13 +128,7 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.4" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
 </layout>

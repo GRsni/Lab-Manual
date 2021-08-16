@@ -1,4 +1,4 @@
-package uca.esi.manual.screens.examination.repository
+package uca.esi.manual.screens.questionary.repository
 
 import uca.esi.manual.models.Question
 import uca.esi.manual.models.labs.BaseLab

@@ -99,6 +99,8 @@
     <string name="boton_finalizar">Finalizar</string>
     <string name="boton_realizar_encuesta">Realizar encuesta de satisfacción</string>
     <string name="boton_comenzar_encuesta">Comenzar encuesta</string>
+    <string name="boton_enviar">Enviar</string>
+    <string name="boton_cancelar">Cancelar</string>
 
     <string name="selecciona_app">Elige si estás en el laboratorio C13 de la ESI o en otro lugar, y
         seguidamente selecciona la práctica que quieres realizar:</string>
@@ -193,6 +195,9 @@
         \nTambién puedes repetir la práctica o hacer otra distinta pulsando el botón de Volver al
         inicio.</string>
 
+    <string name="texto_final_completo">Gracias por realizar la encuesta, tu opinión es muy importante
+    para mejorar los recursos disponibles para los alumnos de ingeniería. ¡Esperamos volver a verte pronto!</string>
+
     <string name="introduccion_encuesta">El objetivo de esta encuesta es evaluar la calidad de esta
         aplicación como manual de laboratorio en la Escuela Superior de Ingeniería.\n\nTus respuestas
     serán utilizadas por el departamento de Ingeniería Mecánica de la ESI para mejorar la calidad del
@@ -225,7 +230,15 @@
     <string name="explicacion_interfaz_usuario">Si te ha gustado visualmente el diseño de la aplicación.</string>
 
     <string name="explicacion_ux_feel">Si te ha parecido que la aplicación funciona correctamente, o
-    si has tenido problemas que te han impedido usarla.</string>
+    si has tenido problemas que te han impedido usarla, o pequeños errores.</string>
+
+    <string name="texto_sugerencia_encuesta">Aquí puedes, de manera voluntaria, escribir las posibles
+    sugerencias para mejorar la aplicación, correcciones que creas necesarias o comentarios en general:</string>
+
+    <string name="titulo_confirmar_encuesta">Enviar encuesta</string>
+
+    <string name="cuerpo_confirmar_encuesta">Al pulsar en botón de enviar, se guardarán las respuestas
+        y se dará por finalizada la encuesta. ¿Deseas continuar?</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="zero">0</string>

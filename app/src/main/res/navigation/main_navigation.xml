@@ -265,7 +265,7 @@
     </fragment>
     <fragment
         android:id="@+id/questionsFragment"
-        android:name="uca.esi.manual.screens.examination.QuestionsFragment"
+        android:name="uca.esi.manual.screens.questionary.QuestionsFragment"
         android:label="questions_fragment"
         tools:layout="@layout/questions_fragment">
         <argument
@@ -303,6 +303,10 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
+        <argument
+            android:name="surveyDone"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
     <fragment
         android:id="@+id/surveyIntroFragment"
@@ -386,5 +390,46 @@
             app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/likertSurveyFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_likertSurveyFragment_to_suggestionSurveyFragment"
+            app:destination="@id/suggestionSurveyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/suggestionSurveyFragment"
+        android:name="uca.esi.manual.screens.survey.suggestion.SuggestionSurveyFragment"
+        android:label="suggestion_survey_fragment"
+        tools:layout="@layout/suggestion_survey_fragment">
+        <action
+            android:id="@+id/action_suggestionSurveyFragment_to_likertSurveyFragment"
+            app:destination="@id/likertSurveyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/suggestionSurveyFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_suggestionSurveyFragment_to_titleFragment"
+            app:destination="@id/titleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="survey"
+            app:argType="uca.esi.manual.models.Survey" />
+        <action
+            android:id="@+id/action_suggestionSurveyFragment_to_endFragment"
+            app:destination="@id/endFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
 </navigation>

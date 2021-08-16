@@ -75,8 +75,8 @@ public abstract class BaseLab implements Parcelable {
         }
     }
 
-    public static LabType getTypeFromInt(int tipoInt) {
-        switch (tipoInt) {
+    public static LabType getTypeFromInt(int typeInt) {
+        switch (typeInt) {
             case 1:
                 return LabType.TORSION;
             case 2:

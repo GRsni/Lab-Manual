@@ -80,7 +80,7 @@ class ARLauncherFragment : Fragment() {
 
 
     private fun getBackButtonText(): ViewModelString {
-        return if (activityViewModel.arModule.executed) {
+        return if (activityViewModel.arExecuted) {
             ViewModelString(R.string.boton_continuar)
         } else {
             ViewModelString(R.string.boton_saltar)
@@ -96,7 +96,7 @@ class ARLauncherFragment : Fragment() {
     private fun addEventLaunchObserver() {
         viewModel.eventLaunchAR.observe(viewLifecycleOwner, { launch ->
             if (launch) {
-                activityViewModel.arModule.executed = true
+                activityViewModel.arExecuted = true
                 viewModel.onLaunchARComplete()
                 binding.buttonExit.text = getBackButtonText().resolve(requireContext())
                 launchARActivity(viewModel.lab)
