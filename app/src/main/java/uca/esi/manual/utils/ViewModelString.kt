@@ -3,6 +3,16 @@ package uca.esi.manual.utils
 import android.content.Context
 import androidx.annotation.StringRes
 
+/**
+ * Class ViewModelString
+ *
+ * Allows injecting parametrized strings from the ViewModel
+ * into the Fragment
+ *
+ * @author Anonymous
+ * @Link https://stackoverflow.com/questions/57760742/mvvm-injecting-activity-string-resource-reader
+ */
+
 class ViewModelString private constructor(
     private val string: String?,
     @StringRes private val stringResId: Int = 0,
