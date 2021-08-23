@@ -18,6 +18,11 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.utils.ViewModelString
 import uca.esi.manual.utils.printLabIfDebug
 
+/**
+ * A r launcher fragment
+ *
+ * @constructor Create empty A r launcher fragment
+ */
 class ARLauncherFragment : Fragment() {
 
     private lateinit var viewModel: ARLauncherViewModel
@@ -27,6 +32,14 @@ class ARLauncherFragment : Fragment() {
 
     private lateinit var activityViewModel: MainActivityViewModel
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -79,6 +92,11 @@ class ARLauncherFragment : Fragment() {
     }
 
 
+    /**
+     * Get back button text
+     *
+     * @return
+     */
     private fun getBackButtonText(): ViewModelString {
         return if (activityViewModel.arExecuted) {
             ViewModelString(R.string.boton_continuar)
@@ -87,12 +105,23 @@ class ARLauncherFragment : Fragment() {
         }
     }
 
+    /**
+     * Get full text
+     *
+     * @param machineText
+     * @param positionText
+     * @return
+     */
     private fun getFullText(machineText: ViewModelString, positionText: ViewModelString): String {
         return machineText.resolve(requireContext()) + " " +
                 positionText.resolve(requireContext())
     }
 
 
+    /**
+     * Add event launch observer
+     *
+     */
     private fun addEventLaunchObserver() {
         viewModel.eventLaunchAR.observe(viewLifecycleOwner, { launch ->
             if (launch) {
@@ -104,6 +133,11 @@ class ARLauncherFragment : Fragment() {
         })
     }
 
+    /**
+     * Launch a r activity
+     *
+     * @param lab
+     */
     private fun launchARActivity(lab: BaseLab) {
         val i = Intent(activity, UnityPlayerActivity::class.java)
         i.putExtra("data", lab.data)

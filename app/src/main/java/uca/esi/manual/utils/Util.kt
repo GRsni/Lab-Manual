@@ -18,6 +18,12 @@ import java.nio.charset.StandardCharsets
 import kotlin.math.abs
 
 
+/**
+ * Get s h a256hashed string
+ *
+ * @param plain
+ * @return
+ */
 @NotNull
 fun getSHA256HashedString(plain: String): String {
     return Hashing.sha256().hashString(plain, StandardCharsets.UTF_8).toString()
@@ -26,23 +32,46 @@ fun getSHA256HashedString(plain: String): String {
 val FragmentManager.currentNavigationFragment: Fragment?
     get() = primaryNavigationFragment?.childFragmentManager?.fragments?.first()
 
+/**
+ * Print lab
+ *
+ * @param lab
+ */
 fun printLab(lab: BaseLab) = when (lab) {
     is PandeoLab -> Timber.i(lab.toString())
     is TorsionLab -> Timber.i(lab.toString())
     else -> Timber.i(lab.toString())
 }
 
+/**
+ * Print lab if debug
+ *
+ * @param lab
+ */
 fun printLabIfDebug(lab: BaseLab) {
     if (BuildConfig.DEBUG) {
         printLab(lab)
     }
 }
 
+/**
+ * Is dark theme on
+ *
+ * @return
+ */
 fun Context.isDarkThemeOn(): Boolean {
     return resources.configuration.uiMode and
             Configuration.UI_MODE_NIGHT_MASK == UI_MODE_NIGHT_YES
 }
 
+/**
+ * Value not in threshold
+ *
+ * @param theoretical
+ * @param experimental
+ * @param thresholdPercent
+ * @return
+ */
 fun valueNotInThreshold(
     theoretical: Float,
     experimental: Float,
@@ -52,6 +81,13 @@ fun valueNotInThreshold(
 }
 
 
+/**
+ * Show error dialog
+ *
+ * @param activity
+ * @param titleId
+ * @param messageId
+ */
 fun showErrorDialog(activity: Context, titleId: Int, messageId: Int) {
     AlertDialog.Builder(activity)
         .setTitle(titleId)

@@ -7,6 +7,14 @@ import uca.esi.manual.models.ARResourceIds
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.utils.ViewModelString
 
+/**
+ * A r launcher view model
+ *
+ * @property lab
+ * @constructor
+ *
+ * @param arResourceIds
+ */
 class ARLauncherViewModel(
     var lab: BaseLab,
     arResourceIds: ARResourceIds
@@ -28,10 +36,18 @@ class ARLauncherViewModel(
         qrImageId = arResourceIds.imageId
     }
 
+    /**
+     * On launch a r
+     *
+     */
     fun onLaunchAR() {
         _eventLaunchAR.value = true
     }
 
+    /**
+     * On launch a r complete
+     *
+     */
     fun onLaunchARComplete() {
         _eventLaunchAR.value = false
     }

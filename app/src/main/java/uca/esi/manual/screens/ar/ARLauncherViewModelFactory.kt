@@ -8,10 +8,23 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.PandeoLab
 import uca.esi.manual.models.labs.TorsionLab
 
+/**
+ * A r launcher view model factory
+ *
+ * @property lab
+ * @constructor Create empty A r launcher view model factory
+ */
 class ARLauncherViewModelFactory(
     private val lab: BaseLab
 ) : ViewModelProvider.Factory {
 
+    /**
+     * Create
+     *
+     * @param T
+     * @param modelClass
+     * @return
+     */
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ARLauncherViewModel::class.java)) {
@@ -20,6 +33,12 @@ class ARLauncherViewModelFactory(
         throw IllegalArgumentException("Unknown ARLauncherViewModel class")
     }
 
+    /**
+     * Get resource ids
+     *
+     * @param lab
+     * @return
+     */
     private fun getResourceIds(lab: BaseLab): ARResourceIds {
         return when (lab) {
             is PandeoLab -> {

@@ -11,6 +11,11 @@ import androidx.navigation.fragment.NavHostFragment
 import uca.esi.manual.R
 import uca.esi.manual.databinding.DichotomicSurveyFragmentBinding
 
+/**
+ * Dichotomic survey fragment
+ *
+ * @constructor Create empty Dichotomic survey fragment
+ */
 class DichotomicSurveyFragment : Fragment() {
 
     private lateinit var viewModel: DichotomicSurveyViewModel
@@ -19,6 +24,14 @@ class DichotomicSurveyFragment : Fragment() {
 
     private lateinit var binding: DichotomicSurveyFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

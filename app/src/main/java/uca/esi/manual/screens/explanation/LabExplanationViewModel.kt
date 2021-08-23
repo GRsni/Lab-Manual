@@ -8,6 +8,15 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.LabFactory
 import uca.esi.manual.utils.ViewModelString
 
+/**
+ * Lab explanation view model
+ *
+ * @property userId
+ * @constructor
+ *
+ * @param inLab
+ * @param labType
+ */
 class LabExplanationViewModel(var userId: String, inLab: Boolean, labType: Int) : ViewModel() {
 
     var lab: BaseLab
@@ -25,6 +34,12 @@ class LabExplanationViewModel(var userId: String, inLab: Boolean, labType: Int) 
         introText = getIntroText(labType)
     }
 
+    /**
+     * Get intro text
+     *
+     * @param labType
+     * @return
+     */
     private fun getIntroText(labType: Int): ViewModelString {
         return ViewModelString(
             R.string.manual_introduccion,
@@ -32,10 +47,18 @@ class LabExplanationViewModel(var userId: String, inLab: Boolean, labType: Int) 
         )
     }
 
+    /**
+     * On button press
+     *
+     */
     fun onButtonPress() {
         _eventButtonPress.value = true
     }
 
+    /**
+     * On button press complete
+     *
+     */
     fun onButtonPressComplete() {
         _eventButtonPress.value = false
     }

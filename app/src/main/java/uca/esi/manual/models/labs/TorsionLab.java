@@ -9,8 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * The type Torsion lab.
+ */
 public class TorsionLab extends BaseLab {
 
+    /**
+     * The constant CREATOR.
+     */
     public static final Creator<BaseLab> CREATOR = new Creator<BaseLab>() {
 
         @Override
@@ -33,11 +39,21 @@ public class TorsionLab extends BaseLab {
     private float ampliTeo = 0;
     private float ampliExp = 0;
 
+    /**
+     * Instantiates a new Torsion lab.
+     *
+     * @param userId the user id
+     */
     public TorsionLab(String userId) {
         super(userId, LabType.TORSION);
         setData();
     }
 
+    /**
+     * Instantiates a new Torsion lab.
+     *
+     * @param in the in
+     */
     public TorsionLab(Parcel in) {
         super(in);
         String[] data = in.createStringArray();
@@ -78,30 +94,65 @@ public class TorsionLab extends BaseLab {
         return String.valueOf(weights);
     }
 
+    /**
+     * Gets weights.
+     *
+     * @return the weights
+     */
     public int getWeights() {
         return weights;
     }
 
+    /**
+     * Sets weights.
+     *
+     * @param weights the weights
+     */
     public void setWeights(int weights) {
         this.weights = weights;
     }
 
+    /**
+     * Gets err weights.
+     *
+     * @return the err weights
+     */
     public int getErrWeights() {
         return errWeights;
     }
 
+    /**
+     * Sets err weights.
+     *
+     * @param errWeights the err weights
+     */
     public void setErrWeights(int errWeights) {
         this.errWeights = errWeights;
     }
 
+    /**
+     * Gets ampli teo.
+     *
+     * @return the ampli teo
+     */
     public float getAmpliTeo() {
         return ampliTeo;
     }
 
+    /**
+     * Gets ampli exp.
+     *
+     * @return the ampli exp
+     */
     public float getAmpliExp() {
         return ampliExp;
     }
 
+    /**
+     * Sets ampli exp.
+     *
+     * @param ampliExp the ampli exp
+     */
     public void setAmpliExp(float ampliExp) {
         this.ampliExp = ampliExp;
     }

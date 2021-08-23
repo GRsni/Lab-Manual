@@ -9,6 +9,12 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.screens.questionary.repository.QuestionsRepository
 import uca.esi.manual.database.DatabaseHandler
 
+/**
+ * Questions view model
+ *
+ * @property lab
+ * @constructor Create empty Questions view model
+ */
 class QuestionsViewModel(var lab: BaseLab) : ViewModel() {
     private val repository = QuestionsRepository()
     private val dbHandler = DatabaseHandler()
@@ -43,10 +49,19 @@ class QuestionsViewModel(var lab: BaseLab) : ViewModel() {
         correctAnswers = BooleanArray(questionList.size) { false }
     }
 
+    /**
+     * On changed answer
+     *
+     * @param index
+     */
     fun onChangedAnswer(index: Int) {
         _checkedAnswer.value = index
     }
 
+    /**
+     * On button press
+     *
+     */
     fun onButtonPress() {
         /**
          * Counter starts at -1, showing the introduction text
@@ -83,6 +98,11 @@ class QuestionsViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
+    /**
+     * Check answer
+     *
+     * @param index
+     */
     private fun checkAnswer(index: Int) {
         Timber.i("Checked answer $index is: ${_checkedAnswer.value}, correct is ${questionList[index].correctIndex}")
         if (_checkedAnswer.value != null) {
@@ -92,6 +112,10 @@ class QuestionsViewModel(var lab: BaseLab) : ViewModel() {
         _checkedAnswer.value = -1
     }
 
+    /**
+     * Save answers
+     *
+     */
     private fun saveAnswers() {
         lab.isQ1 = correctAnswers[0]
         lab.isQ2 = correctAnswers[1]
@@ -99,34 +123,66 @@ class QuestionsViewModel(var lab: BaseLab) : ViewModel() {
         lab.isQ4 = correctAnswers[3]
     }
 
+    /**
+     * On event test begin
+     *
+     */
     private fun onEventTestBegin() {
         _eventTestBegin.value = true
     }
 
+    /**
+     * On event test begin complete
+     *
+     */
     fun onEventTestBeginComplete() {
         _eventTestBegin.value = false
     }
 
+    /**
+     * On event next question
+     *
+     */
     private fun onEventNextQuestion() {
         _eventNextQuestion.value = true
     }
 
+    /**
+     * On event next question complete
+     *
+     */
     fun onEventNextQuestionComplete() {
         _eventNextQuestion.value = false
     }
 
+    /**
+     * On event test done
+     *
+     */
     private fun onEventTestDone() {
         _eventTestDone.value = true
     }
 
+    /**
+     * On event test done complete
+     *
+     */
     fun onEventTestDoneComplete() {
         _eventTestDone.value = false
     }
 
+    /**
+     * On event finished
+     *
+     */
     private fun onEventFinished() {
         _eventFinished.value = true
     }
 
+    /**
+     * On event finished complete
+     *
+     */
     fun onEventFinishedComplete() {
         _eventFinished.value = false
     }

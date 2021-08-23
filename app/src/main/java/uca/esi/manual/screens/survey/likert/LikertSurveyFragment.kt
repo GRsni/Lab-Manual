@@ -19,6 +19,11 @@ import uca.esi.manual.databinding.LikertSurveyFragmentBinding
 import uca.esi.manual.utils.isDarkThemeOn
 import uca.esi.manual.utils.showErrorDialog
 
+/**
+ * Likert survey fragment
+ *
+ * @constructor Create empty Likert survey fragment
+ */
 class LikertSurveyFragment : Fragment() {
 
     private lateinit var viewModel: LikertSurveyViewModel
@@ -30,6 +35,14 @@ class LikertSurveyFragment : Fragment() {
     private var checkedIndexRbMap = mutableMapOf<Int, Int>()
 
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -80,6 +93,10 @@ class LikertSurveyFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Add event correct data observer
+     *
+     */
     private fun addEventCorrectDataObserver() {
         viewModel.eventCorrectData.observe(viewLifecycleOwner, {
             if (it) {
@@ -94,6 +111,10 @@ class LikertSurveyFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event empty data observer
+     *
+     */
     private fun addEventEmptyDataObserver() {
         viewModel.eventEmptyData.observe(viewLifecycleOwner, {
             if (it) {
@@ -104,6 +125,10 @@ class LikertSurveyFragment : Fragment() {
         })
     }
 
+    /**
+     * Set smiley icons with theme
+     *
+     */
     private fun setSmileyIconsWithTheme() {
         binding.sadFace.setImageDrawable(
             AppCompatResources.getDrawable(
@@ -136,6 +161,10 @@ class LikertSurveyFragment : Fragment() {
         )
     }
 
+    /**
+     * Set explanation alert dialogs
+     *
+     */
     private fun setExplanationAlertDialogs() {
         binding.textEase.setOnClickListener {
             showErrorDialog(
@@ -174,6 +203,11 @@ class LikertSurveyFragment : Fragment() {
         }
     }
 
+    /**
+     * Load radio groups list
+     *
+     * @return
+     */
     private fun loadRadioGroupsList(): List<RadioGroup> {
         return listOf(
             binding.radioGroupEase,
@@ -184,6 +218,10 @@ class LikertSurveyFragment : Fragment() {
         )
     }
 
+    /**
+     * Load radio buttons
+     *
+     */
     private fun loadRadioButtons() {
         val layoutParams = RadioGroup.LayoutParams(
             0, RadioGroup.LayoutParams.WRAP_CONTENT
@@ -212,6 +250,13 @@ class LikertSurveyFragment : Fragment() {
         }
     }
 
+    /**
+     * Set onclick listener
+     *
+     * @param rb
+     * @param likertIndex
+     * @param rbIndex
+     */
     private fun setOnclickListener(rb: RadioButton, likertIndex: Int, rbIndex: Int) {
         rb.setOnClickListener {
             when (likertIndex) {
@@ -225,6 +270,10 @@ class LikertSurveyFragment : Fragment() {
         }
     }
 
+    /**
+     * Set checked radio buttons
+     *
+     */
     private fun setCheckedRadioButtons() {
         for (entry in checkedIndexRbMap.entries) {
             rgList[entry.key].check(entry.value)

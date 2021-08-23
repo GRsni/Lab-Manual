@@ -14,6 +14,11 @@ import uca.esi.manual.databinding.CalculationsDataFragmentBinding
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.utils.printLabIfDebug
 
+/**
+ * Calculations data fragment
+ *
+ * @constructor Create empty Calculations data fragment
+ */
 class CalculationsDataFragment : Fragment() {
 
     private lateinit var viewModel: CalculationsDataViewModel
@@ -22,6 +27,14 @@ class CalculationsDataFragment : Fragment() {
 
     private lateinit var binding: CalculationsDataFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,6 +65,10 @@ class CalculationsDataFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Launch calculations
+     *
+     */
     private fun launchCalculations() {
         when (viewModel.lab.labType) {
             BaseLab.LabType.PANDEO -> {

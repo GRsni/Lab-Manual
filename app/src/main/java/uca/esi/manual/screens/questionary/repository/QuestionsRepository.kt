@@ -3,6 +3,11 @@ package uca.esi.manual.screens.questionary.repository
 import uca.esi.manual.models.Question
 import uca.esi.manual.models.labs.BaseLab
 
+/**
+ * Questions repository
+ *
+ * @constructor Create empty Questions repository
+ */
 class QuestionsRepository {
     private val torsionQuestions =
         listOf(
@@ -66,6 +71,12 @@ class QuestionsRepository {
         )
     )
 
+    /**
+     * Get question list
+     *
+     * @param labType
+     * @return
+     */
     fun getQuestionList(labType: BaseLab.LabType): List<Question> {
         return when (labType) {
             BaseLab.LabType.TORSION -> torsionQuestions

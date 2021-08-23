@@ -9,6 +9,11 @@ import uca.esi.manual.database.DatabaseHandler
 import uca.esi.manual.models.UserListResponse
 import uca.esi.manual.utils.getSHA256HashedString
 
+/**
+ * Login view model
+ *
+ * @constructor Create empty Login view model
+ */
 class LoginViewModel : ViewModel() {
 
     private val dbHandler = DatabaseHandler()
@@ -49,19 +54,37 @@ class LoginViewModel : ViewModel() {
         readStudentList()
     }
 
+    /**
+     * Read student list
+     *
+     */
     private fun readStudentList() {
         Timber.i("Reading students from database")
         response = dbHandler.getUserListFromDatabase()
     }
 
+    /**
+     * Set username
+     *
+     * @param s
+     */
     fun setUsername(s: Editable) {
         _username.value = s.toString()
     }
 
+    /**
+     * Set password
+     *
+     * @param s
+     */
     fun setPassword(s: Editable) {
         _password.value = s.toString()
     }
 
+    /**
+     * Check identifier
+     *
+     */
     fun checkIdentifier() {
         if (response.value?.users != null) {
             if (!username.value.isNullOrEmpty() && !password.value.isNullOrEmpty()) {
@@ -80,36 +103,71 @@ class LoginViewModel : ViewModel() {
         }
     }
 
+    /**
+     * Change password mask
+     *
+     */
     fun changePasswordMask() {
         isPasswordMasked = !isPasswordMasked
     }
 
+    /**
+     * Key match with i d
+     *
+     * @param id
+     * @param key
+     * @return
+     */
     private fun keyMatchWithID(id: String, key: String): Boolean {
         val hashKey = getSHA256HashedString(key)
         val keyInMap = response.value?.users?.get(id)
         return hashKey == keyInMap
     }
 
+    /**
+     * On empty data
+     *
+     */
     private fun onEmptyData() {
         _eventEmptyData.value = true
     }
 
+    /**
+     * On empty data complete
+     *
+     */
     fun onEmptyDataComplete() {
         _eventEmptyData.value = false
     }
 
+    /**
+     * On wrong data
+     *
+     */
     private fun onWrongData() {
         _eventWrongData.value = true
     }
 
+    /**
+     * On wrong data complete
+     *
+     */
     fun onWrongDataComplete() {
         _eventWrongData.value = false
     }
 
+    /**
+     * On correct data
+     *
+     */
     private fun onCorrectData() {
         _eventCorrectData.value = true
     }
 
+    /**
+     * On correct data complete
+     *
+     */
     fun onCorrectDataComplete() {
         _eventCorrectData.value = false
     }

@@ -15,6 +15,11 @@ import uca.esi.manual.R
 import uca.esi.manual.databinding.CalculationsPandeoFragmentBinding
 import uca.esi.manual.utils.showErrorDialog
 
+/**
+ * Calculations pandeo fragment
+ *
+ * @constructor Create empty Calculations pandeo fragment
+ */
 class CalculationsPandeoFragment : Fragment() {
 
     private lateinit var viewModel: CalculationsPandeoViewModel
@@ -22,6 +27,14 @@ class CalculationsPandeoFragment : Fragment() {
 
     private lateinit var binding: CalculationsPandeoFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -67,6 +80,10 @@ class CalculationsPandeoFragment : Fragment() {
     }
 
 
+    /**
+     * Add event correct data observer
+     *
+     */
     private fun addEventCorrectDataObserver() {
         viewModel.eventCorrectData.observe(viewLifecycleOwner, { dataIsCorrect ->
             if (dataIsCorrect) {
@@ -80,6 +97,10 @@ class CalculationsPandeoFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event wrong data observer
+     *
+     */
     private fun addEventWrongDataObserver() {
         viewModel.eventWrongData.observe(viewLifecycleOwner, { dataIsWrong ->
             if (dataIsWrong) {
@@ -93,6 +114,10 @@ class CalculationsPandeoFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event empty data observer
+     *
+     */
     private fun addEventEmptyDataObserver() {
         viewModel.eventEmptyData.observe(viewLifecycleOwner, { dataIsEmpty ->
             if (dataIsEmpty) {
@@ -106,6 +131,10 @@ class CalculationsPandeoFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event autocomplete data observer
+     *
+     */
     private fun addEventAutocompleteDataObserver() {
         viewModel.eventAutocompleteData.observe(viewLifecycleOwner, { dataAutocompleted ->
             if (dataAutocompleted) {

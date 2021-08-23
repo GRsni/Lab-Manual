@@ -12,10 +12,23 @@ import uca.esi.manual.databinding.SurveyIntroFragmentBinding
 import uca.esi.manual.models.Survey
 import java.util.*
 
+/**
+ * Survey intro fragment
+ *
+ * @constructor Create empty Survey intro fragment
+ */
 class SurveyIntroFragment : Fragment() {
 
     private lateinit var binding: SurveyIntroFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

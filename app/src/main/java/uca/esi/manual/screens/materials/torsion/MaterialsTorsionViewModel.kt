@@ -7,6 +7,12 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.TorsionLab
 import uca.esi.manual.screens.materials.MaterialsI
 
+/**
+ * Materials torsion view model
+ *
+ * @property lab
+ * @constructor Create empty Materials torsion view model
+ */
 class MaterialsTorsionViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
 
     // Event variable for empty user data handler
@@ -32,6 +38,10 @@ class MaterialsTorsionViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         _eventWrongData.value = false
     }
 
+    /**
+     * Check materials
+     *
+     */
     override fun checkMaterials() {
         if (checkCheckboxesAreCorrect()) {
             onCorrectData()
@@ -43,36 +53,70 @@ class MaterialsTorsionViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         }
     }
 
+    /**
+     * Check checkboxes are correct
+     *
+     * @return
+     */
     private fun checkCheckboxesAreCorrect(): Boolean {
         return !checkboxes[0] && checkboxes[1] && !checkboxes[2] && checkboxes[3]
                 && !checkboxes[4] && !checkboxes[5] && checkboxes[6] && checkboxes[7]
     }
 
+    /**
+     * On check box clicked
+     *
+     * @param id
+     * @param value
+     */
     fun onCheckBoxClicked(id: Int, value: Boolean) {
         checkboxes[id] = value
     }
 
-    //------------------Event handlers ------------------------
+    /**
+     * On empty data
+     *
+     *///------------------Event handlers ------------------------
     private fun onEmptyData() {
         _eventEmptyData.value = true
     }
 
+    /**
+     * On empty data complete
+     *
+     */
     fun onEmptyDataComplete() {
         _eventEmptyData.value = false
     }
 
+    /**
+     * On wrong data
+     *
+     */
     private fun onWrongData() {
         _eventWrongData.value = true
     }
 
+    /**
+     * On wrong data complete
+     *
+     */
     fun onWrongDataComplete() {
         _eventWrongData.value = false
     }
 
+    /**
+     * On correct data
+     *
+     */
     private fun onCorrectData() {
         _eventCorrectData.value = true
     }
 
+    /**
+     * On correct data complete
+     *
+     */
     fun onCorrectDataComplete() {
         _eventCorrectData.value = false
     }

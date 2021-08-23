@@ -7,6 +7,12 @@ import androidx.lifecycle.ViewModel
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.utils.valueNotInThreshold
 
+/**
+ * Calculations pandeo view model
+ *
+ * @property lab
+ * @constructor Create empty Calculations pandeo view model
+ */
 class CalculationsPandeoViewModel(var lab: BaseLab) : ViewModel() {
     private val _valueLoad = MutableLiveData<String>()
     val valueLoad: LiveData<String>
@@ -41,6 +47,12 @@ class CalculationsPandeoViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
+    /**
+     * Get default load value
+     *
+     * @param lab
+     * @return
+     */
     private fun getDefaultLoadValue(lab: BaseLab): String {
         return if (lab.isInLab) {
             ""
@@ -49,6 +61,10 @@ class CalculationsPandeoViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
+    /**
+     * Check value
+     *
+     */
     fun checkValue() {
         if (!_valueLoad.value.isNullOrEmpty()) {
             if (valueNotInThreshold(
@@ -69,6 +85,11 @@ class CalculationsPandeoViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
+    /**
+     * Set load value
+     *
+     * @param s
+     */
     fun setLoadValue(s: Editable) {
         if (s.toString().isNotEmpty()) {
             _valueLoad.value = s.toString()
@@ -77,35 +98,66 @@ class CalculationsPandeoViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
-    //------------------Event handlers ------------------------
+    /**
+     * On empty data
+     *
+     *///------------------Event handlers ------------------------
     private fun onEmptyData() {
         _eventEmptyData.value = true
     }
 
+    /**
+     * On empty data complete
+     *
+     */
     fun onEmptyDataComplete() {
         _eventEmptyData.value = false
     }
 
+    /**
+     * On wrong data
+     *
+     */
     private fun onWrongData() {
         _eventWrongData.value = true
     }
 
+    /**
+     * On wrong data complete
+     *
+     */
     fun onWrongDataComplete() {
         _eventWrongData.value = false
     }
 
+    /**
+     * On correct data
+     *
+     */
     private fun onCorrectData() {
         _eventCorrectData.value = true
     }
 
+    /**
+     * On correct data complete
+     *
+     */
     fun onCorrectDataComplete() {
         _eventCorrectData.value = false
     }
 
+    /**
+     * On autocomplete data
+     *
+     */
     private fun onAutocompleteData() {
         _eventAutocompletedData.value = true
     }
 
+    /**
+     * On autocomplete data complete
+     *
+     */
     fun onAutocompleteDataComplete() {
         _eventAutocompletedData.value = false
     }

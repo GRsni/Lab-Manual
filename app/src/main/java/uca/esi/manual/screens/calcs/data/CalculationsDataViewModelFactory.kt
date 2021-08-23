@@ -8,10 +8,23 @@ import uca.esi.manual.models.labs.PandeoLab
 import uca.esi.manual.models.labs.TorsionLab
 import uca.esi.manual.utils.ViewModelString
 
+/**
+ * Calculations data view model factory
+ *
+ * @property lab
+ * @constructor Create empty Calculations data view model factory
+ */
 class CalculationsDataViewModelFactory(
     private val lab: BaseLab
 ) : ViewModelProvider.Factory {
 
+    /**
+     * Create
+     *
+     * @param T
+     * @param modelClass
+     * @return
+     */
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CalculationsDataViewModel::class.java)) {

@@ -6,6 +6,13 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.screens.calcs.data.repository.CalcDataRepository
 import uca.esi.manual.utils.ViewModelString
 
+/**
+ * Calculations data view model
+ *
+ * @property lab
+ * @property introText
+ * @constructor Create empty Calculations data view model
+ */
 class CalculationsDataViewModel(
     var lab: BaseLab,
     var introText: ViewModelString,

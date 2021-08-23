@@ -18,6 +18,11 @@ import uca.esi.manual.R
 import uca.esi.manual.databinding.QuestionsFragmentBinding
 
 
+/**
+ * Questions fragment
+ *
+ * @constructor Create empty Questions fragment
+ */
 class QuestionsFragment : Fragment() {
 
     private lateinit var viewModel: QuestionsViewModel
@@ -25,6 +30,14 @@ class QuestionsFragment : Fragment() {
 
     private lateinit var binding: QuestionsFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -61,6 +74,11 @@ class QuestionsFragment : Fragment() {
     }
 
 
+    /**
+     * Load questions linear layout
+     *
+     * @param counter
+     */
     private fun loadQuestionsLinearLayout(counter: Int) {
         binding.textoEnunciado.text = viewModel.questionList[counter].title
 
@@ -81,6 +99,10 @@ class QuestionsFragment : Fragment() {
         }
     }
 
+    /**
+     * Show answers
+     *
+     */
     private fun showAnswers() {
         val layoutParams = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT
@@ -100,6 +122,11 @@ class QuestionsFragment : Fragment() {
         }
     }
 
+    /**
+     * Get background
+     *
+     * @return
+     */
     private fun getBackground(): Drawable {
         val typedValue = TypedValue()
 
@@ -109,6 +136,10 @@ class QuestionsFragment : Fragment() {
         return ContextCompat.getDrawable(requireContext(), typedValue.resourceId)!!
     }
 
+    /**
+     * Add event next question observer
+     *
+     */
     private fun addEventNextQuestionObserver() {
         viewModel.eventNextQuestion.observe(viewLifecycleOwner, { nextQuestion ->
             if (nextQuestion) {
@@ -118,6 +149,10 @@ class QuestionsFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event test begin observer
+     *
+     */
     private fun addEventTestBeginObserver() {
         viewModel.eventTestBegin.observe(viewLifecycleOwner, { testBegin ->
             if (testBegin) {
@@ -129,6 +164,10 @@ class QuestionsFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event test done observer
+     *
+     */
     private fun addEventTestDoneObserver() {
         viewModel.eventTestDone.observe(viewLifecycleOwner, { testDone ->
             if (testDone) {
@@ -141,6 +180,10 @@ class QuestionsFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event finished observer
+     *
+     */
     private fun addEventFinishedObserver() {
         viewModel.eventFinished.observe(viewLifecycleOwner, { finished ->
             if (finished) {

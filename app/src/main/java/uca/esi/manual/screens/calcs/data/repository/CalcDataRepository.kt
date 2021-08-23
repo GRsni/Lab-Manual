@@ -6,6 +6,11 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.PandeoLab
 import uca.esi.manual.models.labs.TorsionLab
 
+/**
+ * Calc data repository
+ *
+ * @constructor Create empty Calc data repository
+ */
 class CalcDataRepository {
 
     private val torsionData =
@@ -30,6 +35,12 @@ class CalcDataRepository {
     private val errorString = "Error cargando los datos para la práctica"
 
 
+    /**
+     * Get calc data string
+     *
+     * @param lab
+     * @return
+     */
     fun getCalcDataString(lab: BaseLab): Spanned {
         return when (lab) {
             is TorsionLab -> HtmlCompat.fromHtml(

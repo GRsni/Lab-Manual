@@ -12,10 +12,20 @@ import uca.esi.manual.screens.questionary.QuestionsFragment
 import uca.esi.manual.screens.survey.dichotomic.DichotomicSurveyFragment
 import uca.esi.manual.utils.currentNavigationFragment
 
+/**
+ * Main activity
+ *
+ * @constructor Create empty Main activity
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainActivityViewModel
 
+    /**
+     * On create
+     *
+     * @param savedInstanceState
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -24,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
     }
 
+    /**
+     * On back pressed
+     *
+     */
     override fun onBackPressed() {
         when (val fragment = supportFragmentManager.currentNavigationFragment) {
             is ChestFragment,

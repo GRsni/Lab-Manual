@@ -17,6 +17,11 @@ import uca.esi.manual.databinding.CalculationsTorsionFragmentBinding
 import uca.esi.manual.screens.calcs.data.CalculationsDataFragmentArgs
 import uca.esi.manual.utils.showErrorDialog
 
+/**
+ * Calculations torsion fragment
+ *
+ * @constructor Create empty Calculations torsion fragment
+ */
 class CalculationsTorsionFragment : Fragment() {
 
     private lateinit var viewModel: CalculationsTorsionViewModel
@@ -25,6 +30,14 @@ class CalculationsTorsionFragment : Fragment() {
 
     private lateinit var binding: CalculationsTorsionFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -80,6 +93,10 @@ class CalculationsTorsionFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Add event correct data observer
+     *
+     */
     private fun addEventCorrectDataObserver() {
         viewModel.eventCorrectData.observe(viewLifecycleOwner, { dataIsCorrect ->
             if (dataIsCorrect) {
@@ -93,6 +110,10 @@ class CalculationsTorsionFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event wrong ampli data observer
+     *
+     */
     private fun addEventWrongAmpliDataObserver() {
         viewModel.eventWrongAmpliData.observe(viewLifecycleOwner, { dataIsWrong ->
             if (dataIsWrong) {
@@ -106,6 +127,10 @@ class CalculationsTorsionFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event wrong moment data observer
+     *
+     */
     private fun addEventWrongMomentDataObserver() {
         viewModel.eventWrongMomentData.observe(viewLifecycleOwner, { dataIsWrong ->
             if (dataIsWrong) {
@@ -119,6 +144,10 @@ class CalculationsTorsionFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event empty data observer
+     *
+     */
     private fun addEventEmptyDataObserver() {
         viewModel.eventEmptyData.observe(viewLifecycleOwner, { dataIsEmpty ->
             if (dataIsEmpty) {
@@ -132,6 +161,10 @@ class CalculationsTorsionFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event autocomplete data observer
+     *
+     */
     private fun addEventAutocompleteDataObserver() {
         viewModel.eventAutocompleteData.observe(viewLifecycleOwner, { dataAutocompleted ->
             if (dataAutocompleted) {

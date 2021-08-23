@@ -11,8 +11,14 @@ import java.util.Random;
 
 import uca.esi.manual.models.Constants;
 
+/**
+ * The type Pandeo lab.
+ */
 public class PandeoLab extends BaseLab {
 
+    /**
+     * The constant CREATOR.
+     */
     public static final Parcelable.Creator<BaseLab> CREATOR = new Parcelable.Creator<BaseLab>() {
 
         @Override
@@ -26,6 +32,9 @@ public class PandeoLab extends BaseLab {
         }
     };
 
+    /**
+     * The constant FIXTURES_LIST.
+     */
     public static final String[] FIXTURES_LIST = {"AA", "AE", "EE"};
     private static final float[] BARS = {Constants.BAR_500_VALUE, Constants.BAR_1000_VALUE};
     private static final float[] LOADS = {883.7f, 1803f, 3535f, 220.9f, 450.8f, 883.7f};
@@ -34,11 +43,21 @@ public class PandeoLab extends BaseLab {
     private String fixtures = "";
     private int errFixtures = 0;
 
+    /**
+     * Instantiates a new Pandeo lab.
+     *
+     * @param userId the user id
+     */
     public PandeoLab(String userId) {
         super(userId, LabType.PANDEO);
         setData();
     }
 
+    /**
+     * Instantiates a new Pandeo lab.
+     *
+     * @param in the in
+     */
     public PandeoLab(Parcel in) {
         super(in);
         String[] data = in.createStringArray();
@@ -80,34 +99,74 @@ public class PandeoLab extends BaseLab {
         return fixtures + ":" + bar;
     }
 
+    /**
+     * Gets bar.
+     *
+     * @return the bar
+     */
     public float getBar() {
         return bar;
     }
 
+    /**
+     * Sets bar.
+     *
+     * @param bar the bar
+     */
     public void setBar(float bar) {
         this.bar = bar;
     }
 
+    /**
+     * Gets err bar.
+     *
+     * @return the err bar
+     */
     public int getErrBar() {
         return errBar;
     }
 
+    /**
+     * Sets err bar.
+     *
+     * @param errBar the err bar
+     */
     public void setErrBar(int errBar) {
         this.errBar = errBar;
     }
 
+    /**
+     * Gets fixtures.
+     *
+     * @return the fixtures
+     */
     public String getFixtures() {
         return fixtures;
     }
 
+    /**
+     * Sets fixtures.
+     *
+     * @param fixtures the fixtures
+     */
     public void setFixtures(String fixtures) {
         this.fixtures = fixtures;
     }
 
+    /**
+     * Gets err fixtures.
+     *
+     * @return the err fixtures
+     */
     public int getErrFixtures() {
         return errFixtures;
     }
 
+    /**
+     * Sets err fixtures.
+     *
+     * @param errFixtures the err fixtures
+     */
     public void setErrFixtures(int errFixtures) {
         this.errFixtures = errFixtures;
     }

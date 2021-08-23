@@ -18,12 +18,25 @@ import uca.esi.manual.R
 import uca.esi.manual.databinding.LoginFragmentBinding
 import uca.esi.manual.models.UserListResponse
 
+/**
+ * Login fragment
+ *
+ * @constructor Create empty Login fragment
+ */
 class LoginFragment : Fragment() {
 
     private lateinit var viewModel: LoginViewModel
 
     private lateinit var binding: LoginFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -69,6 +82,10 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Change password visibility
+     *
+     */
     private fun changePasswordVisibility() {
         viewModel.changePasswordMask()
 
@@ -99,6 +116,10 @@ class LoginFragment : Fragment() {
         )
     }
 
+    /**
+     * Add event correct data observer
+     *
+     */
     private fun addEventCorrectDataObserver() {
         viewModel.eventCorrectData.observe(viewLifecycleOwner, { dataIsCorrect ->
             if (dataIsCorrect) {
@@ -108,6 +129,10 @@ class LoginFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event wrong data observer
+     *
+     */
     private fun addEventWrongDataObserver() {
         viewModel.eventWrongData.observe(viewLifecycleOwner, { dataIsWrong ->
             if (dataIsWrong) {
@@ -121,6 +146,10 @@ class LoginFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event empty data observer
+     *
+     */
     private fun addEventEmptyDataObserver() {
         viewModel.eventEmptyData.observe(viewLifecycleOwner, { dataIsEmpty ->
             if (dataIsEmpty) {
@@ -134,6 +163,10 @@ class LoginFragment : Fragment() {
         })
     }
 
+    /**
+     * Add database response observer
+     *
+     */
     private fun addDatabaseResponseObserver() {
         viewModel.response.observe(viewLifecycleOwner, {
             if (it.exception != null) {
@@ -152,6 +185,10 @@ class LoginFragment : Fragment() {
     }
 
 
+    /**
+     * Login with i d
+     *
+     */
     private fun loginWithID() {
         NavHostFragment.findNavController(this).navigate(
             LoginFragmentDirections.actionLoginFragmentToLabSelectionFragment(
@@ -161,6 +198,10 @@ class LoginFragment : Fragment() {
         viewModel.onCorrectDataComplete()
     }
 
+    /**
+     * Login anon
+     *
+     */
     private fun loginAnon() {
         NavHostFragment.findNavController(this).navigate(
             LoginFragmentDirections.actionLoginFragmentToLabSelectionFragment("u99999999")
@@ -168,6 +209,11 @@ class LoginFragment : Fragment() {
         viewModel.onCorrectDataComplete()
     }
 
+    /**
+     * Print
+     *
+     * @param response
+     */
     private fun print(response: UserListResponse) {
         response.users?.let { users ->
             users.forEach { (user, key) ->

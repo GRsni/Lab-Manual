@@ -15,6 +15,11 @@ import uca.esi.manual.R
 import uca.esi.manual.activities.main.MainActivityViewModel
 import uca.esi.manual.databinding.SuggestionSurveyFragmentBinding
 
+/**
+ * Suggestion survey fragment
+ *
+ * @constructor Create empty Suggestion survey fragment
+ */
 class SuggestionSurveyFragment : Fragment() {
 
     private lateinit var viewModel: SuggestionSurveyViewModel
@@ -25,6 +30,14 @@ class SuggestionSurveyFragment : Fragment() {
 
     private lateinit var activityViewModel: MainActivityViewModel
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -76,6 +89,10 @@ class SuggestionSurveyFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Add event overflow observer
+     *
+     */
     private fun addEventOverflowObserver() {
         viewModel.eventOverflow.observe(viewLifecycleOwner, {
             if (it) {
@@ -88,6 +105,10 @@ class SuggestionSurveyFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event send survey observer
+     *
+     */
     private fun addEventSendSurveyObserver() {
         viewModel.eventSendSurvey.observe(viewLifecycleOwner, {
             if (it) {

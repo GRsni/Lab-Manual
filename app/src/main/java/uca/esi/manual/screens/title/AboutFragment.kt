@@ -11,10 +11,21 @@ import androidx.fragment.app.DialogFragment
 import uca.esi.manual.R
 import uca.esi.manual.databinding.AboutFragmentBinding
 
+/**
+ * About fragment
+ *
+ * @constructor Create empty About fragment
+ */
 class AboutFragment : DialogFragment() {
 
     private val recipient: String = "manual.laboratorio.rme.uca@gmail.com"
 
+    /**
+     * On create dialog
+     *
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val binding = AboutFragmentBinding.inflate(LayoutInflater.from(context))
         return AlertDialog.Builder(requireActivity())
@@ -30,6 +41,10 @@ class AboutFragment : DialogFragment() {
             .create()
     }
 
+    /**
+     * Send email intent
+     *
+     */
     private fun sendEmailIntent() {
         val mIntent = Intent(ACTION_SEND)
         mIntent.data = Uri.parse("mailto:")

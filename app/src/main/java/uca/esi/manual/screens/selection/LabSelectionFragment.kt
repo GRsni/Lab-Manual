@@ -16,6 +16,11 @@ import uca.esi.manual.R
 import uca.esi.manual.databinding.LabSelectionFragmentBinding
 import uca.esi.manual.models.Constants
 
+/**
+ * Lab selection fragment
+ *
+ * @constructor Create empty Lab selection fragment
+ */
 class LabSelectionFragment : Fragment() {
 
     private lateinit var viewModel: LabSelectionViewModel
@@ -23,6 +28,14 @@ class LabSelectionFragment : Fragment() {
 
     private lateinit var binding: LabSelectionFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -62,6 +75,10 @@ class LabSelectionFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Add event empty data observer
+     *
+     */
     private fun addEventEmptyDataObserver() {
         viewModel.eventEmptyData.observe(viewLifecycleOwner, { dataIsEmpty ->
             if (dataIsEmpty) {
@@ -75,6 +92,10 @@ class LabSelectionFragment : Fragment() {
         })
     }
 
+    /**
+     * Add torsion press observer
+     *
+     */
     private fun addTorsionPressObserver() {
         viewModel.eventTorsionPress.observe(viewLifecycleOwner, { torsionPressed ->
             if (torsionPressed) {
@@ -84,6 +105,10 @@ class LabSelectionFragment : Fragment() {
         })
     }
 
+    /**
+     * Add pandeo press observer
+     *
+     */
     private fun addPandeoPressObserver() {
         viewModel.eventPandeoPress.observe(viewLifecycleOwner, { pandeoPressed ->
             if (pandeoPressed) {
@@ -93,6 +118,10 @@ class LabSelectionFragment : Fragment() {
         })
     }
 
+    /**
+     * Add traccion press observer
+     *
+     */
     private fun addTraccionPressObserver() {
         viewModel.eventTraccionPress.observe(viewLifecycleOwner, { traccionPressed ->
             if (traccionPressed) {
@@ -105,6 +134,10 @@ class LabSelectionFragment : Fragment() {
         })
     }
 
+    /**
+     * Add flexion press observer
+     *
+     */
     private fun addFlexionPressObserver() {
         viewModel.eventFlexionPress.observe(viewLifecycleOwner, { flexionPressed ->
             if (flexionPressed) {
@@ -117,6 +150,11 @@ class LabSelectionFragment : Fragment() {
         })
     }
 
+    /**
+     * Launch lab
+     *
+     * @param labType
+     */
     private fun launchLab(labType: Int) {
         if (viewModel.checkPlaceSelectedNotEmpty()) {
             Timber.i("Inlab: ${viewModel.inLab.value}")

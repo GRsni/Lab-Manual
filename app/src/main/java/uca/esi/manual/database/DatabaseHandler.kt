@@ -9,6 +9,11 @@ import uca.esi.manual.models.Survey
 import uca.esi.manual.models.UserListResponse
 import uca.esi.manual.models.labs.BaseLab
 
+/**
+ * Database handler
+ *
+ * @constructor Create empty Database handler
+ */
 class DatabaseHandler : DatabaseHandlerI {
 
     private val rootRef: DatabaseReference = FirebaseDatabase.getInstance().reference
@@ -16,6 +21,11 @@ class DatabaseHandler : DatabaseHandlerI {
     private val labsRef: DatabaseReference = rootRef.child("Users")
     private val surveysRef: DatabaseReference = rootRef.child("Surveys")
 
+    /**
+     * Get user list from database
+     *
+     * @return
+     */
     @Suppress("UNCHECKED_CAST")
     override fun getUserListFromDatabase(): MutableLiveData<UserListResponse> {
         Timber.i("loading users")
@@ -34,6 +44,11 @@ class DatabaseHandler : DatabaseHandlerI {
     }
 
 
+    /**
+     * Upload data
+     *
+     * @param lab
+     */
     override fun uploadData(lab: BaseLab) {
         Timber.i("Uploading lab: $lab")
         val path = createLabPath(lab)
@@ -52,6 +67,12 @@ class DatabaseHandler : DatabaseHandlerI {
         }
     }
 
+    /**
+     * Create lab path
+     *
+     * @param lab
+     * @return
+     */
     private fun createLabPath(lab: BaseLab): String {
         return "/" + lab.userID + "/practicas/" +
                 when (lab.labType) {
@@ -61,6 +82,11 @@ class DatabaseHandler : DatabaseHandlerI {
                 }
     }
 
+    /**
+     * Upload data
+     *
+     * @param survey
+     */
     override fun uploadData(survey: Survey) {
         Timber.i("Uploading survey: $survey")
         val key = surveysRef.push().key

@@ -12,6 +12,11 @@ import uca.esi.manual.R
 import uca.esi.manual.databinding.LabExplanationFragmentBinding
 import uca.esi.manual.utils.printLabIfDebug
 
+/**
+ * Lab explanation fragment
+ *
+ * @constructor Create empty Lab explanation fragment
+ */
 class LabExplanationFragment : Fragment() {
 
     private lateinit var viewModel: LabExplanationViewModel
@@ -19,6 +24,14 @@ class LabExplanationFragment : Fragment() {
 
     private lateinit var binding: LabExplanationFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -58,6 +71,10 @@ class LabExplanationFragment : Fragment() {
     }
 
 
+    /**
+     * Launch chest
+     *
+     */
     private fun launchChest() {
         NavHostFragment.findNavController(this).navigate(
             LabExplanationFragmentDirections.actionLabExplanationFragmentToChestFragment(

@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * The type Base lab.
+ */
 public abstract class BaseLab implements Parcelable {
     private String userID;               //0
     private LabType labType;             //1
@@ -23,9 +26,17 @@ public abstract class BaseLab implements Parcelable {
     private boolean q3 = false;          //10
     private boolean q4 = false;          //11
 
+    /**
+     * Instantiates a new Base lab.
+     */
     protected BaseLab() {
     }
 
+    /**
+     * Instantiates a new Base lab.
+     *
+     * @param in the in
+     */
     protected BaseLab(Parcel in) {
         String[] data = in.createStringArray();
         if (data != null) {
@@ -45,6 +56,12 @@ public abstract class BaseLab implements Parcelable {
 
     }
 
+    /**
+     * Instantiates a new Base lab.
+     *
+     * @param userId the user id
+     * @param type   the type
+     */
     protected BaseLab(String userId, LabType type) {
         this.userID = userId;
         this.labType = type;
@@ -60,6 +77,12 @@ public abstract class BaseLab implements Parcelable {
         this.q4 = false;
     }
 
+    /**
+     * Gets int from type.
+     *
+     * @param type the type
+     * @return the int from type
+     */
     public static int getIntFromType(LabType type) {
         switch (type) {
             case TORSION:
@@ -75,6 +98,12 @@ public abstract class BaseLab implements Parcelable {
         }
     }
 
+    /**
+     * Gets type from int.
+     *
+     * @param typeInt the type int
+     * @return the type from int
+     */
     public static LabType getTypeFromInt(int typeInt) {
         switch (typeInt) {
             case 1:
@@ -90,6 +119,11 @@ public abstract class BaseLab implements Parcelable {
         }
     }
 
+    /**
+     * To string list list.
+     *
+     * @return the list
+     */
     public List<String> toStringList() {
         List<String> data = new ArrayList<>();
 
@@ -119,100 +153,223 @@ public abstract class BaseLab implements Parcelable {
         dest.writeStringArray(this.toStringList().toArray(new String[0]));
     }
 
+    /**
+     * Gets user id.
+     *
+     * @return the user id
+     */
     public String getUserID() {
         return userID;
     }
 
+    /**
+     * Gets lab type.
+     *
+     * @return the lab type
+     */
     public LabType getLabType() {
         return labType;
     }
 
+    /**
+     * Sets lab type.
+     *
+     * @param type the type
+     */
     public void setLabType(LabType type) {
         this.labType = type;
     }
 
+    /**
+     * Gets date.
+     *
+     * @return the date
+     */
     public String getDate() {
         return date;
     }
 
+    /**
+     * Sets date.
+     *
+     * @param date the date
+     */
     public void setDate(String date) {
         this.date = date;
     }
 
+    /**
+     * Is manual boolean.
+     *
+     * @return the boolean
+     */
     public boolean isManual() {
         return manual;
     }
 
+    /**
+     * Sets manual.
+     *
+     * @param manual the manual
+     */
     public void setManual(boolean manual) {
         this.manual = manual;
     }
 
+    /**
+     * Is in lab boolean.
+     *
+     * @return the boolean
+     */
     public boolean isInLab() {
         return inLab;
     }
 
+    /**
+     * Sets in lab.
+     *
+     * @param inLab the in lab
+     */
     public void setInLab(boolean inLab) {
         this.inLab = inLab;
     }
 
+    /**
+     * Gets val teo.
+     *
+     * @return the val teo
+     */
     public float getValTeo() {
         return valTeo;
     }
 
+    /**
+     * Sets val teo.
+     *
+     * @param valTeo the val teo
+     */
     protected void setValTeo(float valTeo) {
         this.valTeo = valTeo;
     }
 
+    /**
+     * Gets val exp.
+     *
+     * @return the val exp
+     */
     public float getValExp() {
         return valExp;
     }
 
+    /**
+     * Sets val exp.
+     *
+     * @param valExp the val exp
+     */
     public void setValExp(float valExp) {
         this.valExp = valExp;
     }
 
+    /**
+     * Gets err val.
+     *
+     * @return the err val
+     */
     public int getErrVal() {
         return errVal;
     }
 
+    /**
+     * Sets err val.
+     *
+     * @param errVal the err val
+     */
     public void setErrVal(int errVal) {
         this.errVal = errVal;
     }
 
+    /**
+     * Is q 1 boolean.
+     *
+     * @return the boolean
+     */
     public boolean isQ1() {
         return q1;
     }
 
+    /**
+     * Sets q 1.
+     *
+     * @param q1 the q 1
+     */
     public void setQ1(boolean q1) {
         this.q1 = q1;
     }
 
+    /**
+     * Is q 2 boolean.
+     *
+     * @return the boolean
+     */
     public boolean isQ2() {
         return q2;
     }
 
+    /**
+     * Sets q 2.
+     *
+     * @param q2 the q 2
+     */
     public void setQ2(boolean q2) {
         this.q2 = q2;
     }
 
+    /**
+     * Is q 3 boolean.
+     *
+     * @return the boolean
+     */
     public boolean isQ3() {
         return q3;
     }
 
+    /**
+     * Sets q 3.
+     *
+     * @param q3 the q 3
+     */
     public void setQ3(boolean q3) {
         this.q3 = q3;
     }
 
+    /**
+     * Is q 4 boolean.
+     *
+     * @return the boolean
+     */
     public boolean isQ4() {
         return q4;
     }
 
+    /**
+     * Sets q 4.
+     *
+     * @param q4 the q 4
+     */
     public void setQ4(boolean q4) {
         this.q4 = q4;
     }
 
+    /**
+     * Sets data.
+     */
     protected abstract void setData();
 
+    /**
+     * Gets data.
+     *
+     * @return the data
+     */
     public abstract String getData();
 
     @Override
@@ -233,11 +390,29 @@ public abstract class BaseLab implements Parcelable {
                 '}';
     }
 
+    /**
+     * The enum Lab type.
+     */
     public enum LabType {
+        /**
+         * Torsion lab type.
+         */
         TORSION,
+        /**
+         * Pandeo lab type.
+         */
         PANDEO,
+        /**
+         * Flexion lab type.
+         */
         FLEXION,
+        /**
+         * Traccion lab type.
+         */
         TRACCION,
+        /**
+         * Invalid lab type.
+         */
         INVALID;
 
         @Override

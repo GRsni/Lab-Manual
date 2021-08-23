@@ -8,6 +8,12 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.TorsionLab
 import uca.esi.manual.utils.valueNotInThreshold
 
+/**
+ * Calculations torsion view model
+ *
+ * @property lab
+ * @constructor Create empty Calculations torsion view model
+ */
 class CalculationsTorsionViewModel(var lab: BaseLab) : ViewModel() {
 
     private val _valueAmpli = MutableLiveData<String>()
@@ -55,6 +61,12 @@ class CalculationsTorsionViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
+    /**
+     * Get default moment value
+     *
+     * @param lab
+     * @return
+     */
     private fun getDefaultMomentValue(lab: BaseLab): String {
         return if (lab.isInLab) {
             ""
@@ -63,6 +75,12 @@ class CalculationsTorsionViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
+    /**
+     * Get default ampli value
+     *
+     * @param lab
+     * @return
+     */
     private fun getDefaultAmpliValue(lab: BaseLab): String {
         return if (lab.isInLab) {
             ""
@@ -71,6 +89,10 @@ class CalculationsTorsionViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
+    /**
+     * Check values
+     *
+     */
     fun checkValues() {
         val torsionLab = lab as TorsionLab
         if (!_valueMoment.value.isNullOrEmpty() && !_valueAmpli.value.isNullOrEmpty()) {
@@ -104,6 +126,11 @@ class CalculationsTorsionViewModel(var lab: BaseLab) : ViewModel() {
     }
 
 
+    /**
+     * Set ampli value
+     *
+     * @param s
+     */
     fun setAmpliValue(s: Editable) {
         if (s.toString().isNotEmpty()) {
             _valueAmpli.value = s.toString()
@@ -112,6 +139,11 @@ class CalculationsTorsionViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
+    /**
+     * Set moment value
+     *
+     * @param s
+     */
     fun setMomentValue(s: Editable) {
         if (s.toString().isNotEmpty()) {
             _valueMoment.value = s.toString()
@@ -120,43 +152,82 @@ class CalculationsTorsionViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
-    //------------------Event handlers ------------------------
+    /**
+     * On empty data
+     *
+     *///------------------Event handlers ------------------------
     private fun onEmptyData() {
         _eventEmptyData.value = true
     }
 
+    /**
+     * On empty data complete
+     *
+     */
     fun onEmptyDataComplete() {
         _eventEmptyData.value = false
     }
 
+    /**
+     * On wrong ampli data
+     *
+     */
     private fun onWrongAmpliData() {
         _eventWrongAmpliData.value = true
     }
 
+    /**
+     * On wrong ampli data complete
+     *
+     */
     fun onWrongAmpliDataComplete() {
         _eventWrongAmpliData.value = false
     }
 
+    /**
+     * On wrong moment data
+     *
+     */
     private fun onWrongMomentData() {
         _eventWrongMomentData.value = true
     }
 
+    /**
+     * On wrong moment data complete
+     *
+     */
     fun onWrongMomentDataComplete() {
         _eventWrongMomentData.value = false
     }
 
+    /**
+     * On correct data
+     *
+     */
     private fun onCorrectData() {
         _eventCorrectData.value = true
     }
 
+    /**
+     * On correct data complete
+     *
+     */
     fun onCorrectDataComplete() {
         _eventCorrectData.value = false
     }
 
+    /**
+     * On autocomplete data
+     *
+     */
     private fun onAutocompleteData() {
         _eventAutocompletedData.value = true
     }
 
+    /**
+     * On autocomplete data complete
+     *
+     */
     fun onAutocompleteDataComplete() {
         _eventAutocompletedData.value = false
     }

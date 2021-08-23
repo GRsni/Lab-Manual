@@ -14,6 +14,11 @@ import uca.esi.manual.R
 import uca.esi.manual.databinding.WeightsFragmentBinding
 import uca.esi.manual.models.labs.TorsionLab
 
+/**
+ * Weights fragment
+ *
+ * @constructor Create empty Weights fragment
+ */
 class WeightsFragment : Fragment() {
 
     private lateinit var viewModel: WeightsViewModel
@@ -22,6 +27,14 @@ class WeightsFragment : Fragment() {
 
     private lateinit var binding: WeightsFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -87,11 +100,20 @@ class WeightsFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Set load text
+     *
+     * @return
+     */
     private fun setLoadText(): String {
         val baseString = viewModel.loadText.resolve(requireContext())
         return String.format(baseString, (viewModel.lab as TorsionLab).weights)
     }
 
+    /**
+     * Add event correct data observer
+     *
+     */
     private fun addEventCorrectDataObserver() {
         viewModel.eventCorrectData.observe(viewLifecycleOwner, { dataIsCorrect ->
             if (dataIsCorrect) {
@@ -105,6 +127,10 @@ class WeightsFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event wrong data observer
+     *
+     */
     private fun addEventWrongDataObserver() {
         viewModel.eventWrongData.observe(viewLifecycleOwner, { dataIsWrong ->
             if (dataIsWrong) {
@@ -118,6 +144,10 @@ class WeightsFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event empty data observer
+     *
+     */
     private fun addEventEmptyDataObserver() {
         viewModel.eventEmptyData.observe(viewLifecycleOwner, { dataIsEmpty ->
             if (dataIsEmpty) {

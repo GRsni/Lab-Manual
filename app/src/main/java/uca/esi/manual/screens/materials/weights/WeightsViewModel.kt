@@ -10,6 +10,12 @@ import uca.esi.manual.models.labs.TorsionLab
 import uca.esi.manual.screens.materials.MaterialsI
 import uca.esi.manual.utils.ViewModelString
 
+/**
+ * Weights view model
+ *
+ * @property lab
+ * @constructor Create empty Weights view model
+ */
 class WeightsViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
 
     private val _support = MutableLiveData<Int>()
@@ -53,6 +59,11 @@ class WeightsViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         loadText = ViewModelString(R.string.manual_torsion_carga)
     }
 
+    /**
+     * Set support
+     *
+     * @param s
+     */
     fun setSupport(s: Editable) {
         if (s.toString().isNotEmpty()) {
             _support.value = s.toString().toInt()
@@ -61,6 +72,11 @@ class WeightsViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         }
     }
 
+    /**
+     * Set load5n
+     *
+     * @param s
+     */
     fun setLoad5N(s: Editable) {
         if (s.toString().isNotEmpty()) {
             _load5N.value = s.toString().toInt()
@@ -69,6 +85,11 @@ class WeightsViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         }
     }
 
+    /**
+     * Set load10n
+     *
+     * @param s
+     */
     fun setLoad10N(s: Editable) {
         if (s.toString().isNotEmpty()) {
             _load10N.value = s.toString().toInt()
@@ -77,6 +98,11 @@ class WeightsViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         }
     }
 
+    /**
+     * Set load20n
+     *
+     * @param s
+     */
     fun setLoad20N(s: Editable) {
         if (s.toString().isNotEmpty()) {
             _load20N.value = s.toString().toInt()
@@ -85,6 +111,10 @@ class WeightsViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         }
     }
 
+    /**
+     * Check materials
+     *
+     */
     override fun checkMaterials() {
         if (_support.value != 0) {
             if ((lab as TorsionLab).weights == getCombinedLoad()) {
@@ -98,32 +128,60 @@ class WeightsViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         }
     }
 
+    /**
+     * Get combined load
+     *
+     * @return
+     */
     private fun getCombinedLoad(): Int {
         return (_support.value!! * 5) + (_load5N.value!! * 5) +
                 (_load10N.value!! * 10) + (_load20N.value!! * 20)
     }
 
-    //------------------Event handlers ------------------------
+    /**
+     * On empty data
+     *
+     *///------------------Event handlers ------------------------
     private fun onEmptyData() {
         _eventEmptyData.value = true
     }
 
+    /**
+     * On empty data complete
+     *
+     */
     fun onEmptyDataComplete() {
         _eventEmptyData.value = false
     }
 
+    /**
+     * On wrong data
+     *
+     */
     private fun onWrongData() {
         _eventWrongData.value = true
     }
 
+    /**
+     * On wrong data complete
+     *
+     */
     fun onWrongDataComplete() {
         _eventWrongData.value = false
     }
 
+    /**
+     * On correct data
+     *
+     */
     private fun onCorrectData() {
         _eventCorrectData.value = true
     }
 
+    /**
+     * On correct data complete
+     *
+     */
     fun onCorrectDataComplete() {
         _eventCorrectData.value = false
     }

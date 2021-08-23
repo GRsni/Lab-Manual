@@ -15,8 +15,21 @@ import uca.esi.manual.databinding.TitleFragmentBinding
 import uca.esi.manual.utils.isDarkThemeOn
 
 
+/**
+ * Title fragment
+ *
+ * @constructor Create empty Title fragment
+ */
 class TitleFragment : Fragment() {
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -13,6 +13,11 @@ import uca.esi.manual.R
 import uca.esi.manual.databinding.MaterialsTorsionFragmentBinding
 import uca.esi.manual.utils.printLabIfDebug
 
+/**
+ * Materials torsion fragment
+ *
+ * @constructor Create empty Materials torsion fragment
+ */
 class MaterialsTorsionFragment : Fragment() {
 
     private lateinit var viewModel: MaterialsTorsionViewModel
@@ -20,6 +25,14 @@ class MaterialsTorsionFragment : Fragment() {
 
     private lateinit var binding: MaterialsTorsionFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -61,6 +74,10 @@ class MaterialsTorsionFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Add check box listeners
+     *
+     */
     private fun addCheckBoxListeners() {
         binding.checkDosGanchos.setOnCheckedChangeListener { _, isChecked ->
             viewModel.onCheckBoxClicked(0, isChecked)
@@ -88,6 +105,10 @@ class MaterialsTorsionFragment : Fragment() {
         }
     }
 
+    /**
+     * Add event correct data observer
+     *
+     */
     private fun addEventCorrectDataObserver() {
         viewModel.eventCorrectData.observe(viewLifecycleOwner, {
             if (it) {
@@ -106,6 +127,10 @@ class MaterialsTorsionFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event wrong data observer
+     *
+     */
     private fun addEventWrongDataObserver() {
         viewModel.eventWrongData.observe(viewLifecycleOwner, { dataIsWrong ->
             if (dataIsWrong) {
@@ -119,6 +144,10 @@ class MaterialsTorsionFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event empty data observer
+     *
+     */
     private fun addEventEmptyDataObserver() {
         viewModel.eventEmptyData.observe(viewLifecycleOwner, { dataIsEmpty ->
             if (dataIsEmpty) {

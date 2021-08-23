@@ -15,6 +15,11 @@ import uca.esi.manual.databinding.MaterialsPandeoFragmentBinding
 import uca.esi.manual.utils.printLabIfDebug
 
 
+/**
+ * Materials pandeo fragment
+ *
+ * @constructor Create empty Materials pandeo fragment
+ */
 class MaterialsPandeoFragment : Fragment() {
 
     private lateinit var viewModel: MaterialsPandeoViewModel
@@ -22,6 +27,14 @@ class MaterialsPandeoFragment : Fragment() {
 
     private lateinit var binding: MaterialsPandeoFragmentBinding
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -72,6 +85,10 @@ class MaterialsPandeoFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Add event correct data observer
+     *
+     */
     private fun addEventCorrectDataObserver() {
         viewModel.eventCorrectData.observe(viewLifecycleOwner, {
             if (it) {
@@ -90,6 +107,10 @@ class MaterialsPandeoFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event wrong bar data observer
+     *
+     */
     private fun addEventWrongBarDataObserver() {
         viewModel.eventWrongBarData.observe(viewLifecycleOwner, { dataIsWrong ->
             if (dataIsWrong) {
@@ -103,6 +124,10 @@ class MaterialsPandeoFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event wrong joint data observer
+     *
+     */
     private fun addEventWrongJointDataObserver() {
         viewModel.eventWrongJointData.observe(viewLifecycleOwner, { dataIsWrong ->
             if (dataIsWrong) {
@@ -116,6 +141,10 @@ class MaterialsPandeoFragment : Fragment() {
         })
     }
 
+    /**
+     * Add event empty data observer
+     *
+     */
     private fun addEventEmptyDataObserver() {
         viewModel.eventEmptyData.observe(viewLifecycleOwner, { dataIsEmpty ->
             if (dataIsEmpty) {

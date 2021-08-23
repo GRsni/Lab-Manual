@@ -9,6 +9,12 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.PandeoLab
 import uca.esi.manual.screens.materials.MaterialsI
 
+/**
+ * Materials pandeo view model
+ *
+ * @property lab
+ * @constructor Create empty Materials pandeo view model
+ */
 class MaterialsPandeoViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
 
     private val _barSelected500 = MutableLiveData<Boolean>()
@@ -51,22 +57,44 @@ class MaterialsPandeoViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         _eventWrongJointData.value = false
     }
 
+    /**
+     * On click bar500
+     *
+     */
     fun onClickBar500() {
         _barSelected500.value = true
     }
 
+    /**
+     * On click bar1000
+     *
+     */
     fun onClickBar1000() {
         _barSelected500.value = false
     }
 
+    /**
+     * Set fixed joints
+     *
+     * @param s
+     */
     fun setFixedJoints(s: Editable) {
         _fixedJoints.value = s.toString()
     }
 
+    /**
+     * Set loose joints
+     *
+     * @param s
+     */
     fun setLooseJoints(s: Editable) {
         _looseJoints.value = s.toString()
     }
 
+    /**
+     * Check materials
+     *
+     */
     override fun checkMaterials() {
         if (checkBarIsCorrect()) {
             if (checkJoints()) {
@@ -83,6 +111,11 @@ class MaterialsPandeoViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         }
     }
 
+    /**
+     * Check bar is correct
+     *
+     * @return
+     */
     private fun checkBarIsCorrect(): Boolean {
         val labBar = (lab as PandeoLab).bar
 
@@ -98,6 +131,11 @@ class MaterialsPandeoViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         }
     }
 
+    /**
+     * Check joints
+     *
+     * @return
+     */
     private fun checkJoints(): Boolean {
         val joints = countLabJoints((lab as PandeoLab).fixtures)
         val looseJointsLab = joints[0]
@@ -111,6 +149,12 @@ class MaterialsPandeoViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
 
     }
 
+    /**
+     * Count lab joints
+     *
+     * @param s
+     * @return
+     */
     private fun countLabJoints(s: String): IntArray {
         val joints = IntArray(2)
         for (i in s.indices) {
@@ -123,35 +167,66 @@ class MaterialsPandeoViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         return joints
     }
 
-    //------------------Event handlers ------------------------
+    /**
+     * On empty data
+     *
+     *///------------------Event handlers ------------------------
     private fun onEmptyData() {
         _eventEmptyData.value = true
     }
 
+    /**
+     * On empty data complete
+     *
+     */
     fun onEmptyDataComplete() {
         _eventEmptyData.value = false
     }
 
+    /**
+     * On wrong bar data
+     *
+     */
     private fun onWrongBarData() {
         _eventWrongBarData.value = true
     }
 
+    /**
+     * On wrong data bar complete
+     *
+     */
     fun onWrongDataBarComplete() {
         _eventWrongBarData.value = false
     }
 
+    /**
+     * On wrong joint data
+     *
+     */
     private fun onWrongJointData() {
         _eventWrongJointData.value = true
     }
 
+    /**
+     * On wrong data joint complete
+     *
+     */
     fun onWrongDataJointComplete() {
         _eventWrongJointData.value = false
     }
 
+    /**
+     * On correct data
+     *
+     */
     private fun onCorrectData() {
         _eventCorrectData.value = true
     }
 
+    /**
+     * On correct data complete
+     *
+     */
     fun onCorrectDataComplete() {
         _eventCorrectData.value = false
     }

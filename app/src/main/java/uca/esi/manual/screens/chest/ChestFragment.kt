@@ -15,6 +15,11 @@ import uca.esi.manual.databinding.ChestFragmentBinding
 import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.utils.printLabIfDebug
 
+/**
+ * Chest fragment
+ *
+ * @constructor Create empty Chest fragment
+ */
 class ChestFragment : Fragment() {
 
     private lateinit var viewModel: ChestViewModel
@@ -24,6 +29,14 @@ class ChestFragment : Fragment() {
     private lateinit var binding: ChestFragmentBinding
 
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -65,6 +78,10 @@ class ChestFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Launch material selector
+     *
+     */
     private fun launchMaterialSelector() {
         when (viewModel.lab.labType) {
             BaseLab.LabType.PANDEO -> {

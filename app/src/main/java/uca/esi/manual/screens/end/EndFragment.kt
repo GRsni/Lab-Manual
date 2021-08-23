@@ -12,6 +12,11 @@ import uca.esi.manual.R
 import uca.esi.manual.activities.main.MainActivityViewModel
 import uca.esi.manual.databinding.EndFragmentBinding
 
+/**
+ * End fragment
+ *
+ * @constructor Create empty End fragment
+ */
 class EndFragment : Fragment() {
 
     private lateinit var viewModel: EndViewModel
@@ -21,6 +26,14 @@ class EndFragment : Fragment() {
 
     private lateinit var activityViewModel: MainActivityViewModel
 
+    /**
+     * On create view
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

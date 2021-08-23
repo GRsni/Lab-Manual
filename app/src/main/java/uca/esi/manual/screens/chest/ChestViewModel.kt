@@ -8,6 +8,12 @@ import uca.esi.manual.models.labs.BaseLab
 import uca.esi.manual.models.labs.PandeoLab
 import uca.esi.manual.utils.ViewModelString
 
+/**
+ * Chest view model
+ *
+ * @property lab
+ * @constructor Create empty Chest view model
+ */
 class ChestViewModel(var lab: BaseLab) : ViewModel() {
 
     private val _eventButtonPressed = MutableLiveData<Boolean>()
@@ -23,6 +29,12 @@ class ChestViewModel(var lab: BaseLab) : ViewModel() {
         chestImage = getChestImage(lab.labType)
     }
 
+    /**
+     * Get intro text
+     *
+     * @param labType
+     * @return
+     */
     private fun getIntroText(labType: BaseLab.LabType): ViewModelString {
         return when (labType) {
             BaseLab.LabType.TORSION ->
@@ -44,6 +56,12 @@ class ChestViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
+    /**
+     * Get fixtures string list
+     *
+     * @param fixturesString
+     * @return
+     */
     private fun getFixturesStringList(fixturesString: String): Array<String> {
         return Array(2) { i ->
             when (fixturesString[i]) {
@@ -54,6 +72,12 @@ class ChestViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
+    /**
+     * Get chest image
+     *
+     * @param labType
+     * @return
+     */
     private fun getChestImage(labType: BaseLab.LabType): Int {
         return when (labType) {
             BaseLab.LabType.TORSION -> R.drawable.materiales
@@ -62,10 +86,18 @@ class ChestViewModel(var lab: BaseLab) : ViewModel() {
         }
     }
 
+    /**
+     * On button pressed
+     *
+     */
     fun onButtonPressed() {
         _eventButtonPressed.value = true
     }
 
+    /**
+     * On button pressed complete
+     *
+     */
     fun onButtonPressedComplete() {
         _eventButtonPressed.value = false
     }

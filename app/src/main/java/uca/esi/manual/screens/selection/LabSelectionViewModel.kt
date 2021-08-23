@@ -5,6 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import timber.log.Timber
 
+/**
+ * Lab selection view model
+ *
+ * @property userId
+ * @constructor Create empty Lab selection view model
+ */
 class LabSelectionViewModel(var userId: String) : ViewModel() {
 
     private val _inLab = MutableLiveData<Boolean>()
@@ -40,6 +46,11 @@ class LabSelectionViewModel(var userId: String) : ViewModel() {
         _inLab.value = true
     }
 
+    /**
+     * Check place selected not empty
+     *
+     * @return
+     */
     fun checkPlaceSelectedNotEmpty(): Boolean {
         return if (_inLab.value == null) {
             Timber.w("Place not selected")
@@ -50,50 +61,98 @@ class LabSelectionViewModel(var userId: String) : ViewModel() {
         }
     }
 
+    /**
+     * On click in lab
+     *
+     */
     fun onClickInLab() {
         _inLab.value = true
     }
 
+    /**
+     * On click outside
+     *
+     */
     fun onClickOutside() {
         _inLab.value = false
     }
 
+    /**
+     * On empty data
+     *
+     */
     private fun onEmptyData() {
         _eventEmptyData.value = true
     }
 
+    /**
+     * On empty data complete
+     *
+     */
     fun onEmptyDataComplete() {
         _eventEmptyData.value = false
     }
 
+    /**
+     * On torsion click
+     *
+     */
     fun onTorsionClick() {
         _eventTorsionPress.value = true
     }
 
+    /**
+     * On torsion click complete
+     *
+     */
     fun onTorsionClickComplete() {
         _eventTorsionPress.value = false
     }
 
+    /**
+     * On pandeo click
+     *
+     */
     fun onPandeoClick() {
         _eventPandeoPress.value = true
     }
 
+    /**
+     * On pandeo click complete
+     *
+     */
     fun onPandeoClickComplete() {
         _eventPandeoPress.value = false
     }
 
+    /**
+     * On traccion click
+     *
+     */
     fun onTraccionClick() {
         _eventTraccionPress.value = true
     }
 
+    /**
+     * On traccion click complete
+     *
+     */
     fun onTraccionClickComplete() {
         _eventTraccionPress.value = false
     }
 
+    /**
+     * On flexion click
+     *
+     */
     fun onFlexionClick() {
         _eventFlexionPress.value = true
     }
 
+    /**
+     * On flexion click complete
+     *
+     */
     fun onFlexionClickComplete() {
         _eventFlexionPress.value = false
     }
