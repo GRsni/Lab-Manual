@@ -57,7 +57,7 @@ fun printLabIfDebug(lab: BaseLab) {
 /**
  * Is dark theme on
  *
- * @return
+ * @returnna
  */
 fun Context.isDarkThemeOn(): Boolean {
     return resources.configuration.uiMode and

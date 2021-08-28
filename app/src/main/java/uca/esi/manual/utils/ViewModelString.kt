@@ -46,19 +46,6 @@ class ViewModelString private constructor(
     constructor(@StringRes stringResId: Int, args: ArrayList<Any>) : this(null, stringResId, args)
 
     /**
-     * Resolve char seq
-     *
-     * @param context
-     * @return
-     */
-    fun resolveCharSeq(context: Context): CharSequence {
-        return when {
-            string != null -> string
-            else -> context.getString(stringResId)
-        }
-    }
-
-    /**
      * Resolve
      *
      * @param context
