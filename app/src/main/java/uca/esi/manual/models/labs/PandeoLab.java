@@ -35,7 +35,7 @@ public class PandeoLab extends BaseLab {
     /**
      * The constant FIXTURES_LIST.
      */
-    public static final String[] FIXTURES_LIST = {"AA", "AE", "EE"};
+    private static final String[] FIXTURES_LIST = {"AA", "AE", "EE"};
     private static final float[] BARS = {Constants.BAR_500_VALUE, Constants.BAR_1000_VALUE};
     private static final float[] LOADS = {883.7f, 1803f, 3535f, 220.9f, 450.8f, 883.7f};
     private float bar = 0;

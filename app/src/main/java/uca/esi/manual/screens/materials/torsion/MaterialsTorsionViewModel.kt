@@ -73,13 +73,7 @@ class MaterialsTorsionViewModel(var lab: BaseLab) : ViewModel(), MaterialsI {
         checkboxes[id] = value
     }
 
-    /**
-     * On empty data
-     *
-     *///------------------Event handlers ------------------------
-    private fun onEmptyData() {
-        _eventEmptyData.value = true
-    }
+    //------------------Event handlers ------------------------
 
     /**
      * On empty data complete
