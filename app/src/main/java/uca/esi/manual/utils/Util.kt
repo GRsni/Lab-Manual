@@ -37,9 +37,9 @@ val FragmentManager.currentNavigationFragment: Fragment?
  *
  * @param lab
  */
-fun printLab(lab: BaseLab) = when (lab) {
-    is PandeoLab -> Timber.i(lab.toString())
-    is TorsionLab -> Timber.i(lab.toString())
+fun printLab(lab: BaseLab) = when (lab.labType) {
+    BaseLab.LabType.PANDEO -> Timber.i((lab as PandeoLab).toString())
+    BaseLab.LabType.TORSION -> Timber.i((lab as TorsionLab).toString())
     else -> Timber.i(lab.toString())
 }
 
@@ -57,7 +57,7 @@ fun printLabIfDebug(lab: BaseLab) {
 /**
  * Is dark theme on
  *
- * @returnna
+ * @return true if dark theme is used
  */
 fun Context.isDarkThemeOn(): Boolean {
     return resources.configuration.uiMode and
