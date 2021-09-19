@@ -18,7 +18,7 @@
         android:theme="@style/Theme.Manual_lab"
         android:fullBackupContent="false">
         <activity android:name=".activities.main.MainActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

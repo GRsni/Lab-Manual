@@ -9,12 +9,12 @@ apply plugin: 'org.jetbrains.dokka'
 
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "uca.esi.manual"
         minSdkVersion 24
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.1.0"
 
