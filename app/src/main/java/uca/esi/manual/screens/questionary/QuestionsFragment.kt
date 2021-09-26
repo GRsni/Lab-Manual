@@ -1,5 +1,6 @@
 package uca.esi.manual.screens.questionary
 
+import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.TypedValue
@@ -16,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import uca.esi.manual.R
 import uca.esi.manual.databinding.QuestionsFragmentBinding
+import uca.esi.manual.utils.isDarkThemeOn
 
 
 /**
@@ -114,11 +116,30 @@ class QuestionsFragment : Fragment() {
             if (viewModel.correctAnswers[i]) {
                 textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.rightAnswer))
             } else {
-                textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.wrongAnswer))
+                textView.setTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        getWrongAnswerColor(requireContext())
+                    )
+                )
             }
             textView.background = getBackground()
             textView.setPadding(8, 4, 8, 4)
             binding.linearLayoutTipoTest.addView(textView, layoutParams)
+        }
+    }
+
+    /**
+     * Get wrong answer color
+     *
+     * @param context
+     * @return
+     */
+    private fun getWrongAnswerColor(context: Context): Int {
+        return if (!context.isDarkThemeOn()) {
+            R.color.wrongAnswer
+        } else {
+            R.color.red_dark
         }
     }
 

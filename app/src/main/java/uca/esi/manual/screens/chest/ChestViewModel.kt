@@ -65,8 +65,8 @@ class ChestViewModel(var lab: BaseLab) : ViewModel() {
     private fun getFixturesStringList(fixturesString: String): Array<String> {
         return Array(2) { i ->
             when (fixturesString[i]) {
-                'A' -> "Articulado"
-                'E' -> "Empotrado"
+                'A' -> "Apoyo articulado"
+                'E' -> "Apoyo empotrado"
                 else -> throw IllegalArgumentException("Unknown fixture type")
             }
         }
